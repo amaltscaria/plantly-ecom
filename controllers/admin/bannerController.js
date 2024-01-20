@@ -8,8 +8,14 @@ export const getAllBanners = async (req,res) => {
 }
 
 //add banner handler - GET
-export const getAddBanner = async (req, res)=> {
-    res.render('admin/banners/addBanner', {user:req.session.admin});
+export const getAddBanner = async (req, res, next)=> {
+    try{
+        res.render('admin/banners/addBanner', {user:req.session.admin});
+    }
+    catch(err){
+        next(500);
+    }
+    
 }
 
 //add banner handler - POST
