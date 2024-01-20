@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+
+<!-- Mirrored from dostguru.com/HTML/plantly/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 08:19:26 GMT -->
+
+<head>
+  <title>Contact-us | Plantly</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/Favicon.ico">
+  <!-- bootstrap min-->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <!-- fontawesome -->
+  <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.min.css">
+  <!-- OwlCarousel2 -->
+  <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+  <!-- fancybox -->
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
+  <!-- animate -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+  <!-- media -->
+  <link rel="stylesheet" type="text/css" href="assets/css/media.css">
+  <!-- style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- responsive -->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <!-- googleapis -->
+  <link rel="preconnect" href="../../../fonts.gstatic.com/index.html">
+  <style>
+    /* Additional styles for the user profile page */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
+      /* Light gray background */
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #6ea820;
+      /* Green color for plant theme */
+    }
+
+    .profile-page {
+      padding: 40px 0;
+    }
+
+    .user-navbar {
+      background-color: #6ea820;
+      /* Green color for plant theme */
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .user-navbar a {
+      color: #f2f2f2;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 15px;
+      padding: 17px;
+      padding-bottom: 45px;
+      transition: color 0.3s;
+    }
+
+    .delete-address-button {
+      background-color: red;
+      border: none;
+    }
+
+    .address-card {
+      border: 1px solid #ede6e6;
+    }
+
+    .user-navbar a:hover,
+    .user-navbar a.active {
+      color: #ffffff;
+      /* Lighter green color */
+      font-size: 20px;
+      transition: 1s;
+    }
+
+
+    .user-content {
+      display: none;
+      /* Initially hide all user content sections */
+      padding: 21px;
+      background-color: #fff;
+      /* White background for user details */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* Add a subtle box shadow */
+    }
+
+    .profile-heading {
+      color: #6ea820;
+      /* Green color for plant theme */
+      margin-bottom: 20px;
+    }
+
+    .user-details-container {
+      margin-bottom: 20px;
+    }
+
+    .modal-add-btn {
+      background-color: red !important;
+    }
+
+    .edit-btn,
+    .reset-btn {
+      background-color: #6ea820;
+      /* Green color for plant theme */
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .reset-btn {
+      background-color: rgb(142, 140, 140);
+    }
+
+    .edit-btn:hover,
+    .reset-btn:hover {
+      background-color: #6ea820;
+      /* Slightly darker shade for hover effect */
+    }
+
+    .profile-field {
+      border: 1px solid #ddd;
+      padding: 8px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .profile-field:disabled {
+      background-color: #f5f5f5;
+    }
+
+    .user-message {
+      width: 50%;
+    }
+
+    .input-border {
+      border: 1px solid #e2e2e2;
+    }
+
+    #wallet {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+      margin: 0;
+      margin-left: 120px;
+    }
+
+    .wallet {
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+      margin-left: 25%;
+    }
+
+    .wallet:hover {
+      transform: scale(1.05);
+    }
+
+    .wallet-header {
+      background-color: #6ea820;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .wallet-image {
+      max-width: 100%;
+      height: 200px;
+      border-radius: 50%;
+      margin: 20px 0;
+    }
+
+    .wallet-balance {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #333;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .wallet-actions button {
+      background-color: #6ea820;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    .wallet-actions button:hover {
+      background-color: #45a049;
+    }
+
+    .transaction-history {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .transaction-history h2 {
+      margin-top: 5px;
+      color: #7c7c7c;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .transaction-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .transaction-list li {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #ecf0f1;
+      border-radius: 8px;
+      font-size: 10px;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .modal-content-wallet {
+      width: 55% !important;
+      margin-left: 41% !important;
+    }
+
+    .modal-wallet-buttons {
+      justify-content: space-evenly;
+    }
+  </style>
+
+  <style>
+    .remaining-items-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 50px 0 0 25px;
+      padding: 10px;
+      /* Adjust as needed */
+      background-color: rgba(255, 255, 255, 0.8);
+      /* Adjust background color and opacity as needed */
+    }
+
+    .styled-input {
+      width: 100px;
+      border: 2px solid #ebeee7;
+      padding: 5px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .percentage-box {
+      background-color: #2da750;
+      /* Set your desired background color */
+      padding: 8px;
+      /* Adjust the padding as needed */
+      border-radius: 18px;
+      /* Optional: Add border radius for rounded corners */
+      text-align: center;
+      /* Center the text horizontally */
+      height: 60px;
+      min-width: 100px;
+      /* Add any other styles you want */
+    }
+
+    .referral-section {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .referral-input {
+      font-size: 16px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .description1 {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #970505;
+    }
+
+    .copy-button {
+  font-size: 14px;
+  padding: 8px 15px;
+  background-color: rgb(47, 203, 23);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.copy-button:hover {
+  background-color: rgb(220, 150, 205);
+}
+  </style>
+</head>
+
+<body>
+  <!-- cart-model -->
+  <div class="modal fade" id="cart_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title f_13 font-weight-bolder">Product successfully added to your shopping cart</div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-4 col-xs-12 mb-3  ">
+              <img src="assets/img/product/product_13.jpg" class="fst-image mx-auto d-block img-fluid border rounded" alt="product_13">
+            </div>
+            <div class="col-sm-8 col-xs-12 ">
+              <h6 class="font-weight-bolder">Hummingbird printed t-shirt</h6>
+              <div class="font-weight-bolder pb-1">$19.12</div>
+              <span class="font-weight-bolder f_13 pb-1">Size: S</span><br>
+              <span class="font-weight-bolder f_13 pb-1">Color: White</span><br>
+              <span class="font-weight-bolder f_13 pb-1">Qty: 2</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-12 ">
+              <div class="border rounded final_payment">
+                <div class="card-body  border-bottom">
+                  <p class="text-muted">5 items</p>
+                  <p class="font-weight-bolderer">show details</p>
+                  <div>
+                    <span class="font-weight-bolder">subtotal</span>
+                    <span class="float-right font-weight-bolder">$94.00</span>
+                  </div>
+                  <div>
+                    <span class="font-weight-bolder">shipping</span>
+                    <span class="float-right font-weight-bolder">$9.00</span>
+                  </div>
+                </div>
+                <div class="card-body ">
+                  <div>
+                    <span class="font-weight-bolder">total(tax excl.)</span>
+                    <span class="float-right font-weight-bolder">$94.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary mt-2 f_13 px-3 py-2 rounded" data-dismiss="modal">close</a>
+          <a href="checkout.html" class="btn btn-primary mt-2 f_13 px-3 py-2 rounded">continue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- cart_model -->
+  <!-- eye-model -->
+  <div class="modal fade" id="eye_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-5 col-12">
+              <img src="assets/img/product/product_13.jpg" class="fst-image mx-auto d-block img-fluid border rounded" alt="product_13">
+            </div>
+            <div class="col-sm-7 col-12">
+              <h5 class="font-weight-bolder border-bottom me_name">Aliquam Top Erat Volutpat</h5>
+              <div class="font-weight-bolder border-bottom me_price">$19.12</div>
+              <div class="my-2 border-bottom me_des">Fashion has been creating well-designed collections since 2010. </div>
+              <div class="me_quan">
+                <div class="sp_counter ">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"><span class="minus">-</span></button>
+                    </span>
+                    <input type="number" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"><span class="plus">+</span></button>
+                    </span>
+                  </div>
+                </div>
+                <span>
+                  <a href="cart.html" class="btn btn-primary primary mt-3">add to cart</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- eye_model -->
+  <!-- compare-model -->
+  <div class="modal fade" id="compare_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p>
+            <svg width="30px" height="30px">
+              <use xlink:href="#checked"></use>
+            </svg>
+          </p>
+          <h5>Compare list updated!</h5>
+          <p class="text-muted font-weight-bolder">Product successfully removed from the product comparison!</p>
+          <div class="text-danger font-weight-bolder">Go to Compare</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- compare_model -->
+  <!-- heart-model -->
+  <div class="modal fade" id="heart_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p>
+            <svg width="30px" height="30px">
+              <use xlink:href="#checked"></use>
+            </svg>
+          </p>
+          <p class="text-muted font-weight-bolder">You must be logged in to manage your wishlist.</p>
+          <div class="text-danger font-weight-bolder">Go to wishlist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- heart_model -->
+  <!-- shipping -->
+  <div class="modal fade" id="shippingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Fashion has been creating well-designed collections since 2010. </li>
+            <li>The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. </li>
+            <li>The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. </li>
+            <li>All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- shipping -->
+  <!-- ask about product -->
+  <div class="modal fade" id="question_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="exampleModalLabel">shipping</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body que_form">
+          <h6>have a any question?</h6>
+          <form>
+            <div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <textarea class="form-control" rows="3" placeholder="Enter Your Message"></textarea>
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <input type="text" class="form-control" placeholder="Enter Your Name">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <input type="email" class="form-control" placeholder="Enter Your Mail">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3 ">
+                <input type="tel" pattern=".{10}" class="form-control" id="other_number" oninput="check(this)" required placeholder="Enter Your Phone">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <button type="submit" class="btn btn-primary">submit review</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ask about product -->
+  <!-- add to wishlist -->
+  <div class="modal fade" id="wish_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          Please login and you will add product to your wishlist
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- add to wishlist -->
+  <!-- header area -->
+  <!-- header area -->
+  <header>
+    <div class="topbar-outer py-2 border-bottom d-md-none d-none d-none d-lg-block">
+      <div class="">
+        <div class="row">
+          <div class="col-lg-5 col-md-4 col-sm-4 topbar_left">
+            <ul>
+              <li>
+                <span class="font-weight-bolderer">Get 30% Off On Selected Items</span>
+              </li>
+            </ul>
+          </div>
+          <!-- col-lg-5 col-md-4 col-sm-4 hidden-md-down topbar_left -->
+          <div class="col-lg-7 col-md-8 col-sm-8 text-xs-right  topbar_right text-right">
+            <nav class="navbar d-flex align-items-center  justify-content-end">
+              <div class="dropdown right1 md_2 hr_">
+                <span class="dropdown-toggle lng-select-menu" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <select class=" select-menu form-select d-none d-sm-block">
+                    <option value="selected">English <i class="fas fa-angle-down"></i></option>
+                    <option value="1">Polski</option>
+                    <option value="2">Romana</option>
+                    <option value="3">Deutsch</option>
+                  </select>
+                </span>
+              </div>
+              <div class="dropdown right1 md_1">
+                <span class="dropdown-toggle lng-select-menu" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <select class=" select-menu form-select d-none d-sm-block">
+                    <option value="selected">EUR €<i class="fas fa-angle-down"></i></option>
+                    <option value="1">USD $</option>
+                  </select>
+                </span>
+              </div>
+
+            </nav>
+          </div>
+          <!-- col-lg-7 col-md-8 col-sm-8 text-xs-right hidden-md-down topbar_right text-right -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container  -->
+    </div>
+    <div class="preloader"></div>
+    <!-- topbar-outer py-2 border-bottom<-->
+    <!-- second row -->
+    <div class="header-top py-4 border-bottom sticky-md-top">
+      <div class="header-top-container">
+        <div class="row header_row">
+          <div class="col-xl-2 col-lg-2 col-6  head-logo pl-md-0">
+            <div class="text-left header-top-left pt-2"><a href="index.html"><img src="assets/img/logo.png" class="img-responsive img" alt="logo"></a></div>
+          </div>
+          <!-- col-xl-2 col-lg-2 col-md-2 col-sm-3 head-logo -->
+          <div class="col-xl-10 col-lg-10 col-6  head-search">
+            <div class="d-flex navbar">
+              <div class="input-class  text-left col-xl-8 col-lg-7 col-md-12  ">
+                <div class="between-header border border-danger rounded mb-0 head-left">
+                  <select class="select-menu form-select d-none d-sm-block">
+                    <option value="selected">all categories</option>
+                    <option value="1">laptop</option>
+                    <option value="2">headphone</option>
+                    <option value="3">audio</option>
+                  </select>
+                  <div class="input-group">
+                    <input type="text" placeholder="search" class="form-control" aria-label="search" aria-describedby="button-addon2">
+                    <div class="input-group-btn"><button type="button" class="btn btn-danger text-uppercase font-weight-normal">search</button></div>
+                  </div>
+                </div>
+                <!-- between-header text-left col-sm-8 head-left border border-danger rounded mb-0 -->
+              </div>
+              <div class="col-xl-4 col-lg-5 head-right text-right">
+                <ul class="top_cart" id="my-profile">
+                  <li class="dropdown right1 md_acc md_acco">
+                    <span class="account-block">
+                    </span>
+                    <span class="dropdown-toggle my_account" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= user.firstName %>
+                      <a href="#">
+                      </a>
+                    </span>
+                    <span class="dropdown-menu r_menu dropdown-menu-right text-center">
+                      <a class="dropdown-item font-weight-bolderer" href="">Profile</a>
+                      <a class="dropdown-item font-weight-bolderer" href="">Wallet</a>
+                      <a class="dropdown-item font-weight-bolderer" href="registration.html">Orders</a>
+                      <a class="dropdown-item font-weight-bolderer" href="login.html">Wishlist</a>
+                      <a class="dropdown-item font-weight-bolderer" href="/logout">Logout</a>
+                    </span>
+                  </li>
+                  <!--  <li class="d-lg-none d-md-inline-block user">
+                                 <div class="head_ border rounded bg-white text-left">
+                                    <a class=" md_login" href="#"></a>
+                                 </div>
+                                 </li> -->
+                  <li class="dropdown d-inline-block my-cart md_acco">
+                    <a href="#" class="cart-qty">
+                      <span class="cart-contents">
+                      </span>
+                      <span class="d-lg-inline-block d-md-none d-sm-none d-none align-middle font-weight-bolderer"></span><span class="price_cart d-md-inline-block align-middle font-weight-bolderer">2</span>
+                    </a>
+                    <span class="dropdown-toggle Price-amount" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      $230.00
+                    </span>
+                    <div class="dropdown-menu s_cart dropdown-menu-right">
+                      <ul class="shopping-cart p-2 ">
+                        <%for(let i= 0; i< cart.length; i++) {  %>
+                        <li class="p-3 d-block cart-remove cart_cross">
+                          <div class="media">
+
+                            <div>
+                              <a href="#"><img src="/admin/assets/uploads/productImages/<%=cart[i].product.images[0]%>" class="fst-image img-fluid align-self-center rounded" alt="product_13" width="60px" height="10px"></a>
+                            </div>
+                            <div class="media-body">
+                              <h6 class="mt-0 ml-2 f_15"><%=cart[i].product.name%></h6>
+                              <p><span class="f_13 ml-2 "><%=cart[i].quantity%> x Rs <%=cart[i].product.price%></span></p>
+                            </div>
+                          </div>
+                        </li>
+                        <% } %>
+
+                        <li class="d-block text-muted font-weight-bolderer p-2 border-bottom">
+                          <span class="text-left">subtotal:</span>
+                          <span class="float-right">$230.00</span>
+                        </li>
+                        <li class="d-block font-weight-bolderer pt-2">
+                          <span class="text-left"><a href="/cart">view cart</a></span>
+                          <span class="float-right"><a href="checkout.html">check out</a></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- col-sm-4 head-right text-right -->
+              </div>
+              <!-- row -->
+            </div>
+            <!-- col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 head-search -->
+          </div>
+          <!-- row -->
+        </div>
+        <!--  container  -->
+      </div>
+      <!-- header-top py-4 border-bottom-->
+      <!-- third row -->
+      <!-- third row -->
+
+
+      <div class="header_bottom shadow-sm rounded d-md-none d-sm-none d-none d-lg-block">
+        <div class="">
+          <div class="row">
+            <div class="col-lg-12 text-left">
+              <ul class="main-menu navbar">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                  <a class="dropdown-toggle" href="shop-left-sidebar.html" role="button" data-toggle="dropdown" aria-expanded="false">shop&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                  <ul class="dropdown-menu all-page-drop">
+                    <li><a class="dropdown-item font-weight-bolder" href="shop-left-sidebar.html">left sidebar</a></li>
+                    <li><a class="dropdown-item font-weight-bolder" href="shop-right-sidebar.html">right sidebar</a></li>
+                  </ul>
+                </li>
+                </li>
+                <li class="dropdown mega_menu m1 level-1 font-weight-bolderer">
+                  <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">category&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <ul class="row mx-0">
+                        <li class="mg_menu col-lg-3 col-md-12 ">
+                          <ul class="sub-category">
+                            <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Pot</li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Pigmyweeds</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Indoor Plants</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">outdoor Plants</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flamingo plant</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Succulent Plant</a></li>
+                          </ul>
+                        </li>
+                        <li class="mg_menu col-lg-3 col-md-12 ">
+                          <ul class="sub-category">
+                            <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Plant</li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Fragrant Plants</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Purifying Plant</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Live Plant</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Raisin Pot</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html"> Decorative Pot</a></li>
+                          </ul>
+                        </li>
+                        <li class="mg_menu col-lg-3 col-md-12 ">
+                          <ul class="sub-category">
+                            <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Crassula</li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Nerve Plant</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flowering Plants</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant Seed</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Luck Plants</a></li>
+                            <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant House</a></li>
+                          </ul>
+                        </li>
+                        <li class="mg_menu col-lg-3 col-md-12">
+                          <ul>
+                            <li class="d-block"><a href="single-product.html"><img src="assets/img/m_menu.jpg" class="fst-image mx-auto d-block mb-1 img-fluid" alt="m_menu"></a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown" aria-expanded="false">blog&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                  <ul class="dropdown-menu all-page-drop">
+                    <li><a class="dropdown-item font-weight-bolder" href="blog.html">blog</a></li>
+                    <li><a class="dropdown-item font-weight-bolder" href="blog-left-sidebar.html">left sidebar</a></li>
+                    <li><a class="dropdown-item font-weight-bolder" href="blog-right-sidebar.html">right sidebar</a></li>
+                  </ul>
+                </li>
+                <li><a href="portfolio-grid-4.html">gallery</a></li>
+                <li><a href="about-us.html">about us</a></li>
+                <li>
+                  <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">pages <i class="fas fa-angle-down"></i></a>
+                  <ul class="dropdown-menu all-page-drop">
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="about-us.html">about us</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="compare.html">compare</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="wishlist.html">wishlist</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="checkout.html">check out</a></li>
+                    <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="forgot.html">forgot password</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact-us.html">contact-us</a></li>
+              </ul>
+            </div>
+            <!-- col-lg-12 text-left -->
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container  -->
+      </div>
+
+
+      <!-- header_bottom shadow-sm rounded  -->
+  </header>
+  <!-- header -->
+  <!-- header area end -->
+  <!-- vertical menu and slider -->
+  <div id="home_vertical_menu">
+    <div class="row ">
+      <div class="col-lg-3 vertical_menu">
+        <div class="v_menu bg-white rounded">
+          <div class="cat_menu bg-warning rounded-top"><a href="#" class="pe-auto text-uppercase d-md-none d-sm-none d-none d-lg-block font-weight-bolder"><i class="fas fa-bars"></i>all categories</a></div>
+          <div class="navbar-header d-xl-none d-lg-none">
+            <button type="button" class="btn-navbar navbar-toggle" onclick="openNav()" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fas fa-bars"></i></button>
+          </div>
+          <div id="mySidenav" class="sidenav  ">
+            <div class="close-nav d-xl-none d-lg-none">
+              <span class="categories">Menu</span>
+              <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()"><i class="fas fa-times"></i></a>
+            </div>
+            <ul class="vertical_main_menu h_menu navbar navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="">
+                <a class="dropdown-toggle" href="shop-left-sidebar.html" role="button" data-toggle="dropdown" aria-expanded="false">shop&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="shop-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li class="dropdown mega_menu m1_menu level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">portfolio&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-6 col-md-12 ">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">portfolio grid 2</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-2.html">portfolio grid 2</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-3.html">portfolio grid 3</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-4.html">portfolio grid 4</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-2.html">mesonary grid 2</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-3.html">mesonary grid 3</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-4.html">mesonary grid 4</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-6 col-md-12">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">theme elements</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="title.html">title</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="category-style.html">category</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="services.html">services</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="product-tab.html">product tab</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="multi-slider-product.html">multi slider product</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown" aria-expanded="false">
+                  blog&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog.html">blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li class="dropdown mega_menu level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">Category&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-4 col-md-12 ">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">Pot</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Pigmyweeds</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Indoor Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">outdoor Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flamingo plant</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Succulent Plant</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-4 col-md-12">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">Plants</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Nerve Plant</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flowering Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant Seed</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Luck Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant House</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">pages&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="about-us.html">about us</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="compare.html">compare</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="wishlist.html">wishlist</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="checkout.html">check out</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="forgot.html">forgot password</a></li>
+                </ul>
+              </li>
+              <li class="level-1 font-weight-bolderer"><a href="contact-us.html">contact-us</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- v_menu bg-white rounded -->
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container  menu_slider mt-4 -->
+  <!-- vertical menu and slider end -->
+  <!-- Profile Page Section -->
+  <section class="profile-page" id="#user-profile-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 profile-title">
+          <h2 class="font-weight-bolder mt-2 mb-3 d-inline-block pb-3 position-relative border-bottom profile-heading">Plantly - <%= user.firstName %> <%= user.lastName%></h2>
+        </div>
+
+        <!-- Vertical Navbar -->
+        <div class="user-navbar col-lg-2 col-md-3 col-sm-12 col-12">
+          <a href="#" onclick="showSection('user-details')" class="active">User Details</a>
+          <a href="#" onclick="showSection('orders')">Orders</a>
+          <a href="#" onclick="showSection('addresses')">Addresses</a>
+          <a href="#" onclick="showSection('add-address-section')">Add New Address</a>
+          <a href="#" onclick="showSection('coupon-details')">Coupons</a>
+          <a href="#" onclick="showSection('wallet')">Wallet</a>
+          <a href="/logout">Logout</a>
+        </div>
+
+        <!-- User Profile Section -->
+        <div class="container user-content col-lg-8 col-md-9 col-sm-12 col-12" id="user-details">
+          <h2 class="mt-4 mb-4 profile-heading">User Profile</h2>
+
+          <!-- User Details -->
+          <div class="user-details-container " id="edit-profile">
+            <div id="user-message" class="user-message" style="display: none;">Profile Updated Successfully</div>
+            <div id="user-error-message" class="user-message user-message-error" style="display: none;">User with the given number exists Already!</div>
+            <label for="edit_name">First Name:</label>
+            <input type="text" class="form-control profile-field" id="edit_name" name="edit_name" placeholder="Your Name" value="<%= user.firstName %>" disabled>
+            <div id="error-edit_name" class="validation-error" style="color: red;"></div>
+            <label for="edit_last_name">Last Name:</label>
+            <input type="text" class="form-control profile-field" id="edit_last_name" name="edit_last_name" placeholder="Your Last Name" value="<%= user.lastName %>" disabled>
+            <div id="error-edit_last_name" class="validation-error" style="color: red;"></div>
+            <label for="edit_email">Email:</label>
+            <input type="email" class="form-control profile-email" id="edit_email" name="edit_email" placeholder="Your Email" value="<%= user.email %>" disabled>
+            <label for="edit_phone">Phone:</label>
+            <input type="tel" class="form-control profile-field" id="edit_phone" name="edit_phone" placeholder="Your Phone" value="<%= user.number %>" disabled>
+            <div id="error-edit_phone" class="validation-error" style="color: red;"></div>
+          </div>
+          <div class="referral-section">
+            <h2 style="color: rgb(106 107 172);">Your Referral Link</h2>
+            <label for="referralLink"></label>
+            <input class="referral-input text-success" type="text" id="referralLink" value="http://localhost:3000/signup?referral=<%=user.referralCode%>" disabled>
+            <button onclick="copyToClipboard()" id="copyBtn" class="copy-button">Copy</button>
+            <p class="description1">Refer a friend and you both earn rewards! You earn Rs.200 and your friend earns Rs.100.</p>
+        </div>
+
+          <!-- Edit Profile and Reset Password Buttons -->
+          <button class="btn btn-primary edit-btn text-white mt-5" id="edit-profile-btn" onclick="editProfile()">Edit Profile</button>
+          <button class="btn btn-primary float-right reset-btn text-white mt-5" onclick="resetPassword()">Reset Password</button>
+        </div>
+
+        <!-- Orders Section -->
+        <div class="container user-content col-lg-8 col-md-9 col-sm-12 col-12" id="orders">
+          <h2 class="mt-4 mb-4 profile-heading">Orders</h2>
+          <!-- Order cards content goes here -->
+          <div class="order-cards-container" style="height: 600px;overflow-y: scroll;overflow-x: hidden;">
+            <!-- Sample Order Card 1 -->
+            <%for(let i = 0; i< orders.length; i++){%>
+            <div class="card mb-4">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <!-- Product Image -->
+                  <img src="/assets/img/product/product_13.jpg" alt="Product Image" class="img-fluid" width="150px" height="100px">
+                  <!-- Remaining items text -->
+                  <% if (orders[i].products.length > 1) { %>
+                  <p class="remaining-items-text">
+                    <b>+</b> <%= Math.max(0, orders[i].products.length - 1) %><% if (orders[i].products.length > 2) { %> more Items<%}else{%> more item <%}%>
+                     </p>
+                   <% } %>
+                </div>
+                <div class="col-md-4">
+                  <div class="card-body d-flex flex-column">
+                    <!-- Product Details -->
+                    <h5 class="card-title text-muted">OrderID: <%=orders[i].orderId%> </h5>
+                    <p class="card-text">Items: <%=orders[i].products.length%></p>
+                    <!-- Remove the line <p class="card-text">Remaining items: <%= Math.max(0, orders[i].products.length - 1) %> more</p> from here -->
+                    <p class="card-text">Total: Rs. <%=orders[i].totalAmount%></p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card-body d-flex flex-column" style="float: inline-end; padding-top: 15px;">
+                    <div class="mt-auto text-end">
+                      <!-- This div pushes the button to the bottom right -->
+                      <a href="/orderDetails/<%=orders[i]._id%>" class="btn btn-primary" style="width: 127px;">View Details</a>
+                    </div>
+                  </div>
+                  <div class="card-body d-flex flex-column" style="float: inline-end;">
+                    <div class="mt-auto text-end">
+                      <!-- This div pushes the button to the bottom right -->
+                      <a href="#" class="btn btn-secondary ">Order <%=orders[i].status%></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%}%>
+       <!-- Repeat similar structure for other order cards -->
+   </div>
+</div>
+
+
+<!-- Address Section -->
+<div class="container user-content col-lg-8 col-md-9 col-sm-12 col-12" id="addresses">
+   <h2 class="mt-4 mb-4 profile-heading">Addresses</h2>
+
+   <!-- Address cards content goes here -->
+   <div class="address-cards-container" id = "addressSection" >
+      <div id = "user-delete-address" class="user-message text-dark" style="display: none;">Address Deleted Successfully</div>
+       <!-- Sample Address Card 1 -->
+       <%for(let i = 0; i < user.shippingAddress.length;i++) {%>
+            <div class="card mb-3" id="address-card-<%= i %>">
+              <div class="card-body address-card">
+                <!-- Address Details -->
+                <h5 class="card-title text-success">Shipping Address <%=i+1%></h5>
+                <div id="user-edit-address" class="user-message text-dark" style="display: none;">Address Updated Successfully</div>
+                <!-- Editable Input Fields -->
+                <div class="row mb-2">
+                  <div class="col">
+                    <input type="text" id="addressName" class="form-control input-border input-small" placeholder="Full Name" value="<%=user.shippingAddress[i].name%>" disabled>
+                  </div>
+                  <div class="col">
+                    <input type="text" id="addressValue" class="form-control input-border input-small" placeholder="Street Address" value="<%=user.shippingAddress[i].address%>" disabled>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <input type="text" id="addressCity" class="form-control input-border input-small" placeholder="City" value="<%=user.shippingAddress[i].city %>" disabled>
+                  </div>
+                  <div class="col">
+                    <input type="text" id="addressState" class="form-control input-border input-small" placeholder="State" value="<%=user.shippingAddress[i].state%>" disabled>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <input type="text" id="addressPost" class="form-control input-border input-small" placeholder="Postal Code" value="<%=user.shippingAddress[i].postCode%>" disabled>
+                  </div>
+                  <div class="col">
+                    <input type="tel" id="addressNumber" class="form-control input-border input-small" placeholder="Mobile Number" value="<%=user.shippingAddress[i].number%>" disabled>
+                  </div>
+                </div>
+                <div class="mt-auto text-end">
+                  <!-- Buttons for Address Actions -->
+                  <button class="btn btn-primary btn-sm text-white" id="address-btn" onclick="editAddress('address-card-<%= i %>','<%=user.shippingAddress[i]._id%>')">Edit Address</button>
+                  <button class="btn delete-address-button btn-danger float-right btn-sm text-white" onclick="deleteAddress('<%=user.shippingAddress[i]._id%>')">Delete</button>
+                </div>
+              </div>
+            </div>
+            <%}%>
+       <!-- Repeat similar structure for other address cards -->
+   </div>
+   <!-- Button for adding a new address -->
+   <div class="text-end mt-2 d-flex justify-content-center">
+       <button class="btn btn-success btn-sm" onclick="showSection('add-address-section')">Add New Address</button>
+   </div>
+</div>
+
+
+  <!-- Add Address Section -->
+<div class="container user-content col-lg-8 col-md-9 col-sm-12 col-12" id="add-address-section" style="display: none;">
+   <h2 class="mt-4 mb-4 profile-heading">Add Address</h2>
+   <div class="card-body" id="add-address-card">
+      <div id = "user-message-address" class="user-message" style="display: none;">Address Added Successfully</div>
+       <div id="c_address" class="page-content">
+           <form id="add-address-form" class="needs-validation" method="post" novalidate>
+               <div class="form-group">
+                   <label for="addressUser" class="font-weight-bolder">Full Name</label>
+                   <input type="text" class="form-control" id="addressUser" name="addressUser" placeholder="Name" required>
+                   <div class="invalid-feedback">Please enter your full name.</div>
+               </div>
+               <div class="form-group">
+                   <label for="address_line1" class="font-weight-bolder">Address Line 1</label>
+                   <input type="text" class="form-control" id="address_line1" name="address_line1" placeholder="Address Line 1" required>
+                   <div class="invalid-feedback">Please enter your address.</div>
+               </div>
+               <div class="form-group">
+                   <label for="city" class="font-weight-bolder">City</label>
+                   <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+                   <div class="invalid-feedback">Please enter your city.</div>
+               </div>
+               <div class="form-group">
+                   <label for="state" class="font-weight-bolder">State</label>
+                   <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
+                   <div class="invalid-feedback">Please enter your post state.</div>
+               </div>
+               <div class="form-group">
+                   <label for="post_code" class="font-weight-bolder">Post Code</label>
+                   <input type="text" class="form-control" id="post_code" name="post_code" placeholder="Post Code" required>
+                   <div class="invalid-feedback">Please enter your post code.</div>
+               </div>
+               <div class="form-group">
+                   <label for="country" class="font-weight-bolder">Country</label>
+                   <input type="text" class="form-control" id="country" name="country" placeholder="Country" required>
+                   <div class="invalid-feedback">Please enter your country.</div>
+               </div>
+               <div class="form-group">
+                   <label for="mobile_number" class="font-weight-bolder">Mobile Number</label>
+                   <input type="tel" class="form-control" id="mobile_number" name="mobile_number" placeholder="Mobile Number" required>
+                   <div class="invalid-feedback">Please enter a valid mobile number.</div>
+                   <small class="text-muted">This number will be used for delivery.</small>
+                   
+               </div>
+               <div class="form-check">
+                   <input type="checkbox" class="form-check-input" id="default_address" name="default_address" value="false">
+                   <label class="form-check-label" for="default_address">Set as Default Address</label>
+               </div>
+               <div><button type="submit" name="submit" class="f_13 btn btn-primary mt-3 mb-2 float-right" onclick="addAddress()" value="save">Add Address</button></div>
+           </form>
+       </div>
+   </div>
+</div>
+<!-- Wallet Section -->
+<div class="container user-content col-lg-8 col-md-9 col-sm-12 col-12 ms-5" id="wallet" style="display: none;">
+   <!-- <h2 class="mt-4 mb-4 profile-heading">Plantly Wallet</h2> -->
+   <div class="wallet" id="walletLoad">
+       <div class="wallet-header">
+           <h1>Plantly Wallet</h1>
+       </div>
+
+       <img src="/assets/img/wallet/wallet.jpg" alt="Plant Image" class="wallet-image">
+
+       <div class="wallet-balance" id="walletAmount">
+           Balance: ₹ <%=user.wallet.balance%>
+          </div>
+          <div class="wallet-actions">
+            <button type="button" id="addMoneyButton">Add Money</button>
+          </div>
+
+          <div class="transaction-history" id="walletHistory" <%if(user.wallet.transactionHistory.length>4){%> style="height: 300px;overflow-y: scroll;"<%}%>>
+            <h2>Transaction History</h2>
+            <ul class="transaction-list" id="myWallet">
+              <%for(let i = user.wallet.transactionHistory.length-1; i > 0;i--){%>
+                <%const date = user.wallet.transactionHistory[i].date.toISOString()%>
+              <li><%=user.wallet.transactionHistory[i].type%>: <%=user.wallet.transactionHistory[i].amount%> <span>
+                <% const theDate = user.wallet.transactionHistory[i].date.setHours(0, 0, 0, 0) %>
+                <% const today = new Date().setHours(0, 0, 0, 0) %>
+                <% const yesterday = new Date(today - 86400000).setHours(0, 0, 0, 0) %>
+                
+                <% if (theDate === today) { %>
+                    Today
+                <% } else if (theDate === yesterday) { %>
+                    Yesterday
+                <% } else { %>
+                    <%= date.split('T')[0] %>
+                <% } %>
+              </span></li>
+              <%}%>
+               
+           </ul>
+       </div>
+   </div>
+</div>
+<!-- Coupon Section -->
+<div class="container user-content col-lg-8 col-md-9 col-sm-12 col-12" style="display: none;" id="coupon-details">
+  <h2 class="mt-4 mb-4 profile-heading">Available Coupons</h2>
+
+  <!-- Coupon Details -->
+  <div class="coupon-details-container">
+    <!-- Loop through each coupon and display its details -->
+
+      <div class="coupon-item" <%if(coupons.length>5){%> style="height: 600px;overflow-y: scroll;"<%}%>>
+        <%for(let i = 0; i< coupons.length; i++){%>
+              <!-- ---------- -->
+              <div class="card">
+                <div class=" d-flex justify-content-between align-items-center">
+                  <div class="card-body">
+                    <% const expirationDate = new Date(coupons[i].expiresOn);
+            const formattedDate = expirationDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+            });%>
+                    <p class="card-text"><%=coupons[i].description%></p>
+                    <button href="#" class="btn btn-primary"><%=coupons[i].code%></button><span class="p-3" <%if(expirationDate < new Date()){%>style='color:red' <%}%>>
+              <% if (expirationDate > new Date()) { %> Active till <%= formattedDate %> <% } else { %> Expired on <%= formattedDate %> <% } %> </span>
+                  </div>
+                  <div class="mr-5">
+                    <div class="percentage-box d-flex justify-content-center align-items-center" <%if(expirationDate < new Date()){%>style='background:red' <%}%>>
+                <p class="text-white" style="font-size: 2rem; margin: 0;"><%= coupons[i].discountPercentage %>%</p>
+                    </div>
+                  </div>
+                </div>
+                <%}%>
+        <!-- ---------- -->
+        </div>
+      </div>
+  </div>
+</div>
+
+
+        </div>
+    </div>
+</section>
+      <!-- footer -->
+      <div class="footer animate__animated animate__fadeInUp">
+         <div class="first_footer">
+            <div class="container ">
+               <div class="row">
+                  <div class="col-lg-12 col-md-12 col-12 d-none d-sm-none d-md-block news-letter">
+                     <div class="newsletter d-inline-block align-middle">
+                        <h4 class="">Sign up to Newsletter</h4>
+                        <p class="mb-0">Make sure that you never miss our interesting news and exclusive promotion. No spam, Ever!</p>
+                     </div>
+                     <div class="input-group">
+                        <input type="text" class="form-control border-white" placeholder="Subscribe newsletter..." aria-label="Subscribe newsletter..." aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                           <button class="btn btn-outline-secondary text-uppercase" type="button" id="button-addon2">Subscribe</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- row first_footer -->
+         <div class="third_footer">
+            <div class="container ">
+               <div class="th_foo">
+                  <div class="row">
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12 f_col">
+                        <div class="fst_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">contact us<button class="toggle collapsed" data-toggle="collapse" data-target="#fproduct"></button></h5>
+                           </div>
+                           <div class="categorie collapse " id="fproduct">
+                              <ul class="add_row">
+                                 <li>
+                                    <div class="data1 add contact-ic">
+                                       <a href="#">Demo A - 2  Puffin Street,<br> Puffinville India,  Surat</a>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <a href="#" class="contact-ic call_ic">+911234567890</a>
+                                 </li>
+                                 <li>
+                                    <a href="#" class="mail_f contact-ic mail_ic">website@gmail.com</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="snd_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">payment<button class="toggle collapsed" data-toggle="collapse" data-target="#payment"></button></h5>
+                           </div>
+                           <div class="categorie collapse " id="payment">
+                              <ul class="foo_pay">
+                                 <li>
+                                    <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-cc-visa"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fas fa-credit-card"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+                        <div class="fth_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">information<button class="toggle collapsed" data-toggle="collapse" data-target="#fh_product"></button></h5>
+                           </div>
+                           <div class="categorie collapse" id="fh_product">
+                              <ul>
+                                 <li><a href="about-us.html">About</a></li>
+                                 <li><a href="information.html">Delivery Infomations</a></li>
+                                 <li><a href="policy.html">Privacy Policy</a></li>
+                                 <li><a href="service.html">Custom Service</a></li>
+                                 <li><a href="condition.html">Terms & Condition</a></li>
+                                 <li><a href="contact-us.html">Contact Us</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+                        <div class="th_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">categories<button class="toggle collapsed" data-toggle="collapse" data-target="#tproduct"></button></h5>
+                           </div>
+                           <div class="categorie collapse" id="tproduct">
+                              <ul>
+                                 <li><a href="shop-left-sidebar.html">Flowering Plants</a></li>
+                                 <li><a href="shop-left-sidebar.html">Plant Seed</a></li>
+                                 <li><a href="shop-left-sidebar.html">Luck Plants</a></li>
+                                 <li><a href="shop-left-sidebar.html">Raisin Pot</a></li>
+                                 <li><a href="shop-left-sidebar.html">Live Plant</a></li>
+                                 <li><a href="shop-left-sidebar.html">outdoor Plants</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12 social_section">
+                        <div class="d-flex">
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f1.png" alt="f1" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f2.png" alt="f2" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f3.png" alt="f3" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="d-flex">
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f4.png" alt="f4" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f5.png" alt="f5" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f6.png" alt="f6" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="d-flex">
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f7.png" alt="f7" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f8.png" alt="f8" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="assets/img/f9.png" alt="f9" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- row first_footer -->
+         <div class="fifth_footer">
+            <div class="container ">
+               <div class="">
+                  <div class="text-center demo_link d-block">2021 @ All rights reserved Powered by <a href="#">demo.com</a></div>
+                  <div class="footer_bottom text-center">
+                     <div class="d-flex justify-content-center">
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-facebook-f"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-youtube"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-skype"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-twitter"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-snapchat-ghost"></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- row first_footer -->
+      </div>
+      <!-- footer -->
+      <!-- footer end -->
+      <!-- scroll -->
+      <a href="#" id="scroll"></a>
+ <!-- bootstrap -->
+      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+
+       <!-- Delete Address Modal -->
+ <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this Address?</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         <button type="button" class="btn modal-add-btn">Confirm</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+  <!-- Reset Password modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="resetPassword" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <div id="user-message-reset" class="user-message" style="display: none;">Password Reset Success</div>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <form id="resetPasswordForm">
+           <!-- Current Password Input -->
+           <div class="mb-3">
+             <label for="currentPassword" class="form-label">Current Password</label>
+             <input type="password" class="form-control" id="currentPassword" name="currentPassword" style="border: 1px solid #e3d9d9;" required>
+             <!-- Validation Div for Current Password -->
+             <div id="currentPasswordValidation" class="text-danger"></div>
+           </div>
+ 
+           <!-- New Password Input -->
+           <div class="mb-3">
+             <label for="password" class="form-label">New Password</label>
+             <input type="password" class="form-control" id="password" name="password" style="border: 1px solid #e3d9d9;" required>
+             <!-- Validation Div for New Password -->
+             <div id="passwordValidation" class="text-danger"></div>
+           </div>
+ 
+           <!-- Confirm Password Input -->
+           <div class="mb-3">
+             <label for="confirmPassword" class="form-label">Confirm Password</label>
+             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" style="border: 1px solid #e3d9d9;" required>
+             <!-- Validation Div for Confirm Password -->
+             <div id="confirmPasswordValidation" class="text-danger"></div>
+           </div>
+         </form>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         <button type="button" id = "resetPasswordBtn" class="btn btn-primary">Reset Password</button>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+  
+ <!--  wallet Modal -->
+ <div class="modal fade" id="walletModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content modal-content-wallet">
+       <div class="modal-header">
+         <h5 class="modal-title" id="staticBackdropLabel">Add Money to Wallet</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body d-flex justify-content-center">
+         <input type="number" name="addMoneyToWallet" id="addMoneyToWallet" placeholder="Amount in Rs." class="styled-input">
+       </div>
+       <div class="text-center pb-1" style="color: red;display: none;" id="walletError">invalid amount!!</div>
+       <div class="modal-footer modal-wallet-buttons">
+         <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cancel</button>
+         <button type="button" class="btn btn-primary" id="walletButtonAddMoney">Add</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <!-- jquery-3.4.1 -->
+      <script src="assets/js/jquery-3.4.1.min.js"></script>
+      <!-- owl.carousel -->
+      <script src="assets/js/owl.carousel.js"></script>
+      <!-- bootstrap.min -->
+      <script src="assets/js/bootstrap.min.js"></script>
+      <!-- form js -->
+      <!-- <script src="assets/js/form.html"></script> -->
+      <!--  jquery-ui -->
+      <script src="assets/js/jquery-ui.min.js"></script>
+      <!-- popper.min -->
+      <script src="assets/js/popper.min.js"></script>
+      <!-- wow.js - v1.2.1 -->
+      <script src="assets/js/wow.min.js"></script>
+      <!-- Font Awesome Free 5.15.1 -->
+      <script src="assets/js/all.min.js"></script>
+      <!-- custom js -->
+      <script src="assets/js/custom.js"></script>
+      <!-- ContactForm -->
+      <script src="assets/mail/js/contactForm.js"></script>
+
+      <!-- razorpay -->
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+       
+   <script>
+    // Show user details section by default
+    document.addEventListener('DOMContentLoaded', function () {
+        showSection('user-details');
+    });
+
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.user-content');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Remove the 'active' class from all navigation items
+        const navItems = document.querySelectorAll('.user-navbar a');
+        navItems.forEach(item => {
+            item.classList.remove('active', 'hover');
+        });
+
+        // Show the selected section
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+
+            // Add 'active' class to the clicked navigation item
+            const clickedNavItem = document.querySelector(`.user-navbar a[href="#"][onclick="showSection('${sectionId}')"]`);
+            if (clickedNavItem) {
+                clickedNavItem.classList.add('active', 'hover');
+            }
+        }
+    }
+
+    // Add event listeners to retain hover effect until another section is selected
+    const navItems = document.querySelectorAll('.user-navbar a');
+    navItems.forEach(item => {
+        item.addEventListener('mouseover', function () {
+            item.classList.add('hover');
+        });
+
+        item.addEventListener('mouseout', function () {
+            if (!item.classList.contains('active')) {
+                item.classList.remove('hover');
+            }
+        });
+    });
+
+    function editProfile() {
+    const editProfileBtn = $('#edit-profile-btn');
+    const inputFields = $('.profile-field');
+
+    // Check if the button is in "Edit Profile" state
+    if (editProfileBtn.text() === 'Edit Profile') {
+        editProfileBtn.text('Save Changes');
+        $('#edit-profile').find('.profile-field').css('color', '#3d4bdb');
+        // Display a message in the email field
+        $('#edit_email').val('To change email, please contact support at plantlyecom@gmail.com');
+        $('#edit-profile').find('.profile-email').css('color', 'green');
+        // Enable input fields for editing, except for the email field
+        $('#edit-profile').find('.profile-field').not('#edit_email').prop('disabled', false);
+        $('#edit_email').prop('disabled', true);
+    } else {
+            //Reset the error messages
+             $('#user-error-message').css('display', 'none');
+             $('#user-message').css('display', 'none');
+             $('#error-edit_name').text('');
+             $('#error-edit_last_name').text('')
+             $('#error-edit_phone').text('');
+
+             // Save Changes logic using fetch
+             const updatedFirstName = $('#edit_name').val();
+             const updatedLastName = $('#edit_last_name').val();
+             const updatedNumber = $('#edit_phone').val();
+             let verified = 1;
+             if(updatedFirstName.trim()===''){
+                $('#error-edit_name').text('Please Provide a valid first name');
+                verified = -1;
+             }
+             if(updatedLastName.trim()===''){
+                $('#error-edit_last_name').text('Please Provide a valid last name')
+                verified = -1;
+             }
+             if (!/^\d{10}$/.test(updatedNumber.trim())) {
+             $('#error-edit_phone').text('Please Provide a valid 10-digit mobile number without 0 or country code');
+            verified = -1;
+            }
+
+             if(verified===-1){
+                return;
+             }
+
+        fetch('/editProfile', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                updatedFirstName,updatedLastName,updatedNumber,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+           if( data.error){
+            $('#user-error-message').css('display', 'block');
+           }else {
+            // Handle success, update UI if needed
+            $('#user-message').css('display', 'block');
+            // Disable input fields
+            inputFields.prop('disabled', true);
+
+            // Revert button text to "Edit Profile"
+            editProfileBtn.text('Edit Profile');
+
+            $('#my-profile').load('/profile #my-profile')
+            //Reload the area
+            setTimeout(()=>{
+                $('#edit-profile').load('/profile #edit-profile');
+            },1000);
+        }
+            
+
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error updating profile:', error);
+
+            // Revert button text to "Edit Profile"
+            editProfileBtn.text('Edit Profile');
+        });
+    }
+    }  
+    document.getElementById('default_address').addEventListener('change', function() {
+        // Update the value to 'true' when the checkbox is checked
+        this.value = this.checked ? 'true' : 'false';
+    });
+    function addAddress() {
+        event.preventDefault();
+
+        // Reset error messages
+        $('#user--message-address').css('display', 'none');
+        $('.invalid-feedback').css('display', 'none');
+        
+        // Validate and get form values
+        const fullName = $('#addressUser').val().trim();
+        const addressLine1 = $('#address_line1').val().trim();
+        const city = $('#city').val().trim();
+        const state = $('#state').val().trim();
+        const postCode = $('#post_code').val().trim();
+        const country = $('#country').val().trim();
+        const mobileNumber = $('#mobile_number').val().trim();
+        const isDefault = $('#default_address').is(':checked');
+
+        // Perform individual validations
+        let isValid = true;
+
+        if (!fullName) {
+            $('#addressUser + .invalid-feedback').text('Please enter your full name.').css('display', 'block');
+            isValid = false;
+        }
+
+        if (!addressLine1) {
+            $('#address_line1 + .invalid-feedback').text('Please enter your address.').css('display', 'block');
+            isValid = false;
+        }
+
+        if (!city) {
+            $('#city + .invalid-feedback').text('Please enter your city.').css('display', 'block');
+            isValid = false;
+        }
+
+        if (!state) {
+            $('#state + .invalid-feedback').text('Please enter your state.').css('display', 'block');
+            isValid = false;
+        }
+
+        if (!postCode || !/^\d{6}$/.test(postCode)) {
+            $('#post_code + .invalid-feedback').text('Please enter a valid 6-digit post code.').css('display', 'block');
+            isValid = false;
+        }
+
+        if (!country) {
+            $('#country + .invalid-feedback').text('Please enter your country.').css('display', 'block');
+            isValid = false;
+        }
+
+        if (!mobileNumber || !/^\d{10}$/.test(mobileNumber)) {
+            $('#mobile_number + .invalid-feedback').text('Please enter a valid 10-digit mobile number.').css('display', 'block');
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Proceed with form submission or API call
+            const address = {
+                fullName,
+                addressLine1,
+                city,
+                state,
+                postCode,
+                country,
+                mobileNumber,
+                isDefault
+            };
+
+             // If all validations pass, proceed with the fetch request
+        fetch('/addAddress', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+         },
+        body: JSON.stringify(address),
+       })
+       .then((response)=>{
+         if(response.status===200){
+            $('#user-message-address').css('display','block');
+            
+            setTimeout(()=>{
+               $(`#add-address-card`).load(`/profile #add-address-card`);
+               $(`#addressSection`).load(`/profile #addressSection`)
+
+            },1500)
+         }
+       })
+       .catch((err)=>{
+         console.error('Error adding address:', err);
+       })
+      }
+    }
+
+    function resetPassword() {
+        // Implement your logic for resetting the password
+        alert('Reset Password clicked. Implement your reset password logic.');
+    }
+
+    function editAddress(card,id) {
+        $(`#${card} #user-edit-address`).css('display','none');
+        if($(`#${card} #address-btn`).text()==='Edit Address'){
+
+        $(`#${card} #address-btn`).text('Save Changes');
+        $(`#${card}`).find('*').prop('disabled', false);
+        $(`#${card}`).find('*').css('color', '#3d4bdb');
+        } else {
+         const addressName = $(`#${card} #addressName`).val();
+         const addressValue = $(`#${card} #addressValue`).val();
+         const addressCity = $(`#${card} #addressCity`).val();
+         const addressState = $(`#${card} #addressState`).val();
+         const addressPost = $(`#${card} #addressPost`).val();
+         const addressNumber = $(`#${card} #addressNumber`).val();
+
+         fetch('/editAddress',{
+         method:'PATCH',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body:JSON.stringify({
+            id,
+            addressName,
+            addressValue,
+            addressCity,
+            addressState,
+            addressPost,
+            addressNumber
+         })
+      }).then((response)=>{
+         if(response.status === 200){
+            $(`#${card} #user-edit-address`).css('display','block');
+            $(`#${card}`).find('*').prop('disabled','true');
+            $(`#${card} #address-btn`).text('Edit Address');
+            setTimeout(()=>{
+            $(`#addressSection`).load(`/profile #addressSection`)
+            },1500)
+            
+         }
+      }).catch((err)=>{
+         console.log(err);
+      })
+        }
+    }
+    function deleteAddress(id){
+      $(`#user-delete-address`).css('display','none');
+      $('#addressModal').modal('show');
+      $('#addressModal').click(()=>{
+         fetch('/deleteAddress',{
+         method:'DELETE',
+         headers:{
+            'Content-Type': 'application/json',
+         },
+         body:JSON.stringify({id:id}),
+      }).then(()=>{
+         $('#addressModal').modal('hide');
+         $(`#user-delete-address`).css('display','block');
+         $('#addressModal').off('click');
+         setTimeout(()=>{
+            $(`#addressSection`).load(`/profile #addressSection`)
+            },1500)
+      }).catch((err)=>{
+         console.log(err)
+      })
+      });
+
+    }
+
+    function resetPassword() {
+      $('#user-message-reset').css('display','none');
+  $('#resetPassword').modal('show');
+
+  // Clear previous error messages
+
+  $('#resetPasswordBtn').click(() => {
+    $('#currentPasswordValidation').text('');
+    $('#passwordValidation').text('');
+    $('#confirmPasswordValidation').text('');
+
+    // Get input values
+    const currentPassword = $('#currentPassword').val();
+    const newPassword = $('#password').val();
+    const confirmNewPassword = $('#confirmPassword').val();
+    console.log(currentPassword);
+    console.log(newPassword);
+    console.log(confirmNewPassword);
+
+    let isValid = true;
+
+    // Perform validations
+    if (currentPassword === '') {
+      $('#currentPasswordValidation').text('Current password is required');
+      isValid = false;
+    }
+
+    if (newPassword === '') {
+      $('#passwordValidation').text('New password is required');
+      isValid = false;
+    }
+    if (newPassword.length < 6) {
+      $('#passwordValidation').text('New password must be atleast 6 characters');
+      isValid = false;
+    }
+
+    if (confirmNewPassword === '') {
+      $('#confirmPasswordValidation').text('Confirm password is required');
+      isValid = false;
+    }
+
+    if (newPassword !== confirmNewPassword) {
+      $('#confirmPasswordValidation').text('Passwords do not match');
+      isValid = false;
+    }
+    if (newPassword === currentPassword) {
+      $('#passwordValidation').text('New Password Cannot be same as Current Password');
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // Your fetch request
+    fetch('/resetPassword', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        currentPassword,
+        newPassword,
+      }),
+    })
+    .then((response)=>{
+      if(response.status===200){
+         $('#user-message-reset').css('display','block');
+         $('#currentPassword').val('');
+         $('#password').val('');
+         $('#confirmPassword').val('');
+         setTimeout(()=>{
+            $('#resetPassword').modal('hide');
+            $('#resetPassword').off('click');
+            $('#resetPasswordBtn').off('click');
+
+         },1000);
+
+      }
+      if(response.status===400){
+         $('#currentPasswordValidation').text('Given Password Is Incorrect');
+         $('#currentPasswordValidation').css('color','red');
+      }
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  });
+}
+
+</script>
+<script>
+let amount;
+let orderId;
+
+document.getElementById('walletButtonAddMoney').onclick = function(e) {
+  amount = $('#addMoneyToWallet').val();
+  $('#walletError').css('display', 'none');
+
+  if (amount < 1) {
+    $('#walletError').css('display', 'block');
+    return;
+  }
+  $('#walletModal').modal('hide');
+
+  const settings = {
+    "url": "/createWalletOrder",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "data": JSON.stringify({
+      "amount": amount,
+    }),
+  };
+
+  // creates new orderId every time
+  $.ajax(settings).done(function(response) {
+    orderId = response.orderId;
+    const amount = response.amount;
+    const type = 'Deposit';
+    $("button").show();
+
+    const options = {
+      "key": 'rzp_test_VMXBmdlGP9IevY',
+      "amount": parseInt(amount) * 100, // Convert to the smallest currency unit
+      "currency": "INR",
+      "name": "Plantly Ecom",
+      "description": "Ecommerce Transactions",
+      "image": "/assets/img/product/product_1.jpg",
+      "order_id": orderId,
+      "handler": function(response) {
+        const verifySettings = {
+          "url": "/verifyWalletPayment",
+          "method": "POST",
+          "timeout": 0,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "data": JSON.stringify({ response , type}),
+        };
+
+        $.ajax(verifySettings).done(function(response) {
+         console.log('hi')
+          $('#walletAmount').load('/profile #walletAmount');
+          $('#walletAmount').load('/profile #walletAmount');
+          $('#myWallet').load('/profile #myWallet')
+        });
+      },
+      "theme": {
+        "color": "#99cc33"
+      }
+    };
+
+    const rzp1 = new Razorpay(options);
+
+    rzp1.on('payment.failed', function(response) {
+      alert(response.error.code);
+      alert(response.error.description);
+      alert(response.error.source);
+      alert(response.error.step);
+      alert(response.error.reason);
+      alert(response.error.metadata.order_id);
+      alert(response.error.metadata.payment_id);
+    });
+
+    rzp1.open();
+  });                
+
+  e.preventDefault();
+};
+
+// Add Money to wallet
+$('#addMoneyButton').click(() => {
+  $('#addMoneyToWallet').val(100);
+  $('#walletModal').modal('show');
+});
+
+async function copyToClipboard(){
+    try {
+      const link = $('#referralLink').val();
+      await navigator.clipboard.writeText(link);
+      $('#copyBtn').text('copied');
+    setTimeout(()=>{
+      $('#copyBtn').text('copy');
+    },3000)
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
+</script>
+</body>
+<!-- Mirrored from dostguru.com/HTML/plantly/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 08:19:29 GMT -->
+</html>

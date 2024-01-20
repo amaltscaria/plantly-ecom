@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html class="" lang="zxx">
+
+<!-- Mirrored from dostguru.com/HTML/plantly/shop-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 08:19:00 GMT -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/img/Favicon.ico">
+  <!-- bootstrap min-->
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <!-- fontawesome -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome.min.css">
+  <!-- OwlCarousel2 -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.css">
+  <!-- animate -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css">
+  <!-- media -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/media.css">
+  <!-- style -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!-- responsive -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+  <!-- googleapis -->
+  <link rel="preconnect" href="../../../fonts.gstatic.com/index.html">
+  <style>
+    .pagination a.active {
+      background: rgb(21, 228, 247);
+      color: aliceblue
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+         input[type=number]::-webkit-outer-spin-button {
+         -webkit-appearance: none;
+         margin: 0;
+         }
+  </style>
+</head>
+
+<body>
+  <!-- cart-model -->
+  <div class="modal fade" id="cart_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title f_13 font-weight-bold">Product successfully added to your shopping cart</div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-4 col-xs-12 mb-3  ">
+              <img src="/assets/img/product/product_13.jpg" class="fst-image mx-auto d-block img-fluid border rounded" alt="product_13">
+            </div>
+            <div class="col-sm-8 col-xs-12 ">
+              <h6 class="font-weight-bold">Hummingbird printed t-shirt</h6>
+              <div class="font-weight-bolder pb-1">$19.12</div>
+              <span class="font-weight-bolder f_13 pb-1">Size: S</span><br>
+              <span class="font-weight-bolder f_13 pb-1">Color: White</span><br>
+              <span class="font-weight-bolder f_13 pb-1">Qty: 2</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-12 ">
+              <div class="border rounded final_payment">
+                <div class="card-body  border-bottom">
+                  <p class="text-muted">5 items</p>
+                  <p class="font-weight-bolder">show details</p>
+                  <div>
+                    <span class="font-weight-bold">subtotal</span>
+                    <span class="float-right font-weight-bold">$94.00</span>
+                  </div>
+                  <div>
+                    <span class="font-weight-bold">shipping</span>
+                    <span class="float-right font-weight-bold">$9.00</span>
+                  </div>
+                </div>
+                <div class="card-body ">
+                  <div>
+                    <span class="font-weight-bold">total(tax excl.)</span>
+                    <span class="float-right font-weight-bold">$94.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary mt-2 f_13 px-3 py-2 rounded" data-dismiss="modal">close</a>
+          <a href="checkout.html" class="btn btn-primary mt-2 f_13 px-3 py-2 rounded">continue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- cart_model -->
+  <!-- eye-model -->
+  <!-- eye-model -->
+  <div class="modal fade" id="eye_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button id="eyeeye" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-5 col-12">
+              <!-- Image content -->
+              <img src="/assets/img/product/product_13.jpg" class="fst-image mx-auto d-block img-fluid border rounded modal-image" alt="product_13">
+            </div>
+            <div class="col-sm-7 col-12">
+              <!-- Product details content -->
+              <form id="eye_form">
+                <!-- Add an ID to the form -->
+                <h5 class="font-weight-bolder border-bottom me_name">Aliquam Top Erat Volutpat</h5>
+                <div class="font-weight-bolder border-bottom me_price">$19.12</div>
+                <div class="my-2 border-bottom me_des">a perfect blend of nature's charm and contemporary elegance.</div>
+                <div class="me_quan">
+                  <div class="sp_counter">
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                          <span class="minus">-</span>
+                        </button>
+                      </span>
+                      <input type="hidden" id="checkStock" value=true>
+                      <input type="number" name="quant[1]" class="form-control input-number" value="1" min="1" id="modalPrice">
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                          <span class="plus">+</span>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                  <span>
+                    <button type="submit" class="btn btn-primary primary mt-3">add to cart</button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- eye_model -->
+  <!-- compare-model -->
+  <div class="modal fade" id="compare_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="checked"></p>
+          <h5>Compare list updated!</h5>
+          <p class="text-muted font-weight-bold">Product successfully removed from the product comparison!</p>
+          <div class="text-danger font-weight-bold">Go to Compare</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- compare_model -->
+  <!-- heart-model -->
+  <div class="modal fade" id="heart_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="checked"></p>
+          <p class="text-muted font-weight-bold">You must be logged in to manage your wishlist.</p>
+          <div class="text-danger font-weight-bold">Go to wishlist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- heart_model -->
+  <!-- shipping -->
+  <div class="modal fade" id="shippingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Fashion has been creating well-designed collections since 2010. </li>
+            <li>The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. </li>
+            <li>The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. </li>
+            <li>All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- shipping -->
+  <!-- ask about product -->
+  <div class="modal fade" id="question_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="exampleModalLabel">shipping</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body que_form">
+          <h6>have a any question?</h6>
+          <form>
+            <div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <textarea class="form-control" rows="3" placeholder="Enter Your Message"></textarea>
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <input type="text" class="form-control" placeholder="Enter Your Name">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <input type="email" class="form-control" placeholder="Enter Your Mail">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3 ">
+                <input type="tel" pattern=".{10}" class="form-control" id="other_number" oninput="check(this)" required placeholder="Enter Your Phone">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <button type="submit" class="btn btn-primary">submit review</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ask about product -->
+  <!-- add to wishlist -->
+  <div class="modal fade" id="wish_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          Please login and you will add product to your wishlist
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- add to wishlist -->
+  <div class="preloader"></div>
+  <!-- header area -->
+  <!-- header area -->
+  <header>
+    <div class="topbar-outer py-2 border-bottom d-md-none d-none d-none d-lg-block">
+      <div class="">
+        <div class="row">
+          <div class="col-lg-5 col-md-4 col-sm-4 topbar_left">
+            <ul>
+              <li>
+                <span class="font-weight-bolderer">Get 30% Off On Selected Items</span>
+              </li>
+            </ul>
+          </div>
+          <!-- col-lg-5 col-md-4 col-sm-4 hidden-md-down topbar_left -->
+          <div class="col-lg-7 col-md-8 col-sm-8 text-xs-right  topbar_right text-right">
+            <nav class="navbar d-flex align-items-center  justify-content-end">
+              <div class="dropdown right1 md_2 hr_">
+                <span class="dropdown-toggle lng-select-menu" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <select class=" select-menu form-select d-none d-sm-block">
+                    <option value="selected">English <i class="fas fa-angle-down"></i></option>
+                    <option value="1">Polski</option>
+                    <option value="2">Romana</option>
+                    <option value="3">Deutsch</option>
+                  </select>
+                </span>
+              </div>
+              <div class="dropdown right1 md_1">
+                <span class="dropdown-toggle lng-select-menu" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <select class=" select-menu form-select d-none d-sm-block">
+                    <option value="selected">EUR €<i class="fas fa-angle-down"></i></option>
+                    <option value="1">USD $</option>
+                  </select>
+                </span>
+              </div>
+
+            </nav>
+          </div>
+          <!-- col-lg-7 col-md-8 col-sm-8 text-xs-right hidden-md-down topbar_right text-right -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container  -->
+    </div>
+    <!-- topbar-outer py-2 border-bottom<-->
+    <!-- second row -->
+    <div class="header-top py-4 border-bottom sticky-md-top">
+      <div class="header-top-container">
+        <div class="row header_row">
+          <div class="col-xl-2 col-lg-2 col-6  head-logo pl-md-0">
+            <div class="text-left header-top-left pt-2"><a href="index.html"><img src="/assets/img/logo.png" class="img-responsive img" alt="logo"></a></div>
+          </div>
+          <!-- col-xl-2 col-lg-2 col-md-2 col-sm-3 head-logo -->
+          <div class="col-xl-10 col-lg-10 col-6  head-search">
+            <div class="d-flex navbar">
+              <div class="input-class  text-left col-xl-8 col-lg-7 col-md-12  ">
+                <div class="between-header border border-danger rounded mb-0 head-left">
+                  <!-- <select class="select-menu form-select d-none d-sm-block"> -->
+                    <!-- <option value="selected">all categories</option> -->
+                    <!-- <p>Plantly</p> -->
+                    <!-- <option value="1">laptop</option>
+                    <option value="2">headphone</option>
+                    <option value="3">audio</option> -->
+                  </select>
+                  <div class="input-group">
+                    <input type="text" id="productSearch" placeholder="search" class="form-control" aria-label="search" aria-describedby="button-addon2" value="<%=search%>">
+                    <div class="input-group-btn"><button type="button" onclick="search()" class="btn btn-danger text-uppercase font-weight-normal">search</button></div>
+                  </div>
+                </div>
+                <!-- between-header text-left col-sm-8 head-left border border-danger rounded mb-0 -->
+              </div>
+              <div class="col-xl-4 col-lg-5 head-right text-right">
+                <ul class="top_cart" id='my-profile'>
+                  <li class="dropdown right1 md_acc md_acco">
+                    <span class="account-block">
+                    </span>
+                    <span class="dropdown-toggle my_account" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= user.firstName %>
+                      <a href="#">
+                      </a>
+                    </span>
+                    <span class="dropdown-menu r_menu dropdown-menu-right text-center">
+                      <a class="dropdown-item font-weight-bolderer" href="/profile">Profile</a>
+                      <a class="dropdown-item font-weight-bolderer" href="registration.html">Orders</a>
+                      <a class="dropdown-item font-weight-bolderer" href="/wishlist">Wishlist</a>
+                      <a class="dropdown-item font-weight-bolderer" href="/logout">Logout</a>
+                    </span>
+                  </li>
+                  <!--  <li class="d-lg-none d-md-inline-block user">
+                                 <div class="head_ border rounded bg-white text-left">
+                                    <a class=" md_login" href="#"></a>
+                                 </div>
+                                 </li> -->
+                  <li class="dropdown d-inline-block my-cart md_acco">
+                    <a href="#" class="cart-qty">
+                      <span class="cart-contents">
+                      </span>
+                      <span class="d-lg-inline-block d-md-none d-sm-none d-none align-middle font-weight-bolderer"></span><span class="price_cart d-md-inline-block align-middle font-weight-bolderer">2</span>
+                    </a>
+                    <span class="dropdown-toggle Price-amount" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <% let sum = 0; for (let i = 0; i < cart.length; i++) { sum += cart[i].product.price * cart[i].quantity; } %>
+                      <%=sum%>
+                    </span>
+                    <div class="dropdown-menu s_cart dropdown-menu-right">
+                      <ul class="shopping-cart p-2 ">
+                        <%for(let i= 0; i< cart.length; i++) {  %>
+                        <li class="p-3 d-block cart-remove cart_cross">
+                          <div class="media">
+
+                            <div>
+                              <a href="#"><img src="/admin/assets/uploads/productImages/<%=cart[i].product.images[0]%>" class="fst-image img-fluid align-self-center rounded" alt="product_13" width="60px" height="10px"></a>
+                            </div>
+                            <div class="media-body">
+                              <h6 class="mt-0 ml-2 f_15"><%=cart[i].product.name%></h6>
+                              <p><span class="f_13 ml-2 "><%=cart[i].quantity%> x Rs <%=cart[i].product.price%></span></p>
+                            </div>
+                          </div>
+                        </li>
+                        <% } %>
+
+                        <li class="d-block text-muted font-weight-bolderer p-2 border-bottom">
+                          <span class="text-left">subtotal:</span>
+                          <span class="float-right"><%=sum%></span>
+                        </li>
+                        <li class="d-block font-weight-bolderer pt-2">
+                          <span class="text-left"><a href="/cart">view cart</a></span>
+                          <span class="float-right"><a href="/checkout">check out</a></span>
+                        </li>
+                      </ul>
+                      <p class="text-center cartempty">Your Shopping cart is empty!</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- col-sm-4 head-right text-right -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 head-search -->
+        </div>
+        <!-- row -->
+      </div>
+      <!--  container  -->
+    </div>
+    <!-- header-top py-4 border-bottom-->
+    <!-- third row -->
+    <!-- third row -->
+
+
+    <div class="header_bottom shadow-sm rounded d-md-none d-sm-none d-none d-lg-block">
+      <div class="">
+        <div class="row">
+          <div class="col-lg-12 text-left">
+            <ul class="main-menu navbar">
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="" role="button">shop</a>
+              </li>
+              </li>
+              <li class="dropdown mega_menu m1 level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">category&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-3 col-md-12 ">
+                        <ul class="sub-category">
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Pot</li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Pigmyweeds</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Indoor Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">outdoor Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flamingo plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Succulent Plant</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-3 col-md-12 ">
+                        <ul class="sub-category">
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Plant</li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Fragrant Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Purifying Plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Live Plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Raisin Pot</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html"> Decorative Pot</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-3 col-md-12 ">
+                        <ul class="sub-category">
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Crassula</li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Nerve Plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flowering Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant Seed</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Luck Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant House</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-3 col-md-12">
+                        <ul>
+                          <li class="d-block"><a href="single-product.html"><img src="/assets/img/m_menu.jpg" class="fst-image mx-auto d-block mb-1 img-fluid" alt="m_menu"></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown" aria-expanded="false">blog&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu all-page-drop">
+                  <li><a class="dropdown-item font-weight-bolder" href="blog.html">blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolder" href="blog-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolder" href="blog-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li><a href="portfolio-grid-4.html">gallery</a></li>
+              <li><a href="about-us.html">about us</a></li>
+              <li>
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">pages <i class="fas fa-angle-down"></i></a>
+                <ul class="dropdown-menu all-page-drop">
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="about-us.html">about us</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="compare.html">compare</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="wishlist.html">wishlist</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="checkout.html">check out</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="forgot.html">forgot password</a></li>
+                </ul>
+              </li>
+              <li><a href="contact-us.html">contact-us</a></li>
+            </ul>
+          </div>
+          <!-- col-lg-12 text-left -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container  -->
+    </div>
+
+
+    <!-- header_bottom shadow-sm rounded  -->
+  </header>
+  <!-- header -->
+  <!-- header area end -->
+  <!-- vertical menu and slider -->
+  <div id="home_vertical_menu">
+    <div class="row ">
+      <div class="col-lg-3 vertical_menu">
+        <div class="v_menu bg-white rounded">
+          <div class="cat_menu bg-warning rounded-top"><a href="#" class="pe-auto text-uppercase d-md-none d-sm-none d-none d-lg-block font-weight-bold"><i class="fas fa-bars"></i>all categories</a></div>
+          <div class="navbar-header d-xl-none d-lg-none">
+            <button type="button" class="btn-navbar navbar-toggle" onclick="openNav()" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fas fa-bars"></i></button>
+          </div>
+          <div id="mySidenav" class="sidenav  ">
+            <div class="close-nav d-xl-none d-lg-none">
+              <span class="categories">Menu</span>
+              <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()"><i class="fas fa-times"></i></a>
+            </div>
+            <ul class="vertical_main_menu h_menu navbar navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="">
+                <a class="dropdown-toggle" href="shop-left-sidebar.html" role="button" data-toggle="dropdown" aria-expanded="false">shop&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="shop-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li class="dropdown mega_menu m1_menu level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">portfolio&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-6 col-md-12 ">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">portfolio grid 2</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-2.html">portfolio grid 2</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-3.html">portfolio grid 3</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-4.html">portfolio grid 4</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-2.html">mesonary grid 2</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-3.html">mesonary grid 3</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-4.html">mesonary grid 4</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-6 col-md-12">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">theme elements</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="title.html">title</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="category-style.html">category</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="services.html">services</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="product-tab.html">product tab</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="multi-slider-product.html">multi slider product</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown" aria-expanded="false">
+                  blog&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog.html">blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li class="dropdown mega_menu level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">Category&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-4 col-md-12 ">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">Pot</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Pigmyweeds</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Indoor Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">outdoor Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flamingo plant</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Succulent Plant</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-4 col-md-12">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">Plants</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Nerve Plant</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flowering Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant Seed</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Luck Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant House</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">pages&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="about-us.html">about us</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="compare.html">compare</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="wishlist.html">wishlist</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="checkout.html">check out</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="forgot.html">forgot password</a></li>
+                </ul>
+              </li>
+              <li class="level-1 font-weight-bolderer"><a href="contact-us.html">contact-us</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- v_menu bg-white rounded -->
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container  menu_slider mt-4 -->
+  <!-- vertical menu and slider end -->
+  <!-- shop page -->
+  <div id="shop_page" class="shop-page animate__animated animate__fadeInUp">
+    <div class="sp_header bg-white p-3">
+      <div class="container custom_container ">
+        <div class="row ">
+          <div class="col-12 ">
+            <ul>
+              <li class="d-inline-block font-weight-bolder"><a href="index.html">home</a></li>
+              <li class="d-inline-block hr_ font-weight-bolder"><a href="#">shop</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container custom_container">
+      <div class="row" id="products1">
+        <div class="col-lg-3 col-md-4">
+          <form action="#" id="shop_page-form" class="needs-validation" novalidate>
+            <div class="shop_sidebar border card-body rounded bg-white">
+              <h2 class="text-uppercase card-title  font-weight-bolder d-md-block d-none">filter by</h2>
+              <!-- <div class="s_filter mt-0">
+                <h6 class="text-uppercase  border-bottom font-weight-bold">Range<button class="toggle collapsed" data-toggle="collapse" data-target="#shop_range_collapse"></button></h6>
+                <div class="collapse " id="shop_range_collapse">
+                  <div class="col-md-6 col-sm-12 pl-0 pr-md-2 pr-sm-0 pr-0">
+                    <label class="font-weight-bolder">min</label>
+                    <input type="number" class="form-control" placeholder="Rs.0" min="0">
+                  </div>
+                  <div class="col-md-6 col-sm-12 pr-0 pl-md-2 pl-sm-0 pl-0 ">
+                    <label class="font-weight-bolder">max</label>
+                    <input type="number" class="form-control" placeholder="Rs.10000" min="0">
+                  </div>
+                  
+                </div>
+                <button id="priceButton" class="m-3 btn btn-primary">Apply</button>
+              </div> -->
+              <div class="s_filter form">
+                <h6 class="text-uppercase  border-bottom font-weight-bold">category<button class="toggle collapsed" data-toggle="collapse" data-target="#shop_color_collapse"></button></h6>
+                <div class="collapse" id="shop_color_collapse">
+                  <%for(let i = 0; i< categories.length; i++){%>
+                  <label class="form-check">
+                    <input class="form-check-input myCheckbox" id="checkCheck" type="checkbox" value="<%= categories[i].name %>" 
+                    <% if (typeof filter === 'string' && filter === categories[i].name) { %>checked<% }else if 
+                     (Array.isArray(filter) && filter.includes(categories[i].name)) { %>checked<% } %>
+                    >
+                    <span class="form-check-label font-weight-bolder"><%=categories[i].name%></span>
+                    
+                    <!-- <span class="text-right float-right font-weight-bolder">(1)</span> -->
+                  </label>
+                  <%}%>
+                             
+                           </div>
+                        </div>
+                       <button id="clearButton" class="btn btn-primary m-3">Clear all</button>
+                     </div>
+                  </form>
+               </div>
+               <div class="col-lg-9 col-md-8">
+                  <div class="row shop_grid_list_row mb-5 bg-white p-2 p-md-1 mb-lg-3 mx-0">
+                     <!-- <div class="col-xl-2 col-sm-2 col-4 pl-0">
+                        <a href="#" id="grid" class="btn">
+                        <span class="grid_icon  p-1"><i class="fas fa-th"></i></span>
+                        </a>
+                        <a href="#" id="list" class="btn">
+                        <span class="list_icon  p-1"><i class="fas fa-list"></i></span>
+                        </a>
+                     </div> -->
+                     <div class="col-xl-4 d-xl-inline-block d-lg-none d-sm-none d-none">
+                        <div class="show-product pt-1"><a style="font-size: 15px;" href="#" ><%if(productCount===0){%>Sorry There are no matching Products🥲<%}else{%> Showing <span id="productCount">(<%=((currentPage-1) * itemsPerPage)+1%> to <%=((currentPage-1) * itemsPerPage)+products.length%>) of <%=productCount%></span> products.<%}%> </a>
+                </div>
+              </div>
+              <div class="col-xl-6 col-sm-10 col-8 pr-0 sortpro">
+                <div class="sort-by text-right">
+                  <div class="sort" >
+                    <select style="font-size: 18px;" class="custom-select" id="inlineFormCustomSelect">
+                      <option selected value="1">Relevance...</option>
+                      <option value="2" <%if(relevance === '2'){%> selected <%}%>>Name, A to Z</option>
+                      <option value="3" <%if(relevance === '3'){%> selected <%}%>>Name, Z to A</option>
+                      <option value="4" <%if(relevance === '4'){%> selected <%}%>>Price, low to high</option>
+                      <option value="5" <%if(relevance === '5'){%> selected <%}%>>Price, high to low</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="products" class="row">
+              <% for(let i = 0; i < products.length; i++){ %>
+              <!-- item -->
+              <div class="item col-xl-3" data-product-id="<%=products[i]._id%>">
+                <div class="product_thumb bg-white rounded">
+                  <div class="pro_image">
+                    <a href="/shop/<%=products[i]._id%>"><img src="/admin/assets/uploads/productImages/<%=products[i].images[0]%>" class="fst-image mx-auto d-block img-fluid" alt="product_13"></a>
+                    <a href="/shop/<%=products[i]._id%>"><img src="/admin/assets/uploads/productImages/<%=products[i].images[2]%>" class="second-img mx-auto d-block img-fluid" alt="product_13"></a>
+                  </div>
+                  <div class="text-center main_text pt-3">
+                    <div>
+                      <!-- <div class="star mb-2">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                      </div> -->
+                      <div class="f_13" style="color: rgb(225, 17, 17);font-size: large;">
+                        <%if(products[i].stock===0){%>
+                         Out of Stock!!!
+                         <%} else if(products[i].stock<10){%>
+                         Only few left !!!! 
+                         <%}%>
+                        </div>
+                        <div class="f_13" style="color: rgb(31, 157, 64);font-size: large;">
+                          <%if(products[i].stock>=10){%>
+                           Hot sellers
+                           <%}%>
+                          </div>
+                      <h2 class="pro-heading  font-weight-bolder mb-1	"><a href="single-product.html"><%=products[i].name%></a></h2>
+                      <input type="hidden" value="<%=products[i].stock%>" id="productStock">
+                      <span class="text-center prices"><span class="font-weight-bolder price">Rs.<%=products[i].price%></span> <del class="text-muted"><%=products[i].price + 0.1*products[i].price %></del></span>
+                      <div class="button-group">
+                        <a href="#" class="symbol pro_heart ml-0" onclick="showModal('<%=products[i]._id%>')"></a>
+                        <!-- <a href="#" class="symbol pro_eye"  data-toggle="modal" data-target="#eye_model"></a> -->
+                        <a href="#" class="symbol pro_eye" id="pro_eye"></a>
+                        <!-- <a href="#" class="symbol pro_compare" data-toggle="modal" data-target="#compare_model "></a>	 -->
+                      </div>
+                      <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
+                        + ADD TO CART
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+              <!-- item -->
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="container custom_container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="float-right mt-5 mt-col-3">
+            <ul class="pagination">
+              <%if(hasPreviousPage){%> <li class="page-item">
+                <a onclick="pagenate('<%=previousPage%>')" class="page-link">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li><%}%>
+                        <%if(currentPage!==1&&previousPage!==1){%><li class="page-item"><a onclick="pagenate('1')" class="page-link" >1</a></li><%}%>
+                        <%if(hasPreviousPage){%><li class="page-item"><a onclick="pagenate('<%=previousPage%>')" class="page-link" ><%=previousPage%></a></li><%}%>
+                        <li class="page-item"><a onclick="pagenate('<%=currentPage%>')" class="page-link active" ><%=currentPage%></a></li>
+              <%if(hasNextPage && nextPage !='0'){%><li class="page-item"><a onclick="pagenate('<%=nextPage%>')" class="page-link" ><%=nextPage%></a></li><%}%>
+                        <%if(lastPage!==currentPage && lastPage !== nextPage && lastPage!='0'){%><li class="page-item"><a onclick="pagenate('<%=lastPage%>')" class="page-link" ><%=lastPage%></a></li><%}%>
+                        <%if(lastPage!==currentPage){%><li class="page-item">
+                <a onclick="pagenate('<%=nextPage%>')" class="page-link" >
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li><%}%>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- shop_page -->
+      <!-- shop page -->
+      <!-- footer -->
+      <div class="footer animate__animated animate__fadeInUp">
+         <div class="first_footer">
+            <div class="container ">
+               <div class="row">
+                  <div class="col-lg-12 col-md-12 col-12 d-none d-sm-none d-md-block news-letter">
+                     <div class="newsletter d-inline-block align-middle">
+                        <h4 class="">Sign up to Newsletter</h4>
+                        <p class="mb-0">Make sure that you never miss our interesting news and exclusive promotion. No spam, Ever!</p>
+                     </div>
+                     <!-- <div class="input-group">
+                        <input type="text" class="form-control border-white" placeholder="Subscribe newsletter..." aria-label="Subscribe newsletter..." aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                           <button class="btn btn-outline-secondary text-uppercase" type="button" id="button-addon2">Subscribe</button>
+                        </div>
+                     </div> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- row first_footer -->
+         <div class="third_footer">
+            <div class="container ">
+               <div class="th_foo">
+                  <div class="row">
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12 f_col">
+                        <div class="fst_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">contact us<button class="toggle collapsed" data-toggle="collapse" data-target="#fproduct"></button></h5>
+                           </div>
+                           <div class="categorie collapse " id="fproduct">
+                              <ul class="add_row">
+                                <li>
+                                          <div class="data1 add contact-ic">
+                                             <a href="#">Demo A - 2  Puffin Street,<br> Puffinville India,  Surat</a>
+                                          </div>
+                                       </li>
+                                       <li>
+                                          <a href="#" class="contact-ic call_ic">+911234567890</a>
+                                       </li>
+                                       <li>
+                                          <a href="#" class="mail_f contact-ic mail_ic">website@gmail.com</a>
+                                       </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="snd_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">payment<button class="toggle collapsed" data-toggle="collapse" data-target="#payment"></button></h5>
+                           </div>
+                           <div class="categorie collapse " id="payment">
+                              <ul class="foo_pay">
+                                 <li>
+                                    <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-cc-visa"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fas fa-credit-card"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+                        <div class="fth_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">information<button class="toggle collapsed" data-toggle="collapse" data-target="#fh_product"></button></h5>
+                           </div>
+                           <div class="categorie collapse" id="fh_product">
+                              <ul>
+                                 <li><a href="about-us.html">About</a></li>
+                                 <li><a href="information.html">Delivery Infomations</a></li>
+                                 <li><a href="policy.html">Privacy Policy</a></li>
+                                 <li><a href="service.html">Custom Service</a></li>
+                                 <li><a href="condition.html">Terms & Condition</a></li>
+                                 <li><a href="contact-us.html">Contact Us</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+                        <div class="th_col">
+                           <div class="footer_title">
+                              <h5 class="text-uppercase">categories<button class="toggle collapsed" data-toggle="collapse" data-target="#tproduct"></button></h5>
+                           </div>
+                           <div class="categorie collapse" id="tproduct">
+                              <ul>
+                                 <li><a href="shop-left-sidebar.html">Flowering Plants</a></li>
+                                 <li><a href="shop-left-sidebar.html">Plant Seed</a></li>
+                                 <li><a href="shop-left-sidebar.html">Luck Plants</a></li>
+                                 <li><a href="shop-left-sidebar.html">Raisin Pot</a></li>
+                                 <li><a href="shop-left-sidebar.html">Live Plant</a></li>
+                                 <li><a href="shop-left-sidebar.html">outdoor Plants</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-12 social_section">
+                        <div class="d-flex">
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f1.png" alt="f1" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f2.png" alt="f2" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f3.png" alt="f3" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="d-flex">
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f4.png" alt="f4" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f5.png" alt="f5" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f6.png" alt="f6" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="d-flex">
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f7.png" alt="f7" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f8.png" alt="f8" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                           <div class="img-2 footer_img">
+                              <h3 class="insta_social">
+                                 <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/>
+                                    <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/>
+                                    <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+                                 </svg>
+                              </h3>
+                              <a href="#"><img src="/assets/img/f9.png" alt="f9" class="w-100 img-fluid"></a>
+                              <div class="box-2">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- row first_footer -->
+         <div class="fifth_footer">
+            <div class="container ">
+               <div class="">
+                  <div class="text-center demo_link d-block">2021 @ All rights reserved Powered by <a href="#">demo.com</a></div>
+                  <div class="footer_bottom text-center">
+                     <div class="d-flex justify-content-center">
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-facebook-f"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-youtube"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-skype"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-twitter"></i>
+                           </a>
+                        </div>
+                        <div class="social_links">
+                           <a href="#">
+                           <i class="fab fa-snapchat-ghost"></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- row first_footer -->
+      </div>
+
+      <div class="modal fade" id="statusSuccessModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header justify-content-end">
+                    <button id="closeBtn" type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-lg-4">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                        <circle class="path circle" fill="none" stroke="#198754" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                        <polyline class="path check" fill="none" stroke="#198754" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                    </svg>
+                    <h4 class="text-success mt-3">Oh Yeah!</h4>
+                    <a href="/cart" type="button" class="btn btn-sm mt-3 btn-success" >View Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="statusErrorsModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false"> 
+      <div class="modal-dialog modal-dialog-centered modal-sm" role="document"> 
+         <div class="modal-content"> 
+            <div class="modal-header justify-content-end">
+               <button id="closeBtnError" type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+            <div class="modal-body text-center p-lg-4"> 
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                  <circle class="path circle" fill="none" stroke="#db3646" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" /> 
+                  <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+                  <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" X2="34.4" y2="92.2" /> 
+               </svg> 
+               <h4 class="text-danger mt-3">Stock Limit Reached!</h4> 
+               <p class="mt-3">Maximum Stock Limit Reached.</p>
+               <button type="button" class="btn btn-sm mt-3 btn-danger" data-bs-dismiss="modal">Ok</button> 
+            </div> 
+         </div> 
+      </div> 
+   </div>
+
+   <div class="modal fade" id="statusErrorsModal2" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false"> 
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document"> 
+       <div class="modal-content"> 
+          <div class="modal-header justify-content-end">
+             <button id="closeBtnError" type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+          <div class="modal-body text-center p-lg-4"> 
+             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                <circle class="path circle" fill="none" stroke="#db3646" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" /> 
+                <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+                <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" X2="34.4" y2="92.2" /> 
+             </svg> 
+             <h4 class="text-danger mt-3">Invalid Stock!</h4> 
+             <p class="mt-3">Please Enter a valid stock.</p>
+             <button type="button" class="btn btn-sm mt-3 btn-danger" data-bs-dismiss="modal">Ok</button> 
+          </div> 
+       </div> 
+    </div> 
+ </div>
+
+ <!-- The Modal -->
+<div class="modal fade" id="outOfStockModal" tabindex="-1" role="dialog" aria-labelledby="outOfStockModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+              <h5 class="modal-title" id="outOfStockModalLabel">Out of Stock</h5>
+              <button id="closeX" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <!-- Modal Body -->
+          <div class="modal-body">
+              <p>We're sorry, but this product is currently out of stock.</p>
+              <p>We are working on bringing in new stocks asap:Thank You</p>
+          </div>
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+              <button id="closeBtnStock" type="button" class="btn btn-secondary">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false"> 
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document"> 
+     <div class="modal-content"> 
+        <div class="modal-header justify-content-end">
+           <button id="closeBtnError" type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+        <div class="modal-body text-center p-lg-4"> 
+           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" style="max-width: 50px;">
+              <circle class="path circle" fill="none" stroke="#db3646" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" /> 
+              <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+              <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" X2="34.4" y2="92.2" /> 
+           </svg> 
+           <h4 class="text-danger mt-3 " id="errorHeading">Item present</h4> 
+           <p class="mt-3" id="errorMessage">Its already in your cart or wishlist, do chechkout.</p>
+           <button type="button" class="btn btn-sm mt-3 btn-danger" data-bs-dismiss="modal">Ok</button> 
+        </div> 
+     </div> 
+  </div> 
+</div>
+
+<div class="modal fade" id="wishlistModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+          <div class="modal-body text-center p-lg-4">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" style="max-width: 100px;">
+                  <circle class="path circle" fill="none" stroke="#198754" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                  <polyline class="path check" fill="none" stroke="#198754" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+              </svg>
+          </div>
+      </div>
+  </div>
+</div>
+<input type="hidden" value="<%=currentPage%>" id="currentPage">
+      <!-- footer -->
+      <!-- footer end -->
+      <!-- scroll -->
+      <a href="#" id="scroll"></a>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <!-- jquery-3.4.1 -->
+      <script src="/assets/js/jquery-3.4.1.min.js"></script>
+      <!-- owl.carousel -->
+      <script src="/assets/js/owl.carousel.js"></script>
+      <!-- bootstrap.min -->
+      <script src="/assets/js/bootstrap.min.js"></script>
+      <!-- popper.min -->
+      <script src="/assets/js/popper.min.js"></script>
+      <!-- wow.js - v1.2.1 -->
+      <script src="/assets/js/wow.min.js"></script>
+      <!-- Font Awesome Free 5.15.1 -->
+      <script src="/assets/js/all.min.js"></script>
+      <!-- custom js -->
+      <script src="/assets/js/custom.js"></script>
+      <script src= 
+      "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> 
+        </script> 
+          <script src= 
+      "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"> 
+          </script> 
+      <script src="/assets/js/autofill.js"></script>
+      <script>
+         $('.pro_eye').click(function() {
+            
+             // Find the parent container of the clicked button
+             const container = $(this).closest('.item');
+             // Find the name and price elements within the same container
+             const stock = container.find('#productStock').val();
+             if(stock==='0'){
+             $('#outOfStockModal').modal('show')
+             return;
+            }
+             const name = container.find('.pro-heading').html();
+             const price = container.find('.prices').html();
+             const img = container.find('.fst-image').attr('src');
+             const productId = container.data('product-id'); // Retrieve the product ID
+     
+             // Update the modal content with the fetched values
+             $('.input-number').val(1);
+             $('.me_name').html(name);
+             $('.me_price').html(price);
+             $('#modalPrice').attr('max',stock);
+             $('.modal-image').attr('src', img);
+     
+             // Show the modal
+$('#eye_model').modal('show');
+
+// Add a submit event handler to the form
+$('#eye_form').submit(async (event) => {
+  try{
+    event.preventDefault(); // Prevent default form submission
+   const quantity = $('.input-number').val();
+   const stock = container.find('#productStock').val();
+   const stockOut = $('#checkStock').val();
+   if(stockOut==='false'){
+    return;
+   }
+    // Perform the AJAX request
+   const response = await fetch('/addToCart', {
+        method: 'POST', // Assuming you want to use POST method
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+         product: productId,
+         quantity,
+        })
+    })
+      if(response.status===409){
+        $('#outOfStockModal').modal('show');
+        setTimeout(()=>{
+          window.location.reload();
+        },1000);
+       
+
+      }else if(response.status===200){
+        $('#my-profile').load('/shop #my-profile');
+        $('#eye_form').off('submit');
+        
+        $('#eye_model').modal('hide');
+
+        $('#statusSuccessModal').modal('show');
+
+        $('.input-number').val(1);
+      }
+  
+  }catch(err){
+    console.log(err);
+  }
+});
+
+         });
+
+         $('#closeBtn').click(()=>{
+  $('#statusSuccessModal').modal('hide');
+})
+
+function pagenate(page) {
+  const checkedInputs = $('.myCheckbox:checked');
+  const val = checkedInputs.map((index, item) => {
+    return item.value
+  }).get();
+  let cat ='';
+  val.forEach((item, index)=>{
+    if(index!==0)cat+='&'
+    cat += `category=${item}`
+  })
+  const search = $('#productSearch').val();
+  if(search)cat += `&search=${search}`
+
+  const relevance = $('#inlineFormCustomSelect').val();
+  if(relevance!=='1') cat += `&relevance=${relevance}`
+
+  cat += `&page=${page}`;
+ 
+  window.location.href = `/shop?${cat}`
+}
+
+function search(){
+  const checkedInputs = $('.myCheckbox:checked');
+  const val = checkedInputs.map((index, item) => {
+    return item.value
+  }).get();
+  let cat ='';
+  val.forEach((item, index)=>{
+    if(index!==0)cat+='&'
+    cat += `category=${item}`
+  })
+  const search = $('#productSearch').val();
+  cat += `&search=${search}`
+
+  const relevance = $('#inlineFormCustomSelect').val();
+  if(relevance!=='1') cat += `&relevance=${relevance}`
+ 
+  window.location.href = `/shop?${cat}`
+
+
+}
+
+ $('.myCheckbox').change(async () => {
+  const checkedInputs = $('.myCheckbox:checked');
+  console.log(checkedInputs)
+  const val = checkedInputs.map((index, item) => {
+    return item.value
+  }).get();
+  let cat ='';
+  val.forEach((item, index)=>{
+    if(index!==0)cat+='&'
+    cat += `category=${item}`
+  })
+  const relevance = $('#inlineFormCustomSelect').val();
+  if(relevance!=='1') cat += `&relevance=${relevance}`;
+
+  const search = $('#productSearch').val();
+  if(search)cat += `&search=${search}`
+
+
+  window.location.href = `/shop?${cat}`
+
+
+ 
+});
+
+$('#inlineFormCustomSelect').change(()=>{
+  const checkedInputs = $('.myCheckbox:checked');
+  const val = checkedInputs.map((index, item) => {
+    return item.value
+  }).get();
+  let cat ='';
+  val.forEach((item, index)=>{
+    if(index!==0)cat+='&'
+    cat += `category=${item}`
+  })
+  const relevance = $('#inlineFormCustomSelect').val();
+  if(relevance!=='1')cat += `&relevance=${relevance}`
+
+  const search = $('#productSearch').val();
+  if(search)
+  cat += `&search=${search}`
+
+  const page = $('#currentPage').val();
+  if(page) cat += `&page=${page}`;
+
+  window.location.href = `/shop?${cat}`;
+})
+
+$('#clearButton').click(()=>{
+  event.preventDefault();
+  window.location.href = '/shop'
+})
+
+    $('#eyeeye').click(()=>{
+      $('#eye_model').modal('hide');
+    })
+
+
+$('#closeBtnStock').click(()=>{
+  $('#outOfStockModal').modal('hide')
+})
+$('#closeX').click(()=>{
+  $('#outOfStockModal').modal('hide')
+})
+
+
+const showModal = async (id)=>{
+try{
+  const response = await fetch(`/wishlist/${id}`,{
+    method:'POST',
+  })
+  if(response.status===200){
+  $('#wishlistModal').modal('show');
+  setTimeout(()=>{
+    $('#wishlistModal').modal('hide');
+  },1000)
+}
+if(response.status === 409){
+  $('#myModal').modal('show');
+  setTimeout(()=>{
+    $('#myModal').modal('hide');
+  },2000);
+}
+}catch(err){
+  console.log(err);
+}
+  
+}
+
+
+
+</script>
+     
+   </body>
+
+<!-- Mirrored from dostguru.com/HTML/plantly/shop-left-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 08:19:00 GMT -->
+</html>

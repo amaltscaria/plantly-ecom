@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+
+<!-- Mirrored from dostguru.com/HTML/plantly/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 08:18:55 GMT -->
+
+<head>
+  <title>Checkout | Plantly</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/Favicon.ico">
+  <!-- bootstrap min-->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <!-- fontawesome -->
+  <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.min.css">
+  <!-- OwlCarousel2 -->
+  <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+  <!-- daterangepicker -->
+  <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+  <!-- fancybox -->
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
+  <!-- animate -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+  <!-- media -->
+  <link rel="stylesheet" type="text/css" href="assets/css/media.css">
+  <!-- style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- responsive -->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <!-- googleapis -->
+  <link rel="preconnect" href="../../../fonts.gstatic.com/index.html">
+
+  <!-- razorpay -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    #coupon-input {
+      border: 1px solid green;
+    }
+
+    #couponBtn {
+      background: #6EA820;
+      color: white;
+    }
+
+    .coupon-code {
+      margin-top: 20px;
+    }
+
+    #coupon-input {
+      border-radius: 0;
+      /* Adjust as needed */
+    }
+
+    .btn-outline-secondary {
+      border-radius: 0;
+      /* Adjust as needed */
+    }
+
+    .couponData {
+      line-height: 2;
+    }
+    .percentage-box {
+    background-color: #2da750; /* Set your desired background color */
+    padding: 10px; /* Adjust the padding as needed */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    text-align: center; /* Center the text horizontally */
+    height: 70px;
+    min-width: 100px;
+    }
+    /* Add any other styles you want */
+  </style>
+</head>
+
+<body>
+  <!-- cart-model -->
+  <div class="modal fade" id="cart_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title f_13 font-weight-bolder">Product successfully added to your shopping cart</div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-4 col-xs-12 mb-3  ">
+              <img src="assets/img/product/product_13.jpg" class="fst-image mx-auto d-block img-fluid border rounded" alt="product_13">
+            </div>
+            <div class="col-sm-8 col-xs-12 ">
+              <h6 class="font-weight-bolder">Hummingbird printed t-shirt</h6>
+              <div class="font-weight-bolder pb-1">$19.12</div>
+              <span class="font-weight-bolder f_13 pb-1">Size: S</span><br>
+              <span class="font-weight-bolder f_13 pb-1">Color: White</span><br>
+              <span class="font-weight-bolder f_13 pb-1">Qty: 2</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-12 ">
+              <div class="border rounded final_payment">
+                <div class="card-body  border-bottom">
+                  <p class="text-muted">5 items</p>
+                  <p class="font-weight-bolderer">show details</p>
+                  <div>
+                    <span class="font-weight-bolder">subtotal</span>
+                    <span class="float-right font-weight-bolder">$94.00</span>
+                  </div>
+                  <div>
+                    <span class="font-weight-bolder">shipping</span>
+                    <span class="float-right font-weight-bolder">$9.00</span>
+                  </div>
+                </div>
+                <div class="card-body ">
+                  <div>
+                    <span class="font-weight-bolder">total(tax excl.)</span>
+                    <span class="float-right font-weight-bolder">$94.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary mt-2 f_13 px-3 py-2 rounded" data-dismiss="modal">close</a>
+          <a href="checkout.html" class="btn btn-primary mt-2 f_13 px-3 py-2 rounded">continue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- cart_model -->
+  <!-- eye-model -->
+  <div class="modal fade" id="eye_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-5 col-12">
+              <img src="assets/img/product/product_13.jpg" class="fst-image mx-auto d-block img-fluid border rounded" alt="product_13">
+            </div>
+            <div class="col-sm-7 col-12">
+              <h5 class="font-weight-bolder border-bottom me_name">Aliquam Top Erat Volutpat</h5>
+              <div class="font-weight-bolder border-bottom me_price">$19.12</div>
+              <div class="my-2 border-bottom me_des">Fashion has been creating well-designed collections since 2010. </div>
+              <div class="me_quan">
+                <div class="sp_counter ">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"><span class="minus">-</span></button>
+                    </span>
+                    <input type="number" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"><span class="plus">+</span></button>
+                    </span>
+                  </div>
+                </div>
+                <span>
+                  <a href="cart.html" class="btn btn-primary primary mt-3">add to cart</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- eye_model -->
+  <!-- compare-model -->
+  <div class="modal fade" id="compare_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p>
+            <svg width="30px" height="30px">
+              <use xlink:href="#checked"></use>
+            </svg>
+          </p>
+          <h5>Compare list updated!</h5>
+          <p class="text-muted font-weight-bolder">Product successfully removed from the product comparison!</p>
+          <div class="text-danger font-weight-bolder">Go to Compare</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- compare_model -->
+  <!-- heart-model -->
+  <div class="modal fade" id="heart_model" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p>
+            <svg width="30px" height="30px">
+              <use xlink:href="#checked"></use>
+            </svg>
+          </p>
+          <p class="text-muted font-weight-bolder">You must be logged in to manage your wishlist.</p>
+          <div class="text-danger font-weight-bolder">Go to wishlist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- heart_model -->
+  <!-- shipping -->
+  <div class="modal fade" id="shippingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Fashion has been creating well-designed collections since 2010. </li>
+            <li>The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. </li>
+            <li>The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. </li>
+            <li>All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- shipping -->
+  <!-- ask about product -->
+  <div class="modal fade" id="question_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="exampleModalLabel">shipping</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body que_form">
+          <h6>have a any question?</h6>
+          <form>
+            <div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <textarea class="form-control" rows="3" placeholder="Enter Your Message"></textarea>
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <input type="text" class="form-control" placeholder="Enter Your Name">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <input type="email" class="form-control" placeholder="Enter Your Mail">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3 ">
+                <input type="tel" pattern=".{10}" class="form-control" id="other_number" oninput="check(this)" required placeholder="Enter Your Phone">
+              </div>
+              <div class="col-12 sp_form pl-0 pb-3">
+                <button type="submit" class="btn btn-primary">submit review</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ask about product -->
+  <!-- add to wishlist -->
+  <div class="modal fade" id="wish_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          Please login and you will add product to your wishlist
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- add to wishlist -->
+  <!-- header area -->
+  <header>
+    <div class="topbar-outer py-2 border-bottom d-md-none d-none d-none d-lg-block">
+      <div class="">
+        <div class="row">
+          <div class="col-lg-5 col-md-4 col-sm-4 topbar_left">
+            <ul>
+              <li>
+                <span class="font-weight-bolderer">Get 30% Off On Selected Items</span>
+              </li>
+            </ul>
+          </div>
+          <!-- col-lg-5 col-md-4 col-sm-4 hidden-md-down topbar_left -->
+          <div class="col-lg-7 col-md-8 col-sm-8 text-xs-right  topbar_right text-right">
+            <nav class="navbar d-flex align-items-center  justify-content-end">
+              <div class="dropdown right1 md_2 hr_">
+                <span class="dropdown-toggle lng-select-menu" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <select class=" select-menu form-select d-none d-sm-block">
+                    <option value="selected">English <i class="fas fa-angle-down"></i></option>
+                    <option value="1">Polski</option>
+                    <option value="2">Romana</option>
+                    <option value="3">Deutsch</option>
+                  </select>
+                </span>
+              </div>
+              <div class="dropdown right1 md_1">
+                <span class="dropdown-toggle lng-select-menu" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <select class=" select-menu form-select d-none d-sm-block">
+                    <option value="selected">EUR €<i class="fas fa-angle-down"></i></option>
+                    <option value="1">USD $</option>
+                  </select>
+                </span>
+              </div>
+
+            </nav>
+          </div>
+          <!-- col-lg-7 col-md-8 col-sm-8 text-xs-right hidden-md-down topbar_right text-right -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container  -->
+    </div>
+    <!-- topbar-outer py-2 border-bottom<-->
+    <!-- second row -->
+    <div class="header-top py-4 border-bottom sticky-md-top">
+      <div class="header-top-container">
+        <div class="row header_row">
+          <div class="col-xl-2 col-lg-2 col-6  head-logo pl-md-0">
+            <div class="text-left header-top-left pt-2"><a href="index.html"><img src="assets/img/logo.png" class="img-responsive img" alt="logo"></a></div>
+          </div>
+          <!-- col-xl-2 col-lg-2 col-md-2 col-sm-3 head-logo -->
+          <div class="col-xl-10 col-lg-10 col-6  head-search">
+            <div class="d-flex navbar">
+              <div class="input-class  text-left col-xl-8 col-lg-7 col-md-12  ">
+                <div class="between-header border border-danger rounded mb-0 head-left">
+                  <select class="select-menu form-select d-none d-sm-block">
+                    <option value="selected">all categories</option>
+                    <option value="1">laptop</option>
+                    <option value="2">headphone</option>
+                    <option value="3">audio</option>
+                  </select>
+                  <div class="input-group">
+                    <input type="text" placeholder="search" class="form-control" aria-label="search" aria-describedby="button-addon2">
+                    <div class="input-group-btn"><button type="button" class="btn btn-danger text-uppercase font-weight-normal">search</button></div>
+                  </div>
+                </div>
+                <!-- between-header text-left col-sm-8 head-left border border-danger rounded mb-0 -->
+              </div>
+              <div class="col-xl-4 col-lg-5 head-right text-right">
+                <ul class="top_cart">
+                  <li class="dropdown right1 md_acc md_acco">
+                    <span class="account-block">
+                    </span>
+                    <span class="dropdown-toggle my_account" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= user.firstName %>
+                      <a href="#">
+                      </a>
+                    </span>
+                    <span class="dropdown-menu r_menu dropdown-menu-right text-center">
+                      <a class="dropdown-item font-weight-bolderer" href="/profile">Profile</a>
+                      <a class="dropdown-item font-weight-bolderer" href="registration.html">Orders</a>
+                      <a class="dropdown-item font-weight-bolderer" href="login.html">Wishlist</a>
+                      <a class="dropdown-item font-weight-bolderer" href="/logout">Logout</a>
+                    </span>
+                  </li>
+                  <!--  <li class="d-lg-none d-md-inline-block user">
+                                 <div class="head_ border rounded bg-white text-left">
+                                    <a class=" md_login" href="#"></a>
+                                 </div>
+                                 </li> -->
+                  <li class="dropdown d-inline-block my-cart md_acco">
+                    <a href="#" class="cart-qty">
+                      <span class="cart-contents">
+                      </span>
+                      <span class="d-lg-inline-block d-md-none d-sm-none d-none align-middle font-weight-bolderer"></span><span class="price_cart d-md-inline-block align-middle font-weight-bolderer">2</span>
+                    </a>
+                    <span class="dropdown-toggle Price-amount" role="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </span>
+                    <div class="dropdown-menu s_cart dropdown-menu-right">
+                      <ul class="shopping-cart p-2 ">
+                        <%for(let i= 0; i< cart.length; i++) {  %>
+                        <li class="p-3 d-block cart-remove cart_cross">
+                          <div class="media">
+
+                            <div>
+                              <a href="#"><img src="/admin/assets/uploads/productImages/<%=cart[i].product.images[0]%>" class="fst-image img-fluid align-self-center rounded" alt="product_13" width="60px" height="10px"></a>
+                            </div>
+                            <div class="media-body">
+                              <h6 class="mt-0 ml-2 f_15"><%=cart[i].product.name%></h6>
+                              <p><span class="f_13 ml-2 "><%=cart[i].quantity%> x Rs <%=cart[i].product.price%></span></p>
+                            </div>
+                          </div>
+                        </li>
+                        <% } %>
+
+                        <li class="d-block text-muted font-weight-bolderer p-2 border-bottom">
+                          <span class="text-left">subtotal:</span>
+                          <span class="float-right"></span>
+                        </li>
+                        <li class="d-block font-weight-bolderer pt-2">
+                          <span class="text-left"><a href="/cart">view cart</a></span>
+                          <span class="float-right"><a href="checkout.html">check out</a></span>
+                        </li>
+                      </ul>
+                      <p class="text-center cartempty">Your Shopping cart is empty!</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- col-sm-4 head-right text-right -->
+            </div>
+            <!-- row -->
+          </div>
+          <!-- col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 head-search -->
+        </div>
+        <!-- row -->
+      </div>
+      <!--  container  -->
+    </div>
+    <!-- header-top py-4 border-bottom-->
+    <!-- third row -->
+    <!-- third row -->
+
+
+    <div class="header_bottom shadow-sm rounded d-md-none d-sm-none d-none d-lg-block">
+      <div class="">
+        <div class="row">
+          <div class="col-lg-12 text-left">
+            <ul class="main-menu navbar">
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a class="dropdown-toggle" href="shop-left-sidebar.html" role="button" data-toggle="dropdown" aria-expanded="false">shop&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu all-page-drop">
+                  <li><a class="dropdown-item font-weight-bolder" href="shop-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolder" href="shop-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              </li>
+              <li class="dropdown mega_menu m1 level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">category&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-3 col-md-12 ">
+                        <ul class="sub-category">
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Pot</li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Pigmyweeds</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Indoor Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">outdoor Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flamingo plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Succulent Plant</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-3 col-md-12 ">
+                        <ul class="sub-category">
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Plant</li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Fragrant Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Purifying Plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Live Plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Raisin Pot</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html"> Decorative Pot</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-3 col-md-12 ">
+                        <ul class="sub-category">
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom d-block">Crassula</li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Nerve Plant</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flowering Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant Seed</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Luck Plants</a></li>
+                          <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant House</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-3 col-md-12">
+                        <ul>
+                          <li class="d-block"><a href="single-product.html"><img src="assets/img/m_menu.jpg" class="fst-image mx-auto d-block mb-1 img-fluid" alt="m_menu"></a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown" aria-expanded="false">blog&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu all-page-drop">
+                  <li><a class="dropdown-item font-weight-bolder" href="blog.html">blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolder" href="blog-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolder" href="blog-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li><a href="portfolio-grid-4.html">gallery</a></li>
+              <li><a href="about-us.html">about us</a></li>
+              <li>
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">pages <i class="fas fa-angle-down"></i></a>
+                <ul class="dropdown-menu all-page-drop">
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="about-us.html">about us</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="compare.html">compare</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="wishlist.html">wishlist</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="checkout.html">check out</a></li>
+                  <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="forgot.html">forgot password</a></li>
+                </ul>
+              </li>
+              <li><a href="contact-us.html">contact-us</a></li>
+            </ul>
+          </div>
+          <!-- col-lg-12 text-left -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container  -->
+    </div>
+
+
+    <!-- header_bottom shadow-sm rounded  -->
+  </header>
+  <!-- header -->
+  <!-- header area end -->
+  <!-- vertical menu and slider -->
+  <div id="home_vertical_menu">
+    <div class="row ">
+      <div class="col-lg-3 vertical_menu">
+        <div class="v_menu bg-white rounded">
+          <div class="cat_menu bg-warning rounded-top"><a href="#" class="pe-auto text-uppercase d-md-none d-sm-none d-none d-lg-block font-weight-bolder"><i class="fas fa-bars"></i>all categories</a></div>
+          <div class="navbar-header d-xl-none d-lg-none">
+            <button type="button" class="btn-navbar navbar-toggle" onclick="openNav()" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fas fa-bars"></i></button>
+          </div>
+          <div id="mySidenav" class="sidenav  ">
+            <div class="close-nav d-xl-none d-lg-none">
+              <span class="categories">Menu</span>
+              <a href="javascript:void(0)" class="closebtn pull-right" onclick="closeNav()"><i class="fas fa-times"></i></a>
+            </div>
+            <ul class="vertical_main_menu h_menu navbar navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="">
+                <a class="dropdown-toggle" href="shop-left-sidebar.html" role="button" data-toggle="dropdown" aria-expanded="false">shop&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="shop-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li class="dropdown mega_menu m1_menu level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">portfolio&nbsp;<span class="float-right"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-6 col-md-12 ">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">portfolio grid 2</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-2.html">portfolio grid 2</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-3.html">portfolio grid 3</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="portfolio-grid-4.html">portfolio grid 4</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-2.html">mesonary grid 2</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-3.html">mesonary grid 3</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="mesonary-grid-4.html">mesonary grid 4</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-6 col-md-12">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">theme elements</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="title.html">title</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="category-style.html">category</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="services.html">services</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="product-tab.html">product tab</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="multi-slider-product.html">multi slider product</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown" aria-expanded="false">
+                  blog&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog.html">blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog-left-sidebar.html">left sidebar</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="blog-right-sidebar.html">right sidebar</a></li>
+                </ul>
+              </li>
+              <li class="dropdown mega_menu level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="single-product.html" role="button" data-toggle="dropdown" aria-expanded="false">Category&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <ul class="row mx-0">
+                      <li class="mg_menu col-lg-4 col-md-12 ">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">Pot</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Pigmyweeds</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Indoor Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">outdoor Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flamingo plant</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Succulent Plant</a></li>
+                        </ul>
+                      </li>
+                      <li class="mg_menu col-lg-4 col-md-12">
+                        <ul>
+                          <li class="h_title text-uppercase font-weight-bolder border-bottom">Plants</li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Nerve Plant</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Flowering Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant Seed</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Luck Plants</a></li>
+                          <li><a class="dropdown-item font-weight-bolderer" href="shop-left-sidebar.html">Plant House</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown level-1 font-weight-bolderer">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">pages&nbsp;<span class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item font-weight-bolderer" href="about-us.html">about us</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="compare.html">compare</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="wishlist.html">wishlist</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="checkout.html">check out</a></li>
+                  <li><a class="dropdown-item font-weight-bolderer" href="forgot.html">forgot password</a></li>
+                </ul>
+              </li>
+              <li class="level-1 font-weight-bolderer"><a href="contact-us.html">contact-us</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- v_menu bg-white rounded -->
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container  menu_slider mt-4 -->
+  <!-- vertical menu and slider end -->
+  <!-- checkout page -->
+  <!-- Add a dropdown for existing addresses -->
+
+
+  <div id="checkout_page" class="checkout-page animate__animated animate__fadeInUp">
+    <div class="sp_header bg-white p-3 ">
+      <div class="container custom_container ">
+        <div class="row ">
+          <div class="col-12 ">
+            <ul>
+              <li class="d-inline-block font-weight-bolderer"><a href="index.html">home</a></li>
+              <li class="d-inline-block hr_ font-weight-bolderer"><a href="#">checkout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container custom_container">
+      <div class="row">
+        <div class="col-lg-8 col-12">
+          <!-- Select Existing Address Accordion -->
+          <div class="accordion" id="check_existing_address">
+            <div class="card rounded mb-2">
+              <div class="card-header bg-white" id="chechout_existing_address">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed text-body p-0 font-weight-bolder" type="button" data-toggle="collapse" data-target="#check_existing" aria-expanded="false" aria-controls="check_existing">
+                    Select Existing Address<span class="float-right"><i class="fas fa-angle-down"></i></span>
+                  </button>
+                </h2>
+              </div>
+              <div id="check_existing" class="collapse show" aria-labelledby="chechout_existing_address" data-parent="#check_out_toggle">
+                <div class="card-body">
+                  <div id="c_existing_address" class="page-content">
+                    <!-- Add code to display existing addresses here -->
+                    <!-- You can use radio buttons or another form of selection -->
+                    <label>Select an existing address:</label>
+                    <%for(let i = 0; i < user.shippingAddress.length;i++){%>
+                    <div>
+                      <input type="radio" id="existing_address_1" name="existing_address" value="<%=user.shippingAddress[i]._id%>" onclick="handleAddressSelection('<%=user.shippingAddress[i]._id%>')" <%if(user.shippingAddress[i].isDefault){%>checked<%}%>>
+                                      <label for="existing_address_1"><%=user.shippingAddress[i].name%> , <%=user.shippingAddress[i].address%> ....</label>
+                    </div>
+                    <%}%>
+                                  <!-- Add New Address Option -->
+                                  <div>
+                                      <input type="radio" id="add_new_address" name="existing_address" onclick="handleAddressSelection()" <%if(user.shippingAddress.length===0){%>Checked<%}%>>
+                                      <label for="add_new_address">Add a new address</label>
+                                  </div>
+                                  <button type="button" class="btn btn-primary mt-3 mb-3 float-right" onclick="proceedToShipping()">Proceed</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Select Existing Address Accordion -->
+                  <div class="accordion" id="check_out_toggle">
+                     <!-- card -->
+                     <div class="card rounded mb-2" id = "addAddress" style="display: none;">
+                        <div class="card-header bg-white" id="chechout_add">
+                           <h2 class="mb-0">
+                              <button class="btn btn-link btn-block text-left collapsed text-body p-0 font-weight-bolder" type="button" data-toggle="collapse" data-target="#check_add" aria-expanded="false" aria-controls="check_add">
+                              Address<span class="float-right"><i class="fas fa-angle-down"></i></span>
+                              </button>
+                           </h2>
+                        </div>
+                        <div id="check_add" class="collapse" aria-labelledby="chechout_add" data-parent="#check_out_toggle">
+                           <div class="card-body">
+                              <div id="c_address" class="page-content">
+                                 <form id="addForm" class="needs-validation " method="post" novalidate>
+                                    <div class="form-group" >
+                                       <label for="addName" class="font-weight-bolder">Full Name</label>
+                                       <input type="text" id = "addName" class="form-control"  placeholder="Full Name"  required>
+                                       <div class="invalid-feedback" id="add1">Please Enter your full name.</div>
+                                    </div>
+                                    <div class="form-group" >
+                                       <label for="addAddress1" class="font-weight-bolder">Address line 1</label>
+                                       <input type="text" id = "addAddress1" class="form-control"  placeholder="Address Line 1"  required>
+                                       <div class="invalid-feedback" id="add2">Please Enter your address.</div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="addCity" class="font-weight-bolder">city</label>
+                                       <input type="text" id = "addCity" class="form-control"  placeholder="City"  required>
+                                       <div class="invalid-feedback" id="add3">Please Enter your city.</div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="addState" class="font-weight-bolder">state</label>
+                                       <input type="text" id = "addState" class="form-control"  placeholder="State"  required>
+                                       <div class="invalid-feedback" id="add4">Please Enter your State.</div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="addPost" class="font-weight-bolder">post code</label>
+                                       <input type="number" id = "addPost" class="form-control"  placeholder="Post Code"  required>
+                                       <div class="invalid-feedback" id="add5">Please Enter a valid post code.</div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="addNumber" class="font-weight-bolder">Number</label>
+                                       <input type="number" id="addNumber" class="form-control" placeholder="Number" required autocomplete="tel">
+
+                                       <div class="invalid-feedback" id="add6">Please Enter a valid number.</div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="addCountry" class="font-weight-bolder">country</label>
+                                       <input type="text" id = "addCountry" class="form-control"  placeholder="Country"  required>
+                                       <div class="invalid-feedback" id="add7">Please Enter your country.</div>
+                                    </div>
+                                   
+                                    <div>
+                                      <span class="text-danger">Make sure you have the right address, you can edit it only on the profile after you save and proceed!!!!!!!!!</span>
+                                       <button type="submit" name="submit" id="saveAndProceedBtn" class="f_13 btn btn-primary mt-3 mb-2 float-right" value="save" data-target="#check_add">Save And Proceed</button>
+                                   </div>                                   
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+<!-- card -->
+<div class="card rounded mb-2" id ='shipping'>
+   <div class="card-header bg-white" id="checkout_shipping">
+       <h2 class="mb-0">
+           <button class="btn btn-link btn-block text-left collapsed text-body p-0 font-weight-bolder" type="button" data-toggle="collapse" data-target="#check_ship" aria-expanded="false" aria-controls="check_ship">
+               Shipping Method<span class="float-right"><i class="fas fa-angle-down"></i></span>
+           </button>
+       </h2>
+   </div>
+   <div id="check_ship" class="collapse" aria-labelledby="checkout_shipping" data-parent="#check_out_toggle">
+       <div class="card-body">
+           <div id="ship_check" class="page-content">
+               <form>
+                   <div class="form-group text-left">
+                       <label class="font-weight-bolder">Shipping Method</label><br>
+                       <span class="form-check d-inline-block mb-2">
+                           <input onchange="proceedToPayment()" class="form-check-input" type="radio" name="gridRadios" id="with_ship" value="false">
+                           <label class="form-check-label" for="free_ship">
+                               Express shipping with one day delivery (An additional Rs. 200 will be included in the delivery charge)
+                           </label>
+                       </span><br>
+                       <span class="form-check d-inline-block mb-2">
+                           <input onchange="proceedToPayment()" class="form-check-input" type="radio" name="gridRadios" id="free_ship" value = true checked>
+                           <label class="form-check-label" for="with_ship">
+                               Normal shipping
+                           </label>
+                       </span>
+                       <!-- <button type="button" class="btn btn-primary mt-3 mb-3 float-right" onclick="proceedToPayment()">Proceed</button> -->
+                   </div>
+               </form>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- card -->
+
+
+<div class="card rounded mb-2">
+   <div class="card-header bg-white" id="checkout_payment">
+       <h2 class="mb-0">
+           <button class="btn btn-link btn-block text-left collapsed text-body p-0 font-weight-bolder" type="button" data-toggle="collapse" data-target="#check_payment" aria-expanded="false" aria-controls="check_payment">
+               Payment<span class="float-right"><i class="fas fa-angle-down"></i></span>
+           </button>
+       </h2>
+   </div>
+   <div id="check_payment" class="collapse" aria-labelledby="checkout_payment" data-parent="#check_out_toggle">
+       <div class="card-body">
+           <div id="pay_check" class="page-content">
+               <form>
+                   <div class="form-group text-left">
+                       <label class="font-weight-bolder">Payment Method</label><br>
+                       <!-- <span class="form-check d-inline-block">
+                           <input class="form-check-input" type="radio" name="paymentMethod" id="pay_by_check" checked>
+                           <label class="form-check-label" for="pay_by_check">Pay by Card</label>
+                       </span> -->
+                       <span class="form-check d-inline-block ml-2">
+                           <input class="form-check-input" type="radio" name="paymentMethod" id="cash_on_delivery" checked>
+                           <label class="form-check-label" for="cash_on_delivery">Cash on Delivery</label>
+                       </span>
+                       <span class="form-check d-inline-block ml-2">
+                           <input class="form-check-input" type="radio" name="paymentMethod" id="upi_payment">
+                           <label class="form-check-label" for="upi_payment">Online Payment</label>
+                       </span>
+                       <span class="form-check d-inline-block ml-2">
+                        <input <%if(user.wallet.balance===0){%>disabled<%}%> class="form-check-input" type="radio" name="paymentMethod" id="wallet">
+                        <label class="form-check-label" for="wallet">Wallet(You can split payment between wallet and other options)<span id="walletMoney"
+                          data-wallet="<%=user.wallet.balance%>" class="p-1" style="color: red;font-size: 15px;">Balance:Rs.<%=user.wallet.balance%></span></label>
+                    </span>
+                  </div>
+                  <!-- <div class="form-group form-check">
+                       <input type="checkbox" class="form-check-input" id="user_agree_check">
+                       <label class="form-check-label" for="user_agree_check">I accept the Terms of Use & Privacy Policy</label>
+                   </div> -->
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary f_13">Place Order</button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card -->
+
+        </div>
+      </div>
+      <div class="col-lg-4 col-12 ">
+        <div class="border rounded bg-white final_payment">
+          <div class="card-body  border-bottom">
+            <%
+                        let sum = 0;
+                        for (let i = 0; i < cart.length; i++) {
+                        sum += cart[i].product.price * cart[i].quantity;
+                        }
+                        %>
+            <p class="text-muted"><%= cart.length %> Items </p>
+            <p class="font-weight-bolderer">Cart details</p>
+            <% for(let i = 0; i< cart.length; i++) {%>
+            <br>
+            <div>
+              <span class="font-weight-bolder text-success"><%=cart[i].product.name%></span>
+              <span class="float-right font-weight-bolder text-success">Rs <%=cart[i].product.price%> * <%=cart[i].quantity%> </span>
+            </div>
+            <% } %>
+            <br>
+            <hr>
+            <div>
+              <span class="font-weight-bolder">
+                Cart Total
+              </span>
+              <span class="float-right font-weight-bolder"> <b>Rs <%= sum %></b></span>
+            </div>
+            <div>
+              <span class="font-weight-bolder">
+                Total Saved
+              </span>
+              <span class="float-right font-weight-bolder"> <b>Rs <%= 0.1 * sum %></b></span>
+            </div>
+          </div>
+          <div class="card-body ">
+            <div>
+              <span class="font-weight-bolder">total</span>
+              <span id="totalAmount" class="float-right font-weight-bolder"><b>Rs. <%= sum %></b></span>
+            </div>
+
+            <!-- <div id='normalPay'>
+                      <span class="font-weight-bolder">Net Payable</span>
+                      <span class="float-right font-weight-bolder"><b>Rs. <%= sum + 100%></b></span>
+                    </div> -->
+            <div id="coupondiv" style="display: none; color: #da0505; font-size: 18px;">
+              <span class="font-weight-bolder">Coupon Discount</span>
+              <span class="float-right font-weight-bolder"><b id="couponSpan"></b>%</span>
+            </div>
+            <div id="discountDiv">
+              <span class="font-weight-bolder">Discounted Amount</span>
+              <span id="maximumD"></span>
+              <span id="discounted" class="float-right font-weight-bolder"><b id="totalAmount1">-0</b></span>
+            </div>
+            <div>
+              <span class="font-weight-bolder">Amount(After Discount)</span>
+              <span class="float-right font-weight-bolder"><b id="totalAmount1"><%if(cart.length>0){%>Rs. <%= sum %><%}else{%>Rs. 0<%}%></b></span>
+                   </div>
+                    <div id='normalDelivery' class="text-success">
+                      <span class="font-weight-bolder">Delivery</span>
+                      <span class="float-right font-weight-bolder"><b>Rs. 100</b></span>
+                    </div>
+                    <div id='expressDelivery' class="text-primary" style="display: none;">
+                      <span class="font-weight-bolder">Delivery</span>
+                      <span class="float-right font-weight-bolder"><b>Rs. 300</b></span>
+                    </div>
+                   <br>
+                   <hr>
+                   <div>
+                      <span class="font-weight-bolde" style="font-size: 18px;">Net Payable</span>
+                      <input id="totalValue" type="hidden" value="<%=sum%>">
+                  <span class="float-right font-weight-bolder" style="color: #6EA820; font-size: 18px;">
+                    Rs. <b id="netPayable" data-net="<%= sum + 100 %>">
+                      <%if(cart.length>0){%><%= sum + 100 %><%}else{%>0<%}%></b>
+                        </span>
+                   </div>
+                    <hr>
+                    <div class="coupon-code">
+                      <div class="input-group">
+                          <div class="input-group-prepend">
+                              <label class="input-group-text" for="coupon-select">
+                                  <i class="fas fa-tags"></i>
+                              </label>
+                          </div>
+                          <select style="font-size: 18px; color: #053eda;" id="coupon-select" class="form-control custom-select">
+                              <option value="default" selected>Select a Coupon</option>
+                              <% for (let i = 0; i < coupons.length; i++) { %>
+
+                      <option  value="<%= coupons[i].discountPercentage %>" data-code="<%=coupons[i].code%>" data-max="<%=coupons[i].maximumDiscount%>">
+                        <span class="coupon-code-text"><b><%= coupons[i].code %></b></span>
+                        <span class="coupon-description-text">&nbsp&nbsp&nbsp&nbsp&nbsp<%= coupons[i].description %></span>
+                      </option>
+                      <% } %>
+                      </select>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" id="couponBtn" type="button" disabled>Apply</button>
+                      </div>
+                     </div>
+                     <div class="show-all-coupons float-right">
+                      <button class="btn btn-primary mt-3 p-2" id="showAllCouponsBtn" type="button">Show All Coupons</button>
+                    </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- checkout page -->
+  <!-- footer -->
+  <div class="footer animate__animated animate__fadeInUp">
+    <div class="first_footer">
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-12 d-none d-sm-none d-md-block news-letter">
+            <div class="newsletter d-inline-block align-middle">
+              <h4 class="">Sign up to Newsletter</h4>
+              <p class="mb-0">Make sure that you never miss our interesting news and exclusive promotion. No spam, Ever!</p>
+            </div>
+            <div class="input-group">
+              <input type="text" class="form-control border-white" placeholder="Subscribe newsletter..." aria-label="Subscribe newsletter..." aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary text-uppercase" type="button" id="button-addon2">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- row first_footer -->
+    <div class="third_footer">
+      <div class="container ">
+        <div class="th_foo">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-12 f_col">
+              <div class="fst_col">
+                <div class="footer_title">
+                  <h5 class="text-uppercase">contact us<button class="toggle collapsed" data-toggle="collapse" data-target="#fproduct"></button></h5>
+                </div>
+                <div class="categorie collapse " id="fproduct">
+                  <ul class="add_row">
+                    <li>
+                      <div class="data1 add contact-ic">
+                        <a href="#">Demo A - 2 Puffin Street,<br> Puffinville India, Surat</a>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#" class="contact-ic call_ic">+911234567890</a>
+                    </li>
+                    <li>
+                      <a href="#" class="mail_f contact-ic mail_ic">website@gmail.com</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="snd_col">
+                <div class="footer_title">
+                  <h5 class="text-uppercase">payment<button class="toggle collapsed" data-toggle="collapse" data-target="#payment"></button></h5>
+                </div>
+                <div class="categorie collapse " id="payment">
+                  <ul class="foo_pay">
+                    <li>
+                      <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-cc-visa"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fas fa-credit-card"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+              <div class="fth_col">
+                <div class="footer_title">
+                  <h5 class="text-uppercase">information<button class="toggle collapsed" data-toggle="collapse" data-target="#fh_product"></button></h5>
+                </div>
+                <div class="categorie collapse" id="fh_product">
+                  <ul>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="information.html">Delivery Infomations</a></li>
+                    <li><a href="policy.html">Privacy Policy</a></li>
+                    <li><a href="service.html">Custom Service</a></li>
+                    <li><a href="condition.html">Terms & Condition</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+              <div class="th_col">
+                <div class="footer_title">
+                  <h5 class="text-uppercase">categories<button class="toggle collapsed" data-toggle="collapse" data-target="#tproduct"></button></h5>
+                </div>
+                <div class="categorie collapse" id="tproduct">
+                  <ul>
+                    <li><a href="shop-left-sidebar.html">Flowering Plants</a></li>
+                    <li><a href="shop-left-sidebar.html">Plant Seed</a></li>
+                    <li><a href="shop-left-sidebar.html">Luck Plants</a></li>
+                    <li><a href="shop-left-sidebar.html">Raisin Pot</a></li>
+                    <li><a href="shop-left-sidebar.html">Live Plant</a></li>
+                    <li><a href="shop-left-sidebar.html">outdoor Plants</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-12 social_section">
+              <div class="d-flex">
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f1.png" alt="f1" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f2.png" alt="f2" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f3.png" alt="f3" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f4.png" alt="f4" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f5.png" alt="f5" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f6.png" alt="f6" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f7.png" alt="f7" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f8.png" alt="f8" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+                <div class="img-2 footer_img">
+                  <h3 class="insta_social">
+                    <svg height="30px" viewBox="0 0 511 511.9" width="30px" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0" />
+                      <path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
+                      <path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
+                    </svg>
+                  </h3>
+                  <a href="#"><img src="assets/img/f9.png" alt="f9" class="w-100 img-fluid"></a>
+                  <div class="box-2">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- row first_footer -->
+    <div class="fifth_footer">
+      <div class="container ">
+        <div class="">
+          <div class="text-center demo_link d-block">2021 @ All rights reserved Powered by <a href="#">demo.com</a></div>
+          <div class="footer_bottom text-center">
+            <div class="d-flex justify-content-center">
+              <div class="social_links">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+              <div class="social_links">
+                <a href="#">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+              <div class="social_links">
+                <a href="#">
+                  <i class="fab fa-skype"></i>
+                </a>
+              </div>
+              <div class="social_links">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+              <div class="social_links">
+                <a href="#">
+                  <i class="fab fa-snapchat-ghost"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- row first_footer -->
+  </div>
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Proceed To Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- ... (previous modal content) ... -->
+        <div class="modal-body">
+          `
+          <!-- Payment options radio buttons -->
+          <div id="walletSplit" style="display: none;">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentOption" id="walletCOD" value="walletCOD" checked>
+              <label class="form-check-label" for="walletCOD">
+                Wallet + COD
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentOption" id="walletRazorpay" value="walletRazorpay">
+              <label class="form-check-label" for="walletRazorpay">
+                Wallet + Razorpay
+              </label>
+            </div>
+          </div>
+
+          <p class="p-2">Are you sure you want to proceed with this order!!</p>
+        </div>
+        <!-- ... (remaining modal content) ... -->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" id="placeorder" class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="statusErrorsModal" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-end">
+          <button id="closeBtnError" type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-lg-4">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#db3646" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+            <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+            <line class="path line" fill="none" stroke="#db3646" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" X2="34.4" y2="92.2" />
+          </svg>
+          <h4 class="text-danger mt-3" id="errorModalHead">Please Select a Valid Address!</h4>
+          <p class="mt-3" id="errorModalBody">You did not select a valid address.</p>
+          <button type="button" class="btn btn-sm mt-3 btn-danger" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">All Coupons</h5>
+          <button type="button" id="closeCoupon" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="coupon-item"  style="height: 600px;overflow-y: scroll;">
+            <%for(let i = 0; i< allCoupons.length; i++){%>
+            <!-- ---------- -->
+            <div class="card">
+              <div class=" d-flex justify-content-between align-items-center">
+              <div class="card-body">
+               <% const expirationDate = new Date(allCoupons[i].expiresOn);
+                const formattedDate = expirationDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                });%>
+                <p class="card-text"><%=allCoupons[i].description%></p>
+                <button href="#" class="btn btn-primary"><%=allCoupons[i].code%></button><span class="p-3" <%if(expirationDate < new Date()){%>style='color:red'<%}%>>
+                  <% if (expirationDate > new Date()) { %>
+                          Active till <%= formattedDate %>
+                      <% } else { %>
+                    Expired on <%= formattedDate %>
+                      <% } %>
+              </span>
+              </div>
+              <div class="mr-5">
+                <div  class="percentage-box d-flex justify-content-center align-items-center" <%if(expirationDate < new Date()){%>style='background:red'<%}%>>
+                    <p class="text-black " style="font-size: 2rem; margin: 0;"><%= allCoupons[i].discountPercentage %>%</p>
+                </div>
+            </div>        
+            </div>
+            <%}%>
+            <!-- ---------- -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="couponCloseX" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer end -->
+  <!-- scroll -->
+  <a href="#" id="scroll"></a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- jquery-3.4.1 -->
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <!-- owl.carousel -->
+  <script src="assets/js/owl.carousel.js"></script>
+  <!-- bootstrap.min -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- slick -->
+  <!-- <script src="assets/js/slick.min.html"></script> -->
+  <!-- popper.min -->
+  <script src="assets/js/popper.min.js"></script>
+  <!-- moment js -->
+  <script src="assets/js/moment.min.js"></script>
+  <!-- daterangepicker js -->
+  <script src="assets/js/daterangepicker.min.js"></script>
+  <!-- wow.js - v1.2.1 -->
+  <script src="assets/js/wow.min.js"></script>
+  <!-- Font Awesome Free 5.15.1 -->
+  <script src="assets/js/all.min.js"></script>
+  <!--   fancybox -->
+  <script src="assets/js/jquery.fancybox.min.js"></script>
+
+  <!-- custom js -->
+  <!-- <script src="assets/js/custom.js"></script> -->
+  <script>
+    // Disable form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      if (($("#add_new_address").is(":checked"))) {
+        $('#addAddress').css('display', 'block');
+        $('#check_add').collapse('show');
+        $('#check_existing_address').css('display', 'none');
+
+      }
+    })
+    let addressId, deliveryType, deliveryCharge, paymentMethod, selectedCouponCode, selectedCouponVal, finalAmountPay;
+
+    addressId = $('#existing_address_1').val()
+    finalAmountPay = $('#netPayable').data('net');
+    if ($("#with_ship").is(":checked")) {
+      deliveryType = 'express';
+      deliveryCharge = 300;
+    } else {
+      deliveryType = 'Normal';
+      deliveryCharge = 100;
+    }
+    function handleAddressSelection(id) {
+      if (id) {
+        $('#addAddress').css('display', 'none');
+        addressId = id;
+      } else {
+        addressId = null;
+        $('#addAddress').css('display', 'block');
+        $('#check_add').collapse('show');
+        $('#check_existing_address').collapse('hide');
+      }
+    }
+
+    $('#saveAndProceedBtn').on('click', async function(e) {
+      e.preventDefault();
+
+      $('#add1').css('display', 'none');
+      $('#add2').css('display', 'none');
+      $('#add3').css('display', 'none');
+      $('#add4').css('display', 'none');
+      $('#add5').css('display', 'none');
+      $('#add6').css('display', 'none');
+      $('#add7').css('display', 'none');
+
+      const name = $('#addName').val();
+      const address = $('#addAddress1').val();
+      const city = $('#addCity').val();
+      const state = $('#addState').val();
+      const country = $('#addCountry').val();
+      const postCode = $('#addPost').val();
+      const number = $('#addNumber').val();
+
+      if (!validateAdd()) return;
+
+      const response = await fetch('/addAddress', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: name,
+          addressLine1: address,
+          city,
+          state,
+          country,
+          postCode,
+          mobileNumber: number
+        })
+      })
+      const x = await response.json();
+      addressId = x.addedId;
+
+      console.log(addressId);
+      $('#saveAndProceedBtn').attr('disabled', true);
+      $('#addForm :input').attr('disabled', true);
+      $('#check_add').collapse('hide');
+      $('#check_ship').collapse('show');
+      $('#check_existing_address').css('display', 'none');
+    });
+
+
+    function validateAdd() {
+      const name = $('#addName').val();
+      const address = $('#addAddress1').val();
+      const city = $('#addCity').val();
+      const state = $('#addState').val();
+      const country = $('#addCountry').val();
+      const postCode = $('#addPost').val();
+      const number = $('#addNumber').val();
+      isValid = true;
+      if (!name.trim()) {
+        isValid = false;
+        $('#add1').css('display', 'block');
+      }
+      if (!address.trim()) {
+        isValid = false;
+        $('#add2').css('display', 'block');
+      }
+      if (!city.trim()) {
+        isValid = false;
+        $('#add3').css('display', 'block');
+      }
+      if (!state.trim()) {
+        isValid = false;
+        $('#add4').css('display', 'block');
+      }
+      if (!country.trim()) {
+        isValid = false;
+        $('#add7').css('display', 'block');
+      }
+      if (!postCode.trim() || postCode.length !== 6) {
+        isValid = false;
+        $('#add5').css('display', 'block');
+      }
+      if (!number.trim() || number.length !== 10) {
+        isValid = false;
+        $('#add6').css('display', 'block');
+      }
+      return isValid;
+    }
+
+    function proceedToShipping() {
+      $('#check_existing').collapse('hide');
+      $('#check_ship').collapse('show');
+    }
+
+    function proceedToPayment() {
+      if ($("#with_ship").is(":checked")) {
+        $('#normalDelivery').css('display', 'none');
+        $('#normalPay').css('display', 'none');
+        $('#expressDelivery').css('display', 'block');
+        $('#expressPay').css('display', 'block');
+        deliveryType = 'express';
+        deliveryCharge = 300;
+        const amount = $('#totalValue').val();
+        finalAmountPay = +amount + +deliveryCharge;
+        $('#netPayable').text(+amount + deliveryCharge);
+        $('#totalAmount').text(+amount + deliveryCharge);
+        const selectedCouponVal = $('#coupon-select').val();
+        if (selectedCouponVal !== 'default') {
+          const finalAmount = amount - Math.round((selectedCouponVal / 100) * amount) + deliveryCharge;
+          finalAmountPay = finalAmount;
+          $('#netPayable').text(finalAmount);
+        }
+
+      } else {
+        $('#expressDelivery').css('display', 'none');
+        $('#expressPay').css('display', 'none');
+        $('#normalDelivery').css('display', 'block');
+        $('#normalPay').css('display', 'block');
+
+        deliveryType = 'Normal';
+        deliveryCharge = 100;
+        const amount = $('#totalValue').val();
+        finalAmountPay = +amount + +deliveryCharge;
+        $('#netPayable').text(+amount + deliveryCharge);
+        $('#totalAmount').text(+amount + deliveryCharge);
+        const selectedCouponVal = $('#coupon-select').val();
+        if (selectedCouponVal !== 'default') {
+          const finalAmount = amount - Math.round((selectedCouponVal / 100) * amount) + deliveryCharge;
+          finalAmountPay = finalAmount;
+          $('#netPayable').text(finalAmount);
+        }
+      }
+      $('#check_payment').collapse('show');
+      $('#check_ship').collapse('hide');
+    }
+
+    $('#pay_check').submit((event) => {
+      event.preventDefault();
+      if (!addressId) {
+        $('#errorModalHead').text('Invalid Address');
+        $('#errorModalBody').text('Please select or add a valid address');
+        $('#statusErrorsModal').modal('show');
+        return
+      }
+      if ($("#cash_on_delivery").is(":checked")) {
+        paymentMethod = 'Cash On Delivery';
+      } else if ($("#upi_payment").is(":checked")) {
+        paymentMethod = 'Online Payment'
+      } else if ($("#wallet").is(":checked")) {
+        paymentMethod = 'Wallet';
+      }
+      console.log(addressId, paymentMethod, deliveryType, selectedCouponVal);
+      const walletBalance = $('#walletMoney').data('wallet')
+      console.log(finalAmountPay);
+      if (paymentMethod === 'Wallet' && walletBalance < finalAmountPay && walletBalance > 0) {
+        $('#walletSplit').css('display', 'block');
+        paymentMethod = 'Partial';
+      } else $('#walletSplit').css('display', 'none');
+      $('#staticBackdrop').modal('show');
+    });
+    $('#placeorder').click(async () => {
+
+      try {
+        let split = '';
+        if (paymentMethod === 'Partial') {
+          if ($('#walletCOD').is(':checked')) split = 'walletCod';
+          else split = 'walletOnline'
+        }
+
+        const response = await fetch('/order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            address: addressId,
+            deliveryType,
+            paymentMethod,
+            selectedCouponCode,
+            split,
+          }),
+        })
+        if (response.status === 200) {
+            const newResponse = await response.json();
+            const paymentMethod = newResponse.paymentMethod;
+            const orderId = newResponse.orderId;
+            let amount;
+            if(newResponse.online){
+              amount = newResponse.online;
+            }else{
+              amount = newResponse.totalAmount;
+            }
+            const nextOrderId = newResponse.nextOrderId;
+            console.log(amount);
+            if(orderId){
+
+            const options = {
+              "key": 'rzp_test_VMXBmdlGP9IevY',
+              "amount": amount, // Convert to the smallest currency unit
+              "currency": "INR",
+              "name": "Plantly Ecom",
+              "description": "Ecommerce Transactions",
+              "image": "/assets/img/product/product_1.jpg",
+              "order_id": orderId,
+              "handler": async function(response) {
+                const verifySettings = {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      response,
+                      nextOrderId,
+                      paymentMethod,
+                    }),
+                  };
+                 const newResponse = await fetch('/api/payment/verify', verifySettings);
+                 if(newResponse.status===200){
+                  window.location.href = `/orderConfirmation?order=${nextOrderId}`;
+                 }
+              },
+              "theme": {
+                "color": "#99cc33"
+              }
+            };
+
+            const rzp1 = new Razorpay(options);
+
+            rzp1.on('payment.failed', function(response) {
+              alert(response.error.code);
+              alert(response.error.description);
+              alert(response.error.source);
+              alert(response.error.step);
+              alert(response.error.reason);
+              alert(response.error.metadata.order_id);
+              alert(response.error.metadata.payment_id);
+            });
+
+            rzp1.open();
+          }
+        else{
+          window.location.href = `/orderConfirmation?order=${nextOrderId}`;
+        }
+      }
+      if (response.status === 409) {
+        $('#errorModalHead').text('Out of Stock');
+        $('#errorModalBody').text('Sorry !!! Some items went out of stock!!!');
+        $('#statusErrorsModal').modal('show');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+
+
+    });
+
+    $('#coupon-select').change(() => {
+      if ($('#coupon-select').val() !== 'default') {
+        $('#couponBtn').removeAttr('disabled');
+        $('#couponBtn').text('Apply');
+      } else {
+        $('#couponBtn').attr('disabled', true)
+        const amount = $('#totalValue').val();
+        $('#coupondiv').css('display', 'none');
+        selectedCouponCode = null;
+        couponDiscount = 0;
+        $('#discounted').text(`-${couponDiscount}`);
+        $('#maximumD').text('');
+        $('#discountDiv').css('color','black');
+        $('#netPayable').text(+amount + +deliveryCharge);
+      }
+
+
+      $('#couponBtn').click(() => {
+        console.log(deliveryCharge);
+        selectedCouponCode = $('#coupon-select').find(':selected').data('code');
+        const maximumDiscount = $('#coupon-select').find(':selected').data('max');
+
+        if ($('#coupon-select').val() !== 'default') {
+          selectedCouponVal = $('#coupon-select').val();
+          $('#coupondiv').css('display', 'block');
+          $('#couponSpan').text(selectedCouponVal);
+          const amount = $('#totalValue').val();
+          let couponDiscount = Math.floor((selectedCouponVal / 100) * amount);
+          if(couponDiscount>maximumDiscount)couponDiscount = maximumDiscount
+          const finalAmount = amount - couponDiscount;
+          $('#discounted').text(`-${couponDiscount}`);
+          $('#maximumD').text(`(Max Discount ${maximumDiscount})`);
+          $('#discountDiv').css('color','red');
+          $('#totalAmount1').text(`Rs. ${finalAmount}`);
+          $('#netPayable').text(finalAmount + deliveryCharge);
+          $('#couponBtn').text('Applied');
+          $('#couponBtn').attr('disabled', true)
+        }
+        $('#couponBtn').off('click');
+      })
+    })
+
+    $('#showAllCouponsBtn').click(()=>{
+      $('#exampleModalLong').modal('show');
+    })
+
+    $('#closeCoupon').click(()=>{
+      $('#exampleModalLong').modal('hide');
+    })
+    $('#couponCloseX').click(()=>{
+      $('#exampleModalLong').modal('hide');
+    })
+  </script>
+
+
+
+
+</body>
+
+<!-- Mirrored from dostguru.com/HTML/plantly/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2023 08:19:00 GMT -->
+
+</html>

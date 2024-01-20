@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .confirmation-container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .confirmation-header {
+            color: #28a745;
+        }
+
+        .confirmation-details {
+            margin-top: 20px;
+        }
+
+        .confirmation-details h2 {
+            color: #333;
+        }
+
+        .confirmation-details p {
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .confirmation-actions {
+            margin-top: 30px;
+        }
+
+        .confirmation-actions a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .confirmation-actions a:hover {
+            background-color: #0056b3;
+        }
+
+        .delivery-date {
+            margin-top: 20px;
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="confirmation-container">
+        <div class="confirmation-header">
+            <h1>Your Order is Confirmed!</h1>
+            <p>Thank you for shopping with Plantly😍</p>
+        </div>
+
+        <div class="confirmation-details">
+            <h2>Order Details</h2>
+            <p><strong>Order ID:</strong><%= myOrder.orderId%> </p>
+            <%
+            const date = myOrder.orderDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              });
+              const newDate = new Date();
+              newDate.setDate(newDate.getDate() + 6);
+              const delDate = newDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              });
+              %>
+            <p><strong>Date:</strong> <%=date%></p>
+            <p><strong>Expected Delivery Date: <%=delDate%></strong></p>
+            <p><strong>Total Amount:</strong>Rs. <%=myOrder.totalAmount%></p>
+            <p><strong>Deliver to :</strong><%=myOrder.address.name%>,<%=myOrder.address.address%></p>
+            <!-- Add more details as needed -->
+        </div>
+
+        <div class="delivery-date">Expected Delivery Date: <%=delDate%></div>
+
+        <div class="confirmation-actions">
+            <a href="/orderDetails/<%=myOrder._id%>">View Your Order</a>
+            <a href="/shop">Continue Shopping</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Plantly Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/admin/assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="/admin/assets/vendors/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="/admin/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.carousel.min.css">
+  <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+  <link href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"  rel="stylesheet" type="text/css">
+<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"  rel="stylesheet" type="text/css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="/admin/assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="/admin/assets/images/favicon.png" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <style>
+    /* Common Styles */
+    .dt-buttons {
+    display: none !important;
+  }
+    .sales-buttons-container {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .content-wrapper {
+        margin-top: 10%;
+    }
+
+    .container-scroller {
+        height: 100vh;
+    }
+
+    .table-responsive {
+        overflow-y: hidden;
+    }
+
+    .btn-action {
+        border: none;
+        margin: 0 5px;
+        color: #fff;
+    }
+
+    /* Table Styles */
+    #salesTable {
+        width: 80%;
+        margin: 50px auto;
+    }
+
+    #salesTable th,
+    #salesTable td {
+        text-align: center;
+    }
+
+    #salesTable th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 15px;
+    }
+
+    #salesTable td {
+        padding: 10px;
+    }
+
+    /* Button Styles */
+    .btn-edit {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    .btn-edit:hover {
+        background-color: #faff67;
+    }
+
+    /* Page Header Styles */
+    .page-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .page-header-title {
+        color: #28a745;
+    }
+
+    .btn-add-sales {
+        background-color: #28a745;
+    }
+
+    .addSalesButton {
+        position: relative;
+        margin-right: 10%;
+    }
+
+    .btn-add-sales:hover {
+        background-color: #218838;
+    }
+
+    .card-header {
+        flex-direction: column;
+    }
+
+    .main-panel {
+        padding-top: 0%;
+    }
+
+    .user-message {
+        margin: auto;
+        width: 30%;
+        padding: 1.2rem;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        border: 1px solid rgb(0, 255, 98);
+        background-color: rgb(101, 255, 175);
+        text-align: center;
+    }
+
+    .user-message-error {
+        border-color: red;
+        background: rgb(244, 187, 187);
+        color: red;
+    }
+</style>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <h1 class="text-white">Plantly</h1>
+        <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="/admin/assets/images/logo-mini.svg" alt="logo" /></a>
+      </div>
+      <ul class="nav">
+        <li class="nav-item profile">
+          <div class="profile-desc">
+            <div class="profile-pic">
+              <div class="count-indicator">
+                <img class="img-xs rounded-circle " src="/admin/assets/images/dashboard/profile.jpeg" alt="">
+                <span class="count bg-success"></span>
+              </div>
+              <div class="profile-name">
+                <h5 class="mb-0 font-weight-normal text-white"><%=user.split('@')[0]%></h5>
+                <span>Gold Member</span>
+              </div>
+            </div>
+            <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+            <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-divider"></div>
+              <a href="/admin/logout" class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                    <i class="mdi mdi-calendar-today text-success"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1 text-small">Logout</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Navigation</span>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="/admin/dashboard">
+            <span class="menu-icon">
+              <i class="mdi mdi-speedometer"></i>
+            </span>
+            <span class="menu-title">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="/admin/customers">
+            <span class="menu-icon">
+              <i class="fa-solid fa-users"></i>
+            </span>
+            <span class="menu-title">Users</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-icon">
+              <i class="fa-brands fa-product-hunt"></i>
+            </span>
+            <span class="menu-title">products</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="/admin/products">All Products</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/addProduct">Add Product</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <span class="menu-icon">
+              <i class="mdi mdi-security"></i>
+            </span>
+            <span class="menu-title">Categories</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="auth">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href=""> All Categories </a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/addCategory"> Add Category </a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="pages/forms/basic_elements.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-playlist-play"></i>
+            </span>
+            <span class="menu-title">Banners</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Sales</span>
+            </a>
+          </li>
+        <li class="nav-item menu-items">
+          <a
+            class="nav-link"
+            data-toggle="collapse"
+            href="#coupons"
+            aria-expanded="false"
+            aria-controls="auth"
+          >
+            <span class="menu-icon">
+              <i class="fa-solid fa-ticket"></i>
+            </span>
+            <span class="menu-title">Coupons</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="coupons">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/coupons">
+                  All Coupons
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/addCoupons">
+                  Add Coupon
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/charts/chartjs.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">Charts</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/icons/mdi.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">Icons</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li> -->
+      </ul>
+    </nav>
+
+<!-- Sales Table -->
+<div class="table-responsive m-0"  id="salesTable" >
+    <!-- Content area -->
+    <div class="container-fluid page-body-wrapper"  >
+        <div class="main-panel">
+            <div class="content-wrapper bg-white pe-0" >
+                <!-- Add your existing content here -->
+                <div class="user-message user-message-error" style="display: none;">errorMessage</div>
+                <div class="user-message" style="display: none;">successMessage</div>
+
+                <!-- Container for Buttons -->
+                <div class="sales-buttons-container d-flex justify-content-between mb-2">
+                    <!-- Sales Report Download Button -->
+                      <!-- Container for Download Button -->
+                <div class="sales-download-container d-flex justify-content-end mb-2">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="downloadOptions" data-bs-toggle="dropdown" aria-expanded="false">
+                            Download Sales Report
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="downloadOptions">
+                            <li><a class="dropdown-item" href="#" onclick="downloadSalesReport('pdf')">Download PDF</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="downloadSalesReport('excel')">Download Excel</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="downloadSalesReport('csv')">Download CSV</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                    <!-- Filter Section -->
+                    <div class="d-flex">
+                        <select id="filterType" class="form-select mx-2">
+                            <option <%if(!filter || filter === 'alltime'){%>selected<%}%> value="alltime">All Time</option>
+                            <option <%if(filter === 'daily'){%>selected<%}%> value="daily">Daily</option>
+                            <option <%if(filter === 'weekly'){%>selected<%}%> value="weekly">Weekly</option>
+                            <option <%if(filter === 'monthly'){%>selected<%}%> value="monthly">Monthly</option>
+                            <option <%if(filter === 'yearly'){%>selected<%}%> value="yearly">Yearly</option>
+                            <option id="my-id" <%if(filter && filter.length === 2){%>selected<%}%> value="custom" data-filter = "<%=filter%>">Custom Date Range</option>
+                        </select>
+                        <div>
+                        <div id="customDateRange" style="display: none;">
+                            <input type="date" id="startDate" class="form-control mx-2">
+                            <input type="date" id="endDate" class="form-control mx-2">
+                        </div>
+                        <div id="invalid" style="color: red;display: none;" class="p-2 ms-2">Please provide valid start and end date !!!</div>
+                        <div id="invalid2" style="color: red; display: none;" class="p-2 ms-2">End date should be greater than start date !!!</div>
+                        
+                        </div>
+                        <button class="btn btn-primary" onclick="applyFilter()">Apply Filter</button>
+                    </div>
+                </div>
+
+                <!-- Sales Table -->
+                <div class="table-responsive" id="salesTable">
+                    <table class="table table-bordered" id="tableData">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Order ID</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Quantity Sold</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total Sales</th>
+                                <th scope="col">Order Date</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Payment Method</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <!-- Replace this with a loop through your sales data -->
+                            <div>
+                            <%orders.forEach((order, index)=>{%>
+                            <tr>
+                                
+                                <td ><%=index+1%>%></td>
+                                <td><%=order.orderId%></td>
+                                <td><%=order.product[0]%></td>
+                                <td><%=order.quantity%></td>
+                                <td><%=order.price%></td>
+                                <td><%=order.price * order.quantity%></td>
+                                <%
+                                const date = order.orderDate.toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                  });
+                                  %>
+                                <td><%=date%></td>
+                                <td><%=order.customer[0]%></td>
+                                <td><%=order.paymentMethod%></td>
+                            </tr>
+                            <!-- End of loop -->
+                            <%})%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="/admin/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/admin/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="/admin/assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="/admin/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="/admin/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/admin/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/admin/assets/js/off-canvas.js"></script>
+    <script src="/admin/assets/js/hoverable-collapse.js"></script>
+    <script src="/admin/assets/js/misc.js"></script>
+    <script src="/admin/assets/js/settings.js"></script>
+    <script src="/admin/assets/js/todolist.js"></script>
+    <script src="https://kit.fontawesome.com/34b95b40fc.js" crossorigin="anonymous"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="/admin/assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+
+    <!-- Unlist Category Modal -->
+    <div class="modal fade" id="unlistCategoryModal" tabindex="-1" aria-labelledby="unlistCategoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="unlistCategoryModalLabel">List/Unlist Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to make the selected changes?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" id="unListButton" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Unlist Category Modal -->
+
+<%const baby = 'amal'%>
+    <!-- Edit Category Modal -->
+    <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editCategoryModalLabel">Edit Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Edit Category Form -->
+            <form id="editCategoryForm">
+              <div class="mb-3">
+                <label for="editedCategoryName" class="form-label"> Make Your Changes</label>
+                <input type="text" class="form-control" id="editedCategoryName" required>
+              </div>
+              <button type="click" class="btn btn-primary">Save Changes</button>
+            </form>
+            <!-- End Edit Category Form -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Edit Category Modal -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script>
+    // Add your filter logic here
+   async function applyFilter() {
+    $('#invalid').css('display','none');
+    $('#invalid2').css('display','none');
+        const filterType = document.getElementById('filterType').value;
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+
+        if (filterType === 'custom') {
+     const theStart = new Date(startDate).setHours(0,0,0,0);
+        const theEnd = new Date(endDate).setHours(0,0,0,0);
+        const theNew = new Date().setHours(0,0,0,0);
+
+        if(!endDate || !startDate){
+            $('#invalid').css('display','block');
+            return
+        }if(theEnd<=theStart){
+            $('#invalid2').css('display','block');
+        }
+            start = `filter=${startDate}`
+            end  = `filter=${endDate}`
+            filterType = start+'&'+end;
+            window.location.href = `/admin/sales?${filterType}`;
+        } else {
+            window.location.href = `/admin/sales?filter=${filterType}`;
+        }
+    }
+    $(document).ready(()=>{
+        const filterType = document.getElementById('filterType').value;
+        if(filterType === 'custom'){
+            const val =  $('#my-id').data('filter').split(',');
+            $('#customDateRange').css('display','flex');
+            document.getElementById('startDate').value = val[0];
+            document.getElementById('endDate').value = val[1];
+        }
+    })
+
+    // Show/hide custom date range inputs based on the selected filter type
+    document.getElementById('filterType').addEventListener('change', function () {
+        var customDateRange = document.getElementById('customDateRange');
+        customDateRange.style.display = this.value === 'custom' ? 'flex' : 'none';
+    });
+
+    // $('#startDate').attr('min',getCurrentDate());
+    //     $('#endDate').attr('min', getCurrentDate());
+
+    //     function getCurrentDate() {
+    //     const today = new Date();
+    //     const dd = String(today.getDate()).padStart(2, '0');
+    //     const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    //     const yyyy = today.getFullYear();
+
+    //     return yyyy + '-' + mm + '-' + dd;
+    //     }
+    </script>
+    <script>
+        $(document).ready(function() {
+          $('#tableData').DataTable( {
+            searching: true,
+            info : true,
+          paging: true,
+              dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf'
+              ]
+          } );
+      } );
+
+      function downloadSalesReport(val) {
+    $('#tableData').DataTable().button(val === 'pdf' ? 3 : (val === 'excel' ? 2 : (val === 'csv' ? 1 : 0))).trigger();
+  }
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plantly Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/admin/assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous">
+    <!-- End plugin css for this page -->
+    <style>
+      /* Common Styles */
+      .content-wrapper {
+        margin-top: 35px;
+      }
+      .container-scroller{
+        height: 100vh;
+        background-color: white;
+      }
+    .table-responsive{
+      overflow-y: hidden;
+    }
+      .btn-action {
+        border: none;
+        margin: 0 5px;
+        color: #fff;
+      }
+    
+      /* Table Styles */
+      #customerTable {
+        width: 80%;
+        margin: 50px auto;
+      }
+    
+      #customerTable th,
+      #customerTable td {
+        text-align: center ;
+      }
+    
+      #customerTable th {
+        background-color: #000000;
+        color: #fff;
+      }
+    
+      /* #customerTable td {
+        padding: 10px;
+      } */
+    
+      /* Button Styles */
+      .btn-blocks {
+          background-color: #03af4e !important;
+          width: 55% !important;
+        }
+      
+        .btn-blocks:hover {
+          background-color: #76f1b5 !important;
+        }
+      
+        .btn-unblock {
+          width: 55% !important;
+          background-color: #000000 !important;
+          color: #a0bcd9;
+        }
+      
+        .btn-unblock:hover {
+          background-color: #aee7ff !important;
+        }
+    
+      /* Page Header Styles */
+      .page-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    
+      .card-header{
+          flex-direction: column;
+      }
+      .main-panel {
+        padding-top: 0%;
+      }
+      .user-message {
+margin: auto;
+width:30%;
+padding: 1.2rem;
+border-radius: 3px;
+margin-bottom: 20px;
+border: 1px solid rgb(0, 255, 98);
+background-color: rgb(22, 213, 115);
+text-align: center;
+}
+.user-message-error {
+border-color: red;
+background: rgb(244, 187, 187);    
+color: red;
+}
+
+    </style>
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/admin/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="/admin/assets/images/favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+                <h1 class = "text-white">Plantly</h1>
+               <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="/admin/assets/images/logo-mini.svg" alt="logo" /></a>
+             </div>
+             <ul class="nav">
+               <li class="nav-item profile">
+                 <div class="profile-desc">
+                   <div class="profile-pic">
+                     <div class="count-indicator">
+                      <img class="img-xs rounded-circle " src="/admin/assets/images/dashboard/profile.jpeg" alt="">
+                       <span class="count bg-success"></span>
+                     </div>
+                     <div class="profile-name">
+                       <h5 class="mb-0 font-weight-normal text-white"><%=user.split('@')[0]%></h5>
+                       <span>Gold Member</span>
+                     </div>
+                   </div>
+                   <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+                   <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+                     <div class="dropdown-divider"></div>
+                     <div class="dropdown-divider"></div>
+                     <a href="/admin/logout" class="dropdown-item preview-item">
+                       <div class="preview-thumbnail">
+                         <div class="preview-icon bg-dark rounded-circle">
+                           <i class="mdi mdi-calendar-today text-success"></i>
+                         </div>
+                       </div>
+                       <div class="preview-item-content">
+                         <p class="preview-subject ellipsis mb-1 text-small">Logout</p>
+                       </div>
+                     </a>
+                   </div>
+                 </div>
+               </li>
+               <li class="nav-item nav-category">
+                 <span class="nav-link">Navigation</span>
+               </li>
+               <li class="nav-item menu-items">
+                 <a class="nav-link" href="/admin/dashboard">
+                   <span class="menu-icon">
+                     <i class="mdi mdi-speedometer"></i>
+                   </span>
+                   <span class="menu-title">Dashboard</span>
+                 </a>
+               </li>
+               <li class="nav-item menu-items">
+                 <a class="nav-link" href="">
+                   <span class="menu-icon">
+                     <i class="fa-solid fa-users"></i>
+                   </span>
+                   <span class="menu-title">Users</span>
+                 </a>
+               </li>
+               <li class="nav-item menu-items">
+                 <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                   <span class="menu-icon">
+                     <i class="fa-brands fa-product-hunt"></i>
+                   </span>
+                   <span class="menu-title">products</span>
+                   <i class="menu-arrow"></i>
+                 </a>
+                 <div class="collapse" id="ui-basic">
+                   <ul class="nav flex-column sub-menu">
+                     <li class="nav-item"> <a class="nav-link" href="/admin/products">All Products</a></li>
+                     <li class="nav-item"> <a class="nav-link" href="/admin/addProduct">Add Product</a></li>
+                   </ul>
+                 </div>
+               </li>
+               <li class="nav-item menu-items">
+                 <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                   <span class="menu-icon">
+                     <i class="mdi mdi-security"></i>
+                   </span>
+                   <span class="menu-title">Categories</span>
+                   <i class="menu-arrow"></i>
+                 </a>
+                 <div class="collapse" id="auth">
+                   <ul class="nav flex-column sub-menu">
+                     <li class="nav-item"> <a class="nav-link" href="/admin/categories"> All Categories </a></li>
+                     <li class="nav-item"> <a class="nav-link" href="/admin/addCategory"> Add Category </a></li>
+                   </ul>
+                 </div>
+               </li>
+               <li class="nav-item menu-items">
+                <a class="nav-link" href="/admin/orders">
+                  <span class="menu-icon">
+                    <i class="mdi mdi-chart-bar"></i>
+                  </span>
+                  <span class="menu-title">Orders</span>
+                </a>
+              </li>
+               <li class="nav-item menu-items">
+                 <a class="nav-link" href="/admin/banners">
+                   <span class="menu-icon">
+                     <i class="mdi mdi-playlist-play"></i>
+                   </span>
+                   <span class="menu-title">Banners</span>
+                 </a>
+               </li>
+               <li class="nav-item menu-items">
+                <a
+                  class="nav-link"
+                  data-toggle="collapse"
+                  href="#coupons"
+                  aria-expanded="false"
+                  aria-controls="auth"
+                >
+                  <span class="menu-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                  </span>
+                  <span class="menu-title">Coupons</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="coupons">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/coupons">
+                        All Coupons
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/addCoupons">
+                        Add Coupon
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+               <!-- <li class="nav-item menu-items">
+                 <a class="nav-link" href="pages/charts/chartjs.html">
+                   <span class="menu-icon">
+                     <i class="mdi mdi-chart-bar"></i>
+                   </span>
+                   <span class="menu-title">Charts</span>
+                 </a>
+               </li>
+               <li class="nav-item menu-items">
+                 <a class="nav-link" href="pages/icons/mdi.html">
+                   <span class="menu-icon">
+                     <i class="mdi mdi-contacts"></i>
+                   </span>
+                   <span class="menu-title">Icons</span>
+                 </a>
+               </li>
+               <li class="nav-item menu-items">
+                 <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+                   <span class="menu-icon">
+                     <i class="mdi mdi-file-document-box"></i>
+                   </span>
+                   <span class="menu-title">Documentation</span>
+                 </a>
+               </li> -->
+             </ul>
+        </nav>
+          
+<!-- Customer Table -->
+<div class="table-responsive" id="customerTable">
+  <% if(errorMessage) { %>
+    <div class = "user-message user-message-error" > <%= errorMessage %> </div>
+    <% } %>
+    <% if(successMessage) { %>
+        <div class = "user-message" > <%= successMessage %> </div>
+    <% } %>
+  <table class="table table-bordered">
+      <thead class="thead-light">
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Customer Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% for(let i = 0; i < customers.length; i++){ %>
+              <tr>
+                  <td><%= i + 1 %></td>
+                  <td><%= customers[i].firstName + ' ' + customers[i].lastName %></td>
+                  <td><%= customers[i].email %></td>
+                  <td><%= customers[i].number %></td>
+                  <td>
+                      <% if (customers[i].isBlocked) { %>
+                          <!-- If customer is blocked, show Unblock button -->
+                          <button class="btn btn-unblock" onclick="blockUnblockUser('<%= customers[i].id %>')">Unblock</button>
+                      <% } else { %>
+                          <!-- If customer is not blocked, show Block button -->
+                          <button class="btn  btn-blocks" onclick="blockUnblockUser('<%= customers[i].id %>')">Block</button>
+                      <% } %>
+                  </td>
+              </tr>
+          <% } %>
+      </tbody>
+  </table>
+</div>
+
+
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="/admin/assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="/admin/assets/vendors/chart.js/Chart.min.js"></script>
+        <script src="/admin/assets/vendors/progressbar.js/progressbar.min.js"></script>
+        <script src="/admin/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+        <script src="/admin/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="/admin/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="/admin/assets/js/off-canvas.js"></script>
+        <script src="/admin/assets/js/hoverable-collapse.js"></script>
+        <script src="/admin/assets/js/misc.js"></script>
+        <script src="/admin/assets/js/settings.js"></script>
+        <script src="/admin/assets/js/todolist.js"></script>
+        <script src="https://kit.fontawesome.com/34b95b40fc.js" crossorigin="anonymous"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page -->
+        <script src="/admin/assets/js/dashboard.js"></script>
+        <!-- End custom js for this page -->
+
+      <!-- Block User Modal -->
+      <div class="modal fade" id="blockUnblockUserModal" tabindex="-1" aria-labelledby="blockUnblockUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="blockUnblockUserModalLabel"> User Block/Unblock</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to perform this action?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" id = "blockUnblockButton" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Unlist Category Modal -->
+    <script>
+      function blockUnblockUser(id) {
+          const blockUnblockButton = document.getElementById('blockUnblockButton');
+        
+          $('#blockUnblockUserModal').modal('show');
+      
+          // Add a new click event listener
+          blockUnblockButton.addEventListener('click', function (event) {
+              blockUnblock(event, id);
+          });
+      }
+      async function blockUnblock(event, id) {
+          event.preventDefault();
+      
+          // Make a fetch request to update the category
+          try {
+              const response = await fetch(`/admin/blockUnblock/${id}`, {
+                  method: 'PATCH', // Use the PATCH method
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  // You can include a request body if needed
+                  // body: JSON.stringify({
+                  //     // your data here
+                  // }),
+              });
+      
+              if (response.ok) {
+                  window.location.reload();
+              } else {
+                  // Error handling
+                  console.error('Error unlisting category');
+                  window.location.reload();
+              }
+          } catch (error) {
+              console.error('Error unlisting category:', error);
+          } finally {
+              // Close the modal after the request is complete
+              $('#unlistCategoryModal').modal('hide');
+          }
+      }
+      
+      </script>
+    </body>
+
+    </html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Plantly Admin</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="/admin/assets/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/admin/assets/vendors/css/vendor.bundle.base.css"
+    />
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/admin/assets/css/style.css" />
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="/admin/assets/images/favicon.png" />
+    <style>
+      .error-message {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+          <div
+            class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg"
+          >
+            <div class="card col-lg-4 mx-auto">
+              <div class="card-body px-5 py-5">
+                <h3 class="card-title text-left mb-3">
+                  Plantly Admin Register
+                </h3>
+                <div class="container">
+                  <form id="registrationForm" method = "post" action = "">
+                      <div class="form-group">
+                          <label for="name">Full Name</label>
+                          <input type="text" class="form-control p_input" id="name" name="name" required>
+                          <div id="nameError" class="error-message"></div>
+                      </div>
+                      <div class="form-group">
+                          <label for="text">Email</label>
+                          <input type="email" class="form-control p_input" id="email" name="email" required>
+                          <div id="emailError" class="error-message"></div>
+                      </div>
+                      <div class="form-group">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control p_input" id="password" name="password" required>
+                          <div id="passwordError" class="error-message"></div>
+                      </div>
+                      <div class="form-group">
+                          <label for="confirmPassword">Confirm Password</label>
+                          <input type="password" class="form-control p_input" id="confirmPassword" name="confirmPassword" required>
+                          <div id="confirmPasswordError" class="error-message"></div>
+                      </div>
+                      <div class="form-group d-flex align-items-center justify-content-between">
+                          <a href="#" class="forgot-pass">Forgot password</a>
+                      </div>
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
+                      </div>
+                      <p class="sign-up text-center">Already have an Account?<a href="/admin"> Sign in</a></p>
+                      <p class="terms">By creating an account you are accepting our<a href="#"> Terms & Conditions</a></p>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="/admin/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/admin/assets/js/off-canvas.js"></script>
+    <script src="/admin/assets/js/hoverable-collapse.js"></script>
+    <script src="/admin/assets/js/misc.js"></script>
+    <script src="/admin/assets/js/settings.js"></script>
+    <script src="/admin/assets/js/todolist.js"></script>
+    <!-- endinject -->
+
+    <script>
+      document.getElementById('registrationForm').addEventListener('submit', function (event) {
+          if (!validateForm()) {
+              event.preventDefault(); // Prevent form submission
+          }
+      });
+  
+      function validateForm() {
+          const nameInput = document.getElementById('name');
+          const emailInput = document.getElementById('email');
+          const passwordInput = document.getElementById('password');
+          const confirmPasswordInput = document.getElementById('confirmPassword');
+  
+          // Trim and validate name
+          const trimmedName = nameInput.value.trim();
+
+          if (!trimmedName) {
+              showErrorMessage('nameError', 'Please enter your full name');
+              return false;
+          } else {
+              hideErrorMessage('nameError');
+          }
+          if (trimmedName.length < 3) {
+              showErrorMessage('nameError', 'Name cannot be less than 3 characters');
+              return false;
+          } else {
+              hideErrorMessage('nameError');
+          }
+  
+          // Validate email format
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(emailInput.value)) {
+              showErrorMessage('emailError', 'Please enter a valid email address');
+              return false;
+          } else {
+              hideErrorMessage('emailError');
+          }
+  
+          // Check if password and confirm password match
+          if (passwordInput.value !== confirmPasswordInput.value) {
+              showErrorMessage('confirmPasswordError', 'Password and Confirm Password do not match');
+              return false;
+          } else {
+              hideErrorMessage('confirmPasswordError');
+          }
+  
+          // Check if password is more than 8 characters
+          if (passwordInput.value.length < 8) {
+              showErrorMessage('passwordError', 'Password must be at least 8 characters long');
+              return false;
+          } else {
+              hideErrorMessage('passwordError');
+          }
+  
+          // Check if all required fields are filled
+          if (!passwordInput.checkValidity()) {
+              showErrorMessage('passwordError', passwordInput.validationMessage);
+              return false;
+          } else {
+              hideErrorMessage('passwordError');
+          }
+  
+          return true;
+      }
+  
+      function showErrorMessage(elementId, message) {
+          const errorElement = document.getElementById(elementId);
+          errorElement.innerText = message;
+      }
+  
+      function hideErrorMessage(elementId) {
+          const errorElement = document.getElementById(elementId);
+          errorElement.innerText = '';
+      }
+  </script>
+  
+  </body>
+</html>

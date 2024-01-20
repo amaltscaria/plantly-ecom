@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plantly Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/admin/assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/admin/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/admin/assets/css/vendor.min.css" />
+    <link rel="stylesheet" href="/admin/assets/css/theme.minc619.css?v=1.0" />
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/admin/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="/admin/assets/images/favicon.png" />
+
+    <!-- Add this to the head of your HTML file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.css" integrity="sha512-bs9fAcCAeaDfA4A+NiShWR886eClUcBtqhipoY5DM60Y1V3BbVQlabthUBal5bq8Z8nnxxiyb1wfGX2n76N1Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+        #addProductForm {
+        margin-top: 5%;
+        margin-left: 3%;
+          width: 70%;
+        }
+        /* Content Container */
+        .content {
+          padding: 20px;
+        }
+      
+        /* Page Header */
+        .page-header {
+          margin-bottom: 20px;
+        }
+        .ts-control {
+            height: 5vh;
+        }
+      
+        .page-header-title {
+          font-size: 24px;
+          font-weight: bold;
+          color: #333; /* Change the color as needed */
+        }
+      
+        /* Form Fields */
+        .form-label {
+          font-size: 16px;
+          font-weight: bold;
+          color: #555; /* Change the color as needed */
+        }
+      
+        .form-control {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ddd; /* Change the border color as needed */
+          border-radius: 5px;
+        }
+      
+        .input-group {
+          width: 100%;
+        }
+      
+        /* Select Styles (Tom-Select) */
+        .tom-select-custom {
+          width: 100%;
+        }
+      
+        /* Button Styles */
+        #submit {
+          background-color: #28a745; /* Green color - Change as needed */
+          color: #fff; /* White color - Change as needed */
+          padding: 10px 20px;
+          font-size: 18px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      
+        #submit:hover {
+          background-color: #218838; /* Darker green color on hover - Change as needed */
+        }
+      
+        /* Textarea Styles */
+        #description {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ddd; /* Change the border color as needed */
+          border-radius: 5px;
+        }
+      
+        /* File Input Styles */
+        #imageUpload {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+      
+        /* Error Message Styles */
+        #errorMessage {
+          color: #dc3545; /* Red color for error messages - Change as needed */
+        }
+      
+        /* Image Preview Styles */
+          #imagePreview {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+          }
+      
+        #imagePreview img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          margin-right: 10px ;
+          margin-bottom: 10px;
+          border: 1px solid #ddd; /* Change the border color as needed */
+          border-radius: 5px;
+        }
+        /* Style for the image previews */
+.cropper-preview {
+  width: 100px; /* Set your desired width */
+  height: 100px; /* Set your desired height */
+  margin: 5px; /* Adjust margin as needed */
+} .user-message {
+  margin: auto;
+  width:30%;
+  padding: 1.2rem;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(0, 255, 98);
+  background-color: rgb(101, 255, 175);
+  text-align: center;
+}
+.user-message-error {
+  border-color: red;
+  background: rgb(244, 187, 187);    
+  color: red;
+}
+
+      
+        /* Additional Styling as Needed */
+      
+      </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.js" integrity="sha512-Zt7blzhYHCLHjU0c+e4ldn5kGAbwLKTSOTERgqSNyTB50wWSI21z0q6bn/dEIuqf6HiFzKJ6cfj2osRhklb4Og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <!-- JS Implementing Plugins -->
+    <script src="/admin/assets/js/vendor.min.js"></script>
+
+    <!-- JS Front -->
+    <script src="/admin/assets/js/theme.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+           <h1 class = "text-white">Plantly</h1>
+          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="/admin/assets/images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <ul class="nav">
+          <li class="nav-item profile">
+            <div class="profile-desc">
+              <div class="profile-pic">
+                <div class="count-indicator">
+                  <img class="img-xs rounded-circle " src="/admin/assets/images/dashboard/profile.jpeg" alt="">
+                  <span class="count bg-success"></span>
+                </div>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal text-white"><%=user.split('@')[0]%></h5>
+                  <span>Gold Member</span>
+                </div>
+              </div>
+              <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+              <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div>
+                <a href="/admin/logout" class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-calendar-today text-success"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject ellipsis mb-1 text-small">Logout</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Navigation</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="/admin/dashboard">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="/admin/customers">
+              <span class="menu-icon">
+                <i class="fa-solid fa-users"></i>
+              </span>
+              <span class="menu-title">Users</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="fa-brands fa-product-hunt"></i>
+              </span>
+              <span class="menu-title">products</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/admin/products">All Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/admin/addProduct">Add Product</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+              </span>
+              <span class="menu-title">Categories</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/admin/categories"> All Categories </a></li>
+                <li class="nav-item"> <a class="nav-link" href=""> Add Category </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="/admin/orders">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">Orders</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="/admin/banners">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Banners</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a
+              class="nav-link"
+              data-toggle="collapse"
+              href="#coupons"
+              aria-expanded="false"
+              aria-controls="auth"
+            >
+              <span class="menu-icon">
+                <i class="fa-solid fa-ticket"></i>
+              </span>
+              <span class="menu-title">Coupons</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="coupons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/coupons">
+                    All Coupons
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/addCoupons">
+                    Add Coupon
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/charts/chartjs.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">Charts</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="pages/icons/mdi.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">Icons</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+       <!-- Add Product Form -->
+
+  <!-- Add Product Form -->
+
+  <form
+  id="addProductForm"
+  action="/admin/addProduct"
+  method="post"
+  enctype="multipart/form-data"
+  class = "mx-auto"
+>
+   <!-- Add your existing content here -->
+   <% if(errorMessage) { %>
+    <div class = "user-message user-message-error" > <%= errorMessage %> </div>
+    <% } %>
+    <% if(successMessage) { %>
+        <div class = "user-message" > <%= successMessage %> </div>
+    <% } %>
+  <main id="content" role="main" class="main">
+    <!-- Content -->
+    <div class="content container-fluid">
+      <!-- End Page Header -->
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- Product Information -->
+          <!-- Product Name -->
+          <div class="mb-4">
+            <label for="productNameLabel" class="form-label">Product Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="productName"
+              id="productNameLabel"
+              placeholder="Product Name"
+              aria-label="Product Name"
+            />
+          </div>
+          <div id="nameError" class="text-danger mt-2"></div>
+          <!-- End Product Name -->
+
+          <!-- SKU Form -->
+          <div class="mb-4">
+            <label for="SKULabel" class="form-label">SKU</label>
+            <input
+              type="text"
+              class="form-control"
+              name="SKU"
+              id="SKULabel"
+              placeholder="e.g., 348121032"
+              aria-label="e.g., 348121032"
+            />
+          </div>
+          <div id="skuError" class="text-danger mt-2"></div>
+          <!-- End SKU Form -->
+
+          <!-- Price Form -->
+          <div class="mb-4">
+            <label for="priceNameLabel" class="form-label">Price</label>
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                name="priceName"
+                id="priceNameLabel"
+                placeholder="0.00"
+                aria-label="0.00"
+                min="0"
+                step="0.01"
+              />
+            </div>
+          </div>
+          <div id="priceError" class="text-danger mt-2"></div>
+          <!-- End Price Form -->
+
+          <div class="mb-4">
+           <!-- Size Form -->
+<!-- Size Form -->
+<div class="mb-4">
+    <label for="sizeSelect" class="form-label">Size</label>
+    <div class="tom-select-custom">
+      <select
+        class="js-select form-select"
+        id="sizeSelect"
+        name="sizes[]"
+        autocomplete="off"
+        multiple
+        data-hs-tom-select-options='{"searchInDropdown": false, "hideSearch": true, "dropdownWidth": "10rem"}'
+      >
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+        <option value="Extra Large">Extra Large</option>
+      </select>
+    </div>
+  </div>
+<div id="sizeError" class="text-danger mt-2"></div>
+  <!-- End Size Form -->
+
+<!-- Weight Form -->
+<div class="mb-4" id="weightsContainer">
+<!-- Dynamic weight input fields will be added here -->
+<!-- <div id="weightError" class="text-danger mt-2"></div> -->
+</div>
+<!-- End Weight Form -->
+
+          </div>
+          <!-- End Weight Form -->
+
+            <!-- Category Form -->
+            <div class="mb-4">
+              <label for="categorySelect" class="form-label">Category</label>
+              <div class="tom-select-custom">
+                <select
+                  class="js-select form-select"
+                  id="categorySelect"
+                  name="category"
+                  autocomplete="off"
+                  data-hs-tom-select-options='{
+                      "searchInDropdown": false,
+                      "hideSearch": true,
+                      "dropdownWidth": "10 rem"
+                  }'
+                >
+                <% for(const category of categories) {%>
+                  <option value="<%= category.name %>"><%= category.name %></option>
+                <% } %>
+                </select>
+              </div>
+            </div>
+            <div id="categoryError" class="text-danger mt-2"></div>
+            <!-- End Category Form -->
+          
+            <!-- Stock Form -->
+            <div class="mb-4">
+              <label for="stockLabel" class="form-label">Stock</label>
+              <input
+                type="number"
+                class="form-control"
+                name="stock"
+                id="stockLabel"
+                placeholder="0"
+                aria-label="0"
+                min="0"
+              />
+            </div>
+            <div id="stockError" class="text-danger mt-2"></div>
+            <!-- End Stock Form -->
+
+            <!-- Vendor Form -->
+            <div class="mb-4">
+              <label for="vendorLabel" class="form-label">Vendor</label>
+              <input
+                type="text"
+                class="form-control"
+                name="vendor"
+                id="vendorLabel"
+                placeholder="e.g., Lily Gardens"
+                aria-label="e.g., Lily Gardens"
+              />
+            </div>
+            <!-- End Vendor Form -->
+            <div id="vendorError" class="text-danger mt-2"></div>
+          </div>
+
+
+        <!-- End Col -->
+
+        <div class="col-sm-6">
+          <!-- Description Form -->
+          <div class="mb-4">
+            <label for="description" class="form-label">Description</label>
+            <!-- Regular Textarea -->
+            <textarea
+              name="description"
+              id="description"
+              class="form-control"
+              rows="5"
+              placeholder="Type your description..."
+              aria-label="Type your description..."
+            ></textarea>
+            <!-- End Textarea -->
+          </div>
+          <div id="descriptionError" class="text-danger mt-2"></div>
+          <!-- End Description Form -->
+           <!-- Images Form -->
+           <div class="mb-4">
+            <label for="imageUpload" class="form-label">Images</label>
+
+            <!-- Larger File Input with multiple attributes -->
+            <input
+              type="file"
+              id="imageUpload"
+              class="form-control"
+              multiple
+            />
+
+            <!-- Image Preview Container -->
+            <!-- Image Preview Container -->
+<div id="imagePreview" class="mt-4 mb-2 d-flex flex-wrap" style="max-width: 800px;"></div>
+
+
+            <!-- Error Message Container -->
+            <div id="errorMessage" class="text-danger mt-2"></div>
+            <div id="imageError" class="text-danger mt-2"></div>
+            <!-- Display a message or instructions if needed -->
+            <small class="form-text text-muted mt-2"
+              >Select one or more files(max 5).</small
+            >
+          </div>
+          
+          <!-- End Images Form -->
+
+          <!-- Colors Form -->
+          <div class="mb-4">
+            <label for="colorsSelect" class="form-label">Colors</label>
+            <div class="tom-select-custom">
+              <select
+                class="js-select form-select"
+                id="colorsSelect"
+                name="colors[]"
+                autocomplete="off"
+                multiple
+                data-hs-tom-select-options='{
+                    "searchInDropdown": false,
+                    "hideSearch": true,
+                    "dropdownWidth": "6rem"
+                }'
+              >
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="pink">Pink</option>
+                <!-- Add more colors as needed -->
+              </select>
+            </div>
+          </div>
+          <div id="colorError" class="text-danger mt-2"></div>
+          <!-- End Colors Form -->
+<!-- Tags Form -->
+<div class="mb-4">
+<label for="tagsInput" class="form-label">Tags</label>
+<div>
+  <input
+    type="text"
+    class="form-control"
+    id="tagsInput"
+    name="tags"
+    placeholder="Enter tags separated by commas"
+  />
+</div>
+</div>
+<div id="tag" class="text-danger mt-2"></div>
+<!-- End Tags Form -->
+<div id="tagError" class="text-danger mt-2"></div>
+
+
+        <!-- End Col -->
+      </div>
+      <div class="text-center">
+        <button id="submit" class="btn btn-primary">Add Product</button>
+      </div>
+    </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Content -->
+  </main>
+</form>
+
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="/admin/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/admin/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="/admin/assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="/admin/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="/admin/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/admin/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/admin/assets/js/off-canvas.js"></script>
+    <script src="/admin/assets/js/hoverable-collapse.js"></script>
+    <script src="/admin/assets/js/misc.js"></script>
+    <script src="/admin/assets/js/settings.js"></script>
+    <script src="/admin/assets/js/todolist.js"></script>
+    <script src="https://kit.fontawesome.com/34b95b40fc.js" crossorigin="anonymous"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="/admin/assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+    <script>
+        // JavaScript to dynamically update weights based on selected sizes
+        document.getElementById('sizeSelect').addEventListener('change', function () {
+          var selectedSizes = Array.from(this.selectedOptions, option => option.value);
+      
+          var weightsContainer = document.getElementById('weightsContainer');
+          weightsContainer.innerHTML = ''; // Clear previous weight inputs
+      
+          selectedSizes.forEach(function (size) {
+            var weightInput = document.createElement('div');
+            weightInput.classList.add('mb-2');
+            weightInput.innerHTML = `
+              <label for="weightLabel-${size}" class="form-label">${size} Weight</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="weights[${size}]"
+                  id="weightLabel-${size}"
+                  placeholder="0.0"
+                  aria-label="0.0"
+                  min="0"
+                />
+              </div>
+            `;
+            weightsContainer.appendChild(weightInput);
+          });
+        });
+      </script>
+
+    <script>
+        (function () {
+          window.onload = function () {
+  
+            // INITIALIZATION OF BOOTSTRAP DROPDOWN
+            // =======================================================
+            HSBsDropdown.init();
+  
+            // INITIALIZATION OF SELECT
+            // =======================================================
+            HSCore.components.HSTomSelect.init('.js-select');
+  
+          };
+        })();
+      </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const myForm = document.getElementById('addProductForm');
+      const imageUploadInput = document.getElementById('imageUpload');
+      const errorMessageContainer = document.getElementById('errorMessage');
+      const imagePreviewContainer = document.getElementById('imagePreview');
+      let croppers = []; // Store Cropper.js instances for each image
+  
+      imageUploadInput.addEventListener('change', function () {
+        imagePreviewContainer.innerHTML = ''; // Clear previous previews
+        errorMessageContainer.innerHTML = '';
+  
+        const files = this.files;
+  
+        // Check if the number of selected files exceeds the limit (5)
+        if (files.length > 5) {
+          errorMessageContainer.textContent = 'You can select a maximum of 5 images.';
+          this.value = ''; // Clear the input field
+          return;
+        }
+  
+        for (let i = 0; i < Math.min(5, files.length); i++) {
+          const file = files[i];
+          const reader = new FileReader();
+  
+          reader.onload = function (e) {
+            const container = document.createElement('div');
+            container.classList.add('img-container', 'mr-2');
+  
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add('img-thumbnail');
+  
+            // Set a fixed size for the image container
+            container.style.width = '200px';
+            container.style.height = '200px';
+  
+            container.appendChild(img);
+            imagePreviewContainer.appendChild(container);
+  
+            // Initialize Cropper.js on the image
+            const cropper = new Cropper(img, {
+              aspectRatio: 1,  
+              viewMode: 1,
+              autoCropArea: 0,
+            });
+  
+            // Store Cropper instance in the array
+            croppers.push(cropper);
+          };
+  
+          reader.readAsDataURL(file);
+        }
+      });
+  
+      myForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Create a FormData object to send the form data
+        const formData = new FormData(this);
+  
+        // Loop through croppers to get cropped images for each image
+        croppers.forEach((cropper, index) => {
+          // Get the cropped base64 data from the canvas
+          const croppedDataUrl = cropper.getCroppedCanvas().toDataURL('image/png');
+  
+          // Convert base64 to Blob
+          const blob = dataURItoBlob(croppedDataUrl);
+  
+          // Append the Blob to the FormData object
+          formData.append(`croppedImage`, blob, `cropped_image_${index}.png`);
+  
+          // Continue with additional cropping data if necessary
+        });
+        // Append other form fields to the FormData object
+
+// Perform validation
+      if(!validateForm(event))return;
+  
+        // Send the FormData object to the server using an AJAX request
+        fetch('/admin/addProduct', {
+          method: 'POST',
+          body: formData,
+        })
+          .then(response => response.json())
+          .then(data => {
+            window.location.reload();
+          })
+          .catch(error => {
+            window.location.reload();
+          });
+      });
+  
+      // Function to convert data URI to Blob
+      function dataURItoBlob(dataURI) {
+        const byteString = atob(dataURI.split(',')[1]);
+        const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        const ab = new ArrayBuffer(byteString.length);
+        const ia = new Uint8Array(ab);
+        for (let i = 0; i < byteString.length; i++) {
+          ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ab], { type: mimeString });
+      }
+    });
+    
+  </script>
+  
+  <script>
+        function validateForm(event){
+          const form = document.getElementById('addProductForm');
+        // Validate Product Name
+        let isValid = true;
+        const productName = form.querySelector('[name="productName"]');
+        if (!productName.value.trim()) {
+          displayError('nameError','Product Name is required.');
+          isValid = false;
+        }
+  
+        // Validate SKU
+        const SKU = form.querySelector('[name="SKU"]');
+        if (!SKU.value.trim()) {
+          displayError('skuError','SKU is required.');
+          isValid = false;
+        }
+  
+        // Validate Price
+        const price = form.querySelector('[name="priceName"]');
+        if (isNaN(price.value) || price.value < 0 || price.value==='') {
+          displayError('priceError','Please enter a valid Price.');
+          isValid = false;
+        }
+  
+        // Validate Size
+        const sizeSelect = form.querySelector('#sizeSelect');
+        if (sizeSelect.selectedOptions.length === 0) {
+          displayError('sizeError','Please select at least one Size.');
+          isValid = false;
+        }
+
+        const category = form.querySelector('#categorySelect');
+        if (category.selectedOptions.length === 0) {
+          displayError('categoryError','Please select at least one category.');
+          isValid = false;
+        }
+  
+        // Validate Stock
+        const stock = form.querySelector('[name="stock"]');
+        if (isNaN(stock.value) || stock.value < 0 || stock.value==='') {
+          displayError('stockError','Please enter a valid Stock value.');
+          isValid = false;
+        }
+  
+        // Validate Vendor
+        const vendor = form.querySelector('[name="vendor"]');
+        if (!vendor.value.trim()) {
+          displayError('vendorError','Vendor is required.');
+          isValid = false;
+        }
+
+  
+        // Validate Description
+        const description = form.querySelector('[name="description"]');
+        if (!description.value.trim()) {
+          displayError('descriptionError','Description is required.');
+          isValid = false;
+        }
+        // Validate Images
+        if (imageUpload.files.length === 0) {
+          displayError('imageError','Please select at least one image.');
+          isValid = false;
+    
+        }
+  
+        // Validate Colors
+        const colorsSelect = form.querySelector('#colorsSelect');
+        if (colorsSelect.selectedOptions.length === 0) {
+          displayError('colorError','Please select at least one Color.');
+          isValid = false;
+       
+        }
+  
+        // Validate Tags
+        const tagsInput = form.querySelector('[name="tags"]');
+        if (!tagsInput.value.trim()) {
+          displayError('tagError','Tags are required.');
+          isValid = false;
+        }
+        return isValid;
+      }
+  
+        // If all validations pass, the form will be submitted
+  
+      // Display error message
+      function displayError(element,message) {
+        const errorMessage = document.getElementById(element);
+        errorMessage.textContent = message;
+      }
+  </script>
+  
+</html>
