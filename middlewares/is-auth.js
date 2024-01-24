@@ -20,10 +20,15 @@ export const isAuthenticated = (req, res, next) => {
 //If the user is blocked
 
 export const isBlocked = async (req, res, next) => {
+  try{
   const blocked = await isUserBlocked(req.session.email);
   if(blocked){
+      req.flash('error', 'You have been blocked by the admin');
     return res.redirect('/logout');
   }
   next();
+}catch(err) {
+  next(err);
+}
 }
  

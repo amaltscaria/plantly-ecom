@@ -5,25 +5,23 @@ import crypto from 'crypto';
 import User from '../../model/User.js';
 import { placeOrder } from '../user/orderController.js';
 
-export const createWalletOrder = async (req, res) => {
+export const createWalletOrder = async (req, res, next) => {
   try {
     const { amount } = req.body;
     const orderId = await createOrder(amount);
     req.session.walletAmount = amount;
     res.status(200).json({ success: true, orderId });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 };
 
-export const verifyWalletOrder = async (req, res) => {
+export const verifyWalletOrder = async (req, res, next) => {
   try {
     const { type } = req.body;
     // STEP 7: Receive Payment Data
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
       req.body.response;
-
-    console.log(razorpay_order_id, razorpay_payment_id, razorpay_signature);
     // Pass yours key_secret here
     const key_secret = process.env.RAZORPAY_KEY_SECRET;
 
@@ -37,8 +35,6 @@ export const verifyWalletOrder = async (req, res) => {
 
     // Creating the hmac in the required format
     const generated_signature = hmac.digest('hex');
-    console.log(razorpay_signature);
-    console.log(generated_signature);
 
     if (razorpay_signature === generated_signature) {
       if (type === 'Deposit')
@@ -48,7 +44,7 @@ export const verifyWalletOrder = async (req, res) => {
         .json({ success: true, message: 'Payment has been verified' });
     } else res.json({ success: false, message: 'Payment verification failed' });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 };
 
@@ -61,10 +57,9 @@ export const createOrder = async amount => {
     };
 
     const order = await instance.orders.create(options);
-    console.log(order);
     return order.id;
   } catch (err) {
-    console.log(err);
+   throw err;
   }
 };
 
@@ -74,21 +69,18 @@ export const addMoneyToWallet = async (email, amount, type) => {
     user.wallet.balance += +amount;
     user.wallet.transactionHistory.push({ type, amount: amount });
     await user.save();
-    console.log(user);
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
-export const verifyOrder = async (req, res) => {
-  console.log(req.body);
+export const verifyOrder = async (req, res, next) => {
   try {
-    const { type, nextOrderId, paymentMethod } = req.body;
+    const { nextOrderId, paymentMethod } = req.body;
     // STEP 7: Receive Payment Data
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
       req.body.response;
 
-    console.log(razorpay_order_id, razorpay_payment_id, razorpay_signature);
     // Pass yours key_secret here
     const key_secret = process.env.RAZORPAY_KEY_SECRET;
 
@@ -102,8 +94,6 @@ export const verifyOrder = async (req, res) => {
 
     // Creating the hmac in the required format
     const generated_signature = hmac.digest('hex');
-    console.log(razorpay_signature);
-    console.log(generated_signature);
 
     if (razorpay_signature === generated_signature) {
       placeOrder(nextOrderId, req.session.email, paymentMethod);
@@ -113,6 +103,6 @@ export const verifyOrder = async (req, res) => {
         .json({ success: true, message: 'Payment has been verified' });
     } else res.json({ success: false, message: 'Payment verification failed' });
   } catch (err) {
-    console.log(err);
+   next(err);
   }
 };

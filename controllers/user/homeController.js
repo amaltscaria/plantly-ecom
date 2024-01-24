@@ -3,33 +3,49 @@ import Coupon from '../../model/Coupon.js';
 
 import { checkCartQuantity} from '../../utils/checkStock.js';
 import { getEligibleCoupons } from '../../utils/getEligibleCoupons.js';
-import Banner from '../../model/banner.js';
+import Banner from '../../model/Banner.js';
+import Category from '../../model/Category.js';
+import Product from '../../model/Product.js';
 
-export const getHomeAfterLogin = async (req, res) => {
+export const getHomeAfterLogin = async (req, res, next) => {
+  try{
   const banners = await Banner.find({
     isListed: true,
     expiryDate: { $gt: new Date() },
   });
-  console.log(banners);
  const user = await User.findOne({ email: req.session.email }).populate(
     'cart.product'
   );
+  const products = await Product.find({isListed: true});
+  const categories = await Category.find({isListed: true});
   const cart = user.cart;
   req.session.userDetails = null;
   req.session.user = null;
-  res.render('user/home', { cart: cart, user: user, banners });
+  res.render('user/home', { cart: cart, user: user, banners, categories, products});
+ } catch(err) {
+  next(err);
+ }
 };
 
-export const getContact = async (req, res) => {
+export const getContact = async (req, res, next) => {
   try{
     res.render('user/contact');
   }
   catch(err){
-    
+    next(err);
   }
 }
 
-export const getCheckout = async (req, res) => {
+export const getAboutUs = async (req, res, next) => {
+  try{
+    res.render('user/about')
+  } catch(err) {
+    next(err);
+  }
+}
+
+export const getCheckout = async (req, res, next) => {
+  try{
   const user = await User.findOne({ email: req.session.email }).populate({
     path: 'cart.product',
     populate: {
@@ -49,9 +65,13 @@ export const getCheckout = async (req, res) => {
     coupons,
     allCoupons,
   });
+}catch(err) {
+  next(err);
+}
 };
 
-export const getWishlist = async (req, res) => {
+export const getWishlist = async (req, res, next) => {
+  try{
   const user = await User.findOne({ email: req.session.email })
     .populate('cart.product')
     .populate({
@@ -63,9 +83,12 @@ export const getWishlist = async (req, res) => {
   const cart = user.cart;
   const wishList = user.wishList;
   res.render('user/wishlist', { user, cart, wishList });
+  }catch(err) {
+    next(err);
+  }
 };
 
-export const postWishlist = async (req, res) => {
+export const postWishlist = async (req, res, next) => {
   try {
     const { id } = req.params;
     const user = await User.findOne({ email: req.session.email });
@@ -85,12 +108,11 @@ export const postWishlist = async (req, res) => {
       res.status(409).json({ message: 'item already there' });
     }
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
 
-export const patchWishList = async (req, res) => {
+export const patchWishList = async (req, res, next) => {
   try {
     const { id } = req.params;
     const user = await User.findOneAndUpdate(
@@ -100,7 +122,6 @@ export const patchWishList = async (req, res) => {
     );
     res.status(200).json({ success: true });
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };

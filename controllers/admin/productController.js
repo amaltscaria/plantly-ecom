@@ -1,7 +1,8 @@
 import Category from '../../model/Category.js';
 import Product from '../../model/Product.js';
 
-export const getAddProduct = async (req, res) => {
+export const getAddProduct = async (req, res, next) => {
+  try{
   let errorMessage = req.flash('error');
   if (errorMessage.length > 0) {
     errorMessage = errorMessage[0];
@@ -21,9 +22,13 @@ export const getAddProduct = async (req, res) => {
     errorMessage: errorMessage,
     successMessage: successMessage,
   });
+}catch (err) {
+  next(err);
+}
 };
 
-export const postAddProduct = async (req, res) => {
+export const postAddProduct = async (req, res, next) => {
+  try{
   let imgArr = [];
   for (let i = 0; i < req.files.length; i++) {
     imgArr.push(req.files[i].filename);
@@ -65,9 +70,13 @@ export const postAddProduct = async (req, res) => {
     req.flash('success', 'New Product Added Successfully');
     res.json({ success: 'yes' });
   }
+}catch(err) {
+  next(err);
+}
 };
 
-export const getAllProducts = async (req, res) => {
+export const getAllProducts = async (req, res, next) => {
+  try{
   const page = +req.query.page || 1;
   const itemsPerPage = 8;
   let errorMessage = req.flash('error');
@@ -102,6 +111,9 @@ export const getAllProducts = async (req, res) => {
     previousPage: page - 1,
     lastPage: Math.ceil(productCount / itemsPerPage),
   });
+}catch(err) {
+  next(err);
+}
 };
 
 export const patchListUnlistProduct = async (req, res) => {
@@ -122,7 +134,6 @@ export const patchListUnlistProduct = async (req, res) => {
       return res.status(200).json({ message: 'Success' });
     }
   } catch (err) {
-    console.error(err);
     res.status(500).json({ message: 'Internal server error.' });
   }
 };
@@ -191,7 +202,6 @@ export const patchEditProduct = async (req, res) => {
     }
     
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Internal Sever Error'});
   }
 };

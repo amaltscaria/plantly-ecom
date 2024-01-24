@@ -2,6 +2,7 @@ import express from 'express';
 import {
   getHomeAfterLogin,
   getContact,
+  getAboutUs,
   getCheckout,
   getWishlist,
   postWishlist,
@@ -13,7 +14,9 @@ const router = express.Router();
 
 router.get('/home', isAuthenticated, isBlocked, getHomeAfterLogin);
 
-router.get('/contact', getContact);
+router.get('/contact',isAuthenticated, isBlocked, getContact);
+
+router.get('/about-us', isAuthenticated, isBlocked, getAboutUs)
 
 router.get('/checkout', isAuthenticated, isBlocked, getCheckout);
 

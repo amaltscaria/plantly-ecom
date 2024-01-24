@@ -92,10 +92,10 @@
       display: none;
       /* Initially hide all user content sections */
       padding: 21px;
-      background-color: #fff;
+      /* background-color: #fff; */
       /* White background for user details */
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
       /* Add a subtle box shadow */
     }
 
@@ -156,28 +156,28 @@
     }
 
     #wallet {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f4f4f4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 80vh;
-      margin: 0;
-      margin-left: 120px;
-    }
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  /* background-color: #f4f4f4; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  margin: 0;
+  padding: 0; /* Removed margin-left and added padding */
+}
 
-    .wallet {
-      background-color: #fff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s ease-in-out;
-      margin-left: 25%;
-    }
+.wallet {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 100%; /* Changed max-width to 100% for full responsiveness */
+  width: 40%; /* Adjusted width for better responsiveness */
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  margin: 0 auto; /* Center the wallet using margin: 0 auto; */
+}
 
     .wallet:hover {
       transform: scale(1.05);
@@ -216,6 +216,9 @@
       font-size: 16px;
       margin: 0 10px;
     }
+    .wallet:hover {
+  transform: scale(1.05);
+}
 
     .wallet-actions button:hover {
       background-color: #45a049;
@@ -333,6 +336,13 @@
 .copy-button:hover {
   background-color: rgb(220, 150, 205);
 }
+
+@media screen and (max-width: 768px) {
+  .wallet {
+    width: 80%; /* Adjust the percentage as needed */
+  }
+}
+
   </style>
 </head>
 
@@ -956,7 +966,7 @@
             <label for="referralLink"></label>
             <input class="referral-input text-success" type="text" id="referralLink" value="http://localhost:3000/signup?referral=<%=user.referralCode%>" disabled>
             <button onclick="copyToClipboard()" id="copyBtn" class="copy-button">Copy</button>
-            <p class="description1">Refer a friend and you both earn rewards! You earn Rs.200 and your friend earns Rs.100.</p>
+            <p class="description1 p-3" style="font-size: 18px;">Refer a friend and you both earn rewards! You earn Rs.200 and your friend earns Rs.100.</p>
         </div>
 
           <!-- Edit Profile and Reset Password Buttons -->
@@ -1140,7 +1150,7 @@
             <button type="button" id="addMoneyButton">Add Money</button>
           </div>
 
-          <div class="transaction-history" id="walletHistory" <%if(user.wallet.transactionHistory.length>4){%> style="height: 300px;overflow-y: scroll;"<%}%>>
+          <div class="transaction-history" id="walletHistory" <%if(user.wallet.transactionHistory.length>3){%> style="height: 200px;overflow-y: scroll;"<%}%>>
             <h2>Transaction History</h2>
             <ul class="transaction-list" id="myWallet">
               <%for(let i = user.wallet.transactionHistory.length-1; i > 0;i--){%>
@@ -1189,7 +1199,7 @@
               <% if (expirationDate > new Date()) { %> Active till <%= formattedDate %> <% } else { %> Expired on <%= formattedDate %> <% } %> </span>
                   </div>
                   <div class="mr-5">
-                    <div class="percentage-box d-flex justify-content-center align-items-center" <%if(expirationDate < new Date()){%>style='background:red' <%}%>>
+                    <div class="percentage-box d-flex justify-content-center align-items-center" <%if(expirationDate < new Date()){%>style='background:#ea6262' <%}%>>
                 <p class="text-white" style="font-size: 2rem; margin: 0;"><%= coupons[i].discountPercentage %>%</p>
                     </div>
                   </div>

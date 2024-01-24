@@ -50,15 +50,17 @@ export const transporter = nodemailer.createTransport({
       // hash the otp
       const saltRounds = 10;
       const hashedOtp = await bcrypt.hash(otp, saltRounds);
-      const newOtp = new Otp({
-        userName,
-        otp: hashedOtp,
-      });
+      // const newOtp = new Otp({
+      //   userName,
+      //   otp: hashedOtp,
+      // },{upsert:true});
       // save otp to database
-      await newOtp.save();
+      // await newOtp.save();
+      // Use the updateOne method with upsert option
+     await Otp.updateOne({ userName }, { otp: hashedOtp, createdAt: new Date(), expiresAt: new Date(Date.now() + 60000) }, { upsert: true });
+ 
       await transporter.sendMail(mailOptions);
     } catch (error) {
-      console.error('Error sending email:', error);
       res.json({
         status: 'FAILED',
         message: error.message,

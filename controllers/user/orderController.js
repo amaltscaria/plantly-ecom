@@ -7,9 +7,8 @@ import { createOrder } from "../payment/paymentController.js";
 import { addMoneyToWallet } from "../payment/paymentController.js";
 import {totalAmountPay} from "../../utils/totalAmoutPay.js";                             
 
-export const postOrder = async (req, res) => {
+export const postOrder = async (req, res, next) => {
     try {
-      console.log(req.body);
       const { address, deliveryType, paymentMethod, selectedCouponCode, split } =
         req.body;
   
@@ -125,14 +124,13 @@ export const postOrder = async (req, res) => {
         return res.status(200).json({ orderId, totalAmount, nextOrderId, paymentMethod});
       } else if (paymentMethod === 'Partial') {
         if (split === 'walletOnline') {
-          console.log(paymentMethod, split);
           orderId = await  createOrder(online);
          return res.status(200).json({ orderId, online , nextOrderId, paymentMethod});
         }
       }
      return  res.status(200).json({success:true, nextOrderId});
     } catch (err) {
-      console.log(err);
+   next(err);
     }
   };
   
@@ -150,11 +148,12 @@ export const postOrder = async (req, res) => {
   user.cart = [];
   await user.save();}
   catch(err){
-    console.log(err);
+    throw err;
   }
   }
   
-  export const getOrderDetails = async (req, res) => {
+  export const getOrderDetails = async (req, res, next) => {
+    try{
     const { id } = req.params;
     const user = await User.findOne({ email: req.session.email });
     const orders = await Order.find({ customer: user._id }).populate(
@@ -163,15 +162,22 @@ export const postOrder = async (req, res) => {
     const order = orders.find(item => item._id.toString() === id);
     const products = order.products;
     res.render('user/orderDetails', { order: order, products: products });
+    }catch(err){
+      next(err);
+    }
   };
   
-  export const getOrderCofirmation = async (req, res) => {
+  export const getOrderCofirmation = async (req, res, next) => {
+    try{
     const {order} = req.query;
     const myOrder = await Order.findOne({orderId:order});
     res.render('user/orderConfirmation', {myOrder});
+    }catch(err) {
+      next(err);
+    }
   };
   
-  export const patchOrder = async (req, res) => {
+  export const patchOrder = async (req, res, next) => {
     try {
       const { action, orderId, productId } = req.body;
       const order = await Order.findOne({ orderId: orderId });
@@ -207,7 +213,6 @@ export const postOrder = async (req, res) => {
         success: 'true',
       });
     } catch (err) {
-      console.log(err);
       res.status(500).json({
         error: 'Internal Sever Error',
       });

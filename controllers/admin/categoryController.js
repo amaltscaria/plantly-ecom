@@ -1,6 +1,7 @@
 import Category from "../../model/Category.js";
 // add categoryhandler - GET
-export const getAddCategory = async (req, res) => {
+export const getAddCategory = async (req, res, next) => {
+  try{
     let errorMessage = req.flash('error');
     if (errorMessage.length > 0) {
       errorMessage = errorMessage[0];
@@ -18,10 +19,14 @@ export const getAddCategory = async (req, res) => {
       errorMessage: errorMessage,
       successMessage: successMessage,
     });
+  }catch(err){
+    next(err);
+  }
   };
   
   // add category handler - POST
-  export const postAddCategory = async (req, res) => {
+  export const postAddCategory = async (req, res, next) => {
+    try{
     const { categoryName, description } = req.body;
     const ifExists = await Category.findOne({
       name: new RegExp('^' + categoryName + '$', 'i'),
@@ -37,10 +42,14 @@ export const getAddCategory = async (req, res) => {
     await category.save();
     req.flash('success', 'Category Addeed Successfully');
     return res.redirect('/admin/addCategory');
+  }catch (err) {
+    next(err);
+  }
   };
   
   // get all categories handler - GET
-  export const getAllCategories = async (req, res) => {
+  export const getAllCategories = async (req, res, next) => {
+    try{
     let errorMessage = req.flash('error');
     if (errorMessage.length > 0) {
       errorMessage = errorMessage[0];
@@ -60,10 +69,13 @@ export const getAddCategory = async (req, res) => {
       errorMessage: errorMessage,
       successMessage: successMessage,
     });
+  }catch(err){
+    next(err);
+  }
   };
   
   // edit category handler - PATCH
-  export const patchEditCategory = async (req, res) => {
+  export const patchEditCategory = async (req, res, next) => {
     try {
       const id = req.params.id;
       const updatedName = req.body.updatedCategoryName;
@@ -95,13 +107,12 @@ export const getAddCategory = async (req, res) => {
       // Send a success response
       res.status(200).json({ message: 'Category updated successfully.' });
     } catch (err) {
-      console.error(err);
       res.status(500).json({ message: 'Internal server error.' });
     }
   };
   
   // list category handler - PATCH
-  export const patchListCategory = async (req, res) => {
+  export const patchListCategory = async (req, res, next) => {
     try {
       const id = req.params.id;
       const category = await Category.findOne({ _id: id });
@@ -117,11 +128,8 @@ export const getAddCategory = async (req, res) => {
         await category.save();
         req.flash('success', 'Category Listed Successfully');
         return res.status(200).json({ message: 'Success' });
-      } else {
-        console.log('no category found ');
       }
     } catch (err) {
-      console.error(err);
       res.status(500).json({ message: 'Internal server error.' });
     }
   };

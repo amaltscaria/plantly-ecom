@@ -84,12 +84,11 @@ app.use((req, res, next) => {
 });
 
 // Custom error middleware
-app.use((err, req, res, next) => {
-  if (err.status === 404 || err === 404) {
-    res.status(404).render('error/404');
-  } else {
-    res.status(500).render('error/500');
-  }
-});
-
+// app.use((err, req, res, next) => {
+//   if (err.status === 404 || err === 404) {
+//     res.status(404).render('error/404');
+//   } else {
+//     res.status(500).render('error/500');
+//   }
+// });
 export default app;

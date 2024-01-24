@@ -6,7 +6,6 @@ import {relevanceFind,searchCategoryArrayRelevance, searchCategoryRelevance, cat
 
 export const getProducts = async (req, res, next) => {
     try {
-      console.log(req.query)
       const {category, search, relevance} = req.query;
       const itemsPerPage = 8;
       const page = +req.query.page || 1;
@@ -30,15 +29,12 @@ export const getProducts = async (req, res, next) => {
         [productCount, products] = await searchCategoryArrayRelevance(page, itemsPerPage, search, category, relevance);
       }
       else if(search && category && typeof category === 'string' && relevance){
-        console.log('hi');
         [productCount, products] = await searchCategoryRelevance(page, itemsPerPage, search, category, relevance);
       }
       else if(category && typeof category!== 'string' && relevance && !search){
-        console.log('kdjfkdj');
         [productCount, products] = await categoryArrayRelevance (page, itemsPerPage, category, relevance);
       }
       else if(category && typeof category ==='string' && relevance && !search){
-        console.log('zdkskfjs');
         [productCount, products] = await categoryRelevance (page, itemsPerPage, category, relevance);
       }
       else if(category && typeof category!=='string' && search && !relevance){
@@ -83,8 +79,7 @@ export const getProducts = async (req, res, next) => {
         lastPage: Math.ceil(productCount / itemsPerPage),
       });
     } catch (err) {
-      next(500);
-      console.log(err);
+      next(err);
     }
   };
   
@@ -110,16 +105,15 @@ export const getProducts = async (req, res, next) => {
         next(404);
       }
     } catch (err) {
-      console.log(err);
-      next(500);
+      next(err);
     }
   };
 
-  export const getProductSearch = async (req, res) => {
+  export const getProductSearch = async (req, res, next) => {
     try{
     const products = await Product.find({isListed:true});
     res.status(200).json({products});
     }catch(err){
-      console.log(err);
+     next(err);
     }
   }

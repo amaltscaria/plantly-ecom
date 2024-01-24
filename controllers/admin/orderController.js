@@ -3,7 +3,8 @@ import Product from '../../model/Product.js';
 import { addMoneyToWallet } from '../payment/paymentController.js';
 
 
-export const getOrders = async (req, res) => {
+export const getOrders = async (req, res, next) => {
+  try{
     const page = +req.query.page || 1;
     const itemsPerPage = 3;
     const orderCount = await Orders.countDocuments();
@@ -13,7 +14,6 @@ export const getOrders = async (req, res) => {
       .sort({orderId:-1})
       .skip((page - 1) * itemsPerPage)
       .limit(itemsPerPage);
-      console.log(orders)
     res.render('admin/orders/allOrders', {
       orders,
       user: req.session.admin,
@@ -26,9 +26,14 @@ export const getOrders = async (req, res) => {
       previousPage: page - 1,
       lastPage: Math.ceil(orderCount / itemsPerPage),
     });
+  }catch(err){
+    console.log(err);
+    next(err);
+  }
   };
   
-  export const patchOrderStatus = async (req, res) => {
+  export const patchOrderStatus = async (req, res, next) => {
+    try{
     const { orderId, productId } = req.body;
     const order = await Orders.findOne({ orderId: orderId });
     const product = order.products.find(item => {
@@ -40,13 +45,15 @@ export const getOrders = async (req, res) => {
   
     let isValid = true;
     const item = order.products.find(item => item.status !== 'Delivered');
-    console.log(item);
     if (item) isValid = false;
     if (isValid) order.status = 'Delivered';
     await order.save();
     res.json({
-      hi: 'hi',
+      success: true,
     });
+  }catch(err){
+    next(err)
+  }
   };
   
   export const patchOrderReturn = async (req, res) => {
@@ -79,7 +86,6 @@ export const getOrders = async (req, res) => {
         success: 'true',
       });
     } catch (err) {
-      console.log(err);
       res.status(500).json({
         error: 'Internal Server Error',
       });

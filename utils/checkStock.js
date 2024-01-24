@@ -10,13 +10,15 @@ export const checkCartQuantity = cart =>{
     return isValid;
 }
 export const itemStock = async (product,quantity) => {
+    try{
     let isValid= true;
     const productAdd = await Product.findOne({_id:product});
-    console.log(productAdd);
     if(productAdd.stock<quantity){
     isValid = false;
    }
-   console.log(isValid);
     return isValid;
+}catch(err) {
+    throw err;
+}
 } 
 

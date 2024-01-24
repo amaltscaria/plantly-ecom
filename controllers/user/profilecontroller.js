@@ -2,7 +2,8 @@ import User from "../../model/User.js";
 import Orders from "../../model/Orders.js";
 import Coupon from "../../model/Coupon.js";
 
-export const getProfile = async (req, res) => {
+export const getProfile = async (req, res, next) => {
+  try{
     const user = await User.findOne({ email: req.session.email }).populate(
       'cart.product'
     );
@@ -15,16 +16,18 @@ export const getProfile = async (req, res) => {
       orders,
       coupons,
     });
+  }catch(err) {
+    next(err)
+  }
   };
   
-  export const patchProfile = async (req, res) => {
+  export const patchProfile = async (req, res, next) => {
     try {
       const { updatedFirstName, updatedLastName, updatedNumber } = req.body;
       const numberExists = await User.findOne({
         number: updatedNumber,
         email: { $ne: req.session.email },
       });
-      console.log(numberExists);
       if (numberExists) {
         res.status(404).json({ error: 'Provided Number exists already' });
       } else {
@@ -38,13 +41,11 @@ export const getProfile = async (req, res) => {
         }
       }
     } catch (err) {
-      console.log(err);
       res.status(500).json({ error: 'Internal server error' });
     }
   };
   
-  export const postAddAddress = async (req, res) => {
-    console.log(req.body);
+  export const postAddAddress = async (req, res, next) => {
     try {
       const {
         fullName,
@@ -71,12 +72,11 @@ export const getProfile = async (req, res) => {
       const addedId = user.shippingAddress[user.shippingAddress.length - 1]._id;
       res.status(200).json({ success: true, addedId });
     } catch (err) {
-      console.log(err);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   };
   
-  export const patchEditAddress = async (req, res) => {
+  export const patchEditAddress = async (req, res, next) => {
     try {
       const {
         id,
@@ -99,14 +99,12 @@ export const getProfile = async (req, res) => {
       address.number = addressNumber;
       await user.save();
       res.status(200).json({ success: true });
-      console.log(address);
     } catch (err) {
-      console.log(err);
-      res.status(404).json({ success: false });
+      res.status(500).json({ error: 'Internal Server Error' });
     }
   };
   
-  export const deleteAddress = async (req, res) => {
+  export const deleteAddress = async (req, res, next) => {
     try {
       const { id } = req.body;
       const user = await User.findOneAndUpdate(
@@ -117,14 +115,12 @@ export const getProfile = async (req, res) => {
       // `user` now contains the updated document with the address removed
       res.status(200).json({ success: true });
     } catch (err) {
-      console.log(err);
-      res.status(500).json({ success: false });
+      res.status(500).json({ error: 'Internal Server Error'});
     }
   };
 
-  export const patchPassword = async (req, res) => {
+  export const patchPassword = async (req, res, next) => {
     try {
-      console.log(req.body);
       const { currentPassword, newPassword } = req.body;
       // Find the user based on the session
       const user = await User.findOne({ email: req.session.email });
@@ -148,7 +144,6 @@ export const getProfile = async (req, res) => {
       res.status(200).json({ success: true });
     } catch (err) {
       // If an error occurs during the update
-      console.error(err);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   };

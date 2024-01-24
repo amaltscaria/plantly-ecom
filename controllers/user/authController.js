@@ -1,29 +1,49 @@
 import dotenv from 'dotenv';
 dotenv.config();
+
+
 import { generate } from 'referral-codes';
 import bcrypt from 'bcryptjs';
 import Otp from '../../model/Otp.js';
 import User from '../../model/User.js';
+import Product from '../../model/Product.js';
+import Category from '../../model/Category.js';
 import crypto from 'crypto';
 import ResetpasswordModel from '../../model/ResetPassword.js';
 import { transporter, sendOtpVerificationMail } from '../../utils/sendOtp.js';
 import { addMoneyToWallet } from '../payment/paymentController.js';
-import Banner from '../../model/banner.js';
+import Banner from '../../model/Banner.js';
 
-export const getHome = async (req, res) => {
-  const banners = Banner.find({
-    isListed: true,
-    expiryDate: { $gt: new Date() },
-  });
-  res.render('user/auth/home', { banners });
+//get home before login - GET
+export const getHome = async (req, res, next) => {
+  try {
+    const banners = await Banner.find({
+      isListed: true,
+      expiryDate: { $gt: new Date() },
+    });
+    const listedCategories = await Category.find({ isListed: true }).distinct(
+      '_id'
+      );
+        const products = await Product.find({
+        category: { $in: listedCategories },
+        isListed: true,
+      })
+    res.render('user/auth/home', { banners, products });
+  } catch (err) {
+    next(err);
+  }
 };
 
-export const getRegister = async (req, res) => {
+export const getRegister = async (req, res, next) => {
+  try{
   const referralCode = req.query.referral;
-  res.render('user/auth/register', {referralCode});
+  res.render('user/auth/register', { referralCode });
+  } catch(err){
+    next(err);
+  }
 };
 
-export const postRegister = async (req, res) => {
+export const postRegister = async (req, res, next) => {
   try {
     let referredUser = '';
     if (req.query.referral) {
@@ -37,7 +57,9 @@ export const postRegister = async (req, res) => {
     // check if the user already exists
     const user = await User.findOne({ email });
     if (user) {
-      return res.status(409).json({message: 'User with the given email exists already'});
+      return res
+        .status(409)
+        .json({ message: 'User with the given email exists already' });
     }
     req.session.user = email;
     req.session.userDetails = {
@@ -49,13 +71,14 @@ export const postRegister = async (req, res) => {
       referredBy: referredUser.email ?? '',
     };
     // Redirect to verification route
-    return res.status(200).json({message:'Success'});
+    return res.status(200).json({ message: 'Success' });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 };
 
-export const getLogin = async (req, res) => {
+export const getLogin = async (req, res, next) => {
+  try{
   let errorMessage = req.flash('error');
   if (errorMessage.length > 0) {
     errorMessage = errorMessage[0];
@@ -72,9 +95,13 @@ export const getLogin = async (req, res) => {
     errorMessage: errorMessage,
     successMessage: successMessage,
   });
+}catch(err) {
+  next(err);
+}
 };
 
-export const postLogin = async (req, res) => {
+export const postLogin = async (req, res, next) => {
+  try{
   const { email, password } = req.body;
   const user = await User.findOne({ email: email });
   //check user exists
@@ -96,9 +123,13 @@ export const postLogin = async (req, res) => {
   } else {
     return res.status(401).json({ message: 'Unauthorized' });
   }
+}catch(err) {
+  next(err);
+}
 };
 
-export const getVerify = async (req, res) => {
+export const getVerify = async (req, res, next) => {
+  try{
   let errorMessage = req.flash('error');
   if (errorMessage.length > 0) {
     errorMessage = errorMessage[0];
@@ -106,9 +137,12 @@ export const getVerify = async (req, res) => {
     errorMessage = null;
   }
   res.render('user/auth/otp', { errorMessage: errorMessage });
+}catch(err){
+  next(err);
+}
 };
 
-export const postVerify = async (req, res) => {
+export const postVerify = async (req, res, next) => {
   try {
     const inputOtp =
       req.body.digit1 +
@@ -117,11 +151,11 @@ export const postVerify = async (req, res) => {
       req.body.digit4 +
       req.body.digit5 +
       req.body.digit6;
-    const user = await Otp.findOne({ userName: req.session.user });
+    const user = await Otp.findOne({ userName: req.session.user});
     const { otp } = user;
+    const {expiresAt} = user;
     const verified = await bcrypt.compare(inputOtp, otp);
-    if (verified) {
-      console.log(req.session.userDetails);
+    if (verified && expiresAt > new Date()) {
       const { firstName, lastName, email, password, number, referredBy } =
         req.session.userDetails;
       const referalCode = generate({
@@ -153,16 +187,20 @@ export const postVerify = async (req, res) => {
       return res.redirect('/verify');
     }
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 };
 
-export const getSendOtp = async (req, res) => {
+export const getSendOtp = async (req, res, next) => {
+  try{
   await sendOtpVerificationMail(req.session.user, res);
-  res.status(200).json({message:'Success'});
+  res.status(200).json({ message: 'Success' });
+  }catch(err) {
+    next(err)
+  }
 };
 
-export const getForgotPassword = (req, res) => {
+export const getForgotPassword = (req, res, next) => {
   let errorMessage = req.flash('error');
   if (errorMessage.length > 0) {
     errorMessage = errorMessage[0];
@@ -172,10 +210,10 @@ export const getForgotPassword = (req, res) => {
   res.render('user/auth/forgot', { errorMessage: errorMessage });
 };
 
-export const postForgotPassword = (req, res) => {
+export const postForgotPassword = (req, res, next) => {
+  try{
   crypto.randomBytes(32, (err, buffer) => {
     if (err) {
-      console.log(err);
       return res.redirect('/forgotPassword');
     }
     const token = buffer.toString('hex');
@@ -207,12 +245,15 @@ export const postForgotPassword = (req, res) => {
         }
       })
       .catch(err => {
-        console.log(err);
+        next(err);
       });
   });
+}catch(err){
+  next(err);
+}
 };
 
-export const getResetPassword = async (req, res) => {
+export const getResetPassword = async (req, res, next) => {
   try {
     const token = req.params.token;
     const user = await ResetpasswordModel.findOne({
@@ -238,13 +279,15 @@ export const getResetPassword = async (req, res) => {
         successMessage: successMessage,
         passwordToken: token,
       });
+    }else {
+      next(404);
     }
   } catch (err) {
-    console.log('expired');
-    console.log(err);
+   next(err);
   }
 };
-export const postResetPassword = async (req, res) => {
+export const postResetPassword = async (req, res, next) => {
+  try{
   const { password, confirmPassword, passwordToken } = req.body;
   // Check if password and confirmPassword match
   if (password !== confirmPassword) {
@@ -275,13 +318,16 @@ export const postResetPassword = async (req, res) => {
     'Password reset successful. You can now login with your new password.'
   );
   res.redirect('/login');
+  }catch(err) {
+    next(err);
+  }
 };
 
-export const getLogout = async (req, res) => {
+export const getLogout = async (req, res, next) => {
   try {
     req.session.email = null;
     res.redirect('/home');
   } catch (err) {
-    res.status(500).json({ error: 'Internal Sever Error' });
+    next(err);
   }
 };

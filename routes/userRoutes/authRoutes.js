@@ -14,12 +14,12 @@ import {
   postResetPassword,
   getLogout,
 } from '../../controllers/user/authController.js';
-import { isLoggedIn, isValid } from '../../middlewares/is-auth.js';
+import { isBlocked, isLoggedIn, isValid } from '../../middlewares/is-auth.js';
 
 const router = express.Router();
 
 // Route to get home page before login
-router.get('/', getHome);
+router.get('/', isLoggedIn,  getHome);
 // Route to handle GET register'
 router.get('/signup', isLoggedIn, getRegister);
 // Route to handle POST register'

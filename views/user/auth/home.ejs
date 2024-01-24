@@ -48,7 +48,7 @@
                      </div>
                      <div class="col-sm-8 col-xs-12 ">
                         <h6 class="font-weight-bolder">Hummingbird printed t-shirt</h6>
-                        <div class="font-weight-bolder pb-1">$19.12</div>
+                        <div class="font-weight-bolder pb-1">Rs. 19.12</div>
                         <span class="font-weight-bolder f_13 pb-1">Size: S</span><br>
                         <span class="font-weight-bolder f_13 pb-1">Color: White</span><br>
                         <span class="font-weight-bolder f_13 pb-1">Qty: 2</span>
@@ -62,17 +62,17 @@
                               <p class="font-weight-bolderer">show details</p>
                               <div>
                                  <span class="font-weight-bolder">subtotal</span>
-                                 <span class="float-right font-weight-bolder">$94.00</span>
+                                 <span class="float-right font-weight-bolder">Rs. 94.00</span>
                               </div>
                               <div>
                                  <span class="font-weight-bolder">shipping</span>
-                                 <span class="float-right font-weight-bolder">$9.00</span>
+                                 <span class="float-right font-weight-bolder">Rs. 9.00</span>
                               </div>
                            </div>
                            <div class="card-body ">
                               <div>
                                  <span class="font-weight-bolder">total(tax excl.)</span>
-                                 <span class="float-right font-weight-bolder">$94.00</span>
+                                 <span class="float-right font-weight-bolder">Rs. 94.00</span>
                               </div>
                            </div>
                         </div>
@@ -103,7 +103,7 @@
                      </div>
                      <div class="col-sm-7 col-12">
                         <h5 class="border-bottom me_name">Aliquam Top Erat Volutpat</h5>
-                        <div class="font-weight-bolder border-bottom me_price">$19.12</div>
+                        <div class="font-weight-bolder border-bottom me_price">Rs. 19.12</div>
                         <div class="my-2 border-bottom me_des">Fashion has been creating well-designed collections since 2010. </div>
                         <div class="me_quan">
                            <div class="sp_counter ">
@@ -159,7 +159,8 @@
                <div class="modal-body text-center">
                   <p class="checked"></p>
                   <p class="text-muted font-weight-bolder">You must be logged in to manage your wishlist.</p>
-                  <div class="text-danger font-weight-bolder"><a href="wishlist.html">Go to wishlist</a></div>
+                  <div class="text-danger font-weight-bolder"><a class="pb-5">Please create a new account or login!!!</a></div>
+                  
                </div>
             </div>
          </div>
@@ -336,7 +337,7 @@
                                              </div>
                                              <div class="media-body">
                                                 <h6 class="mt-0 f_15">Media heading</h6>
-                                                <p><span class="f_13">1 x $ 299.00</span></p>
+                                                <p><span class="f_13">1 x Rs.  299.00</span></p>
                                              </div>
                                           </div>
                                        </li> -->
@@ -349,7 +350,7 @@
                                              </div>
                                              <div class="media-body">
                                                 <h6 class="mt-0 f_15">Media heading</h6>
-                                                <p><span>1 x $ 299.00</span></p>
+                                                <p><span>1 x Rs.  299.00</span></p>
                                              </div>
                                           </div>
                                        </li> -->
@@ -457,7 +458,7 @@
                   <!-- <ul class="dropdown-menu all-page-drop">
                      <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="about-us.html">about us</a></li>
                      <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
-                     <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                     <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="">single blog</a></li>
                      <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
                      <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
                      <li class="d-block"><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
@@ -580,7 +581,7 @@
                               <li><a class="dropdown-item font-weight-bolderer" href="login.html">login</a></li>
                               <li><a class="dropdown-item font-weight-bolderer" href="registration.html">registration</a></li>
                               <li><a class="dropdown-item font-weight-bolderer" href="single-product.html">single product</a></li>
-                              <li><a class="dropdown-item font-weight-bolderer" href="single-blog.html">single blog</a></li>
+                              <li><a class="dropdown-item font-weight-bolderer" href="">single blog</a></li>
                               <li><a class="dropdown-item font-weight-bolderer" href="cart.html">cart</a></li>
                               <li><a class="dropdown-item font-weight-bolderer" href="compare.html">compare</a></li>
                               <li><a class="dropdown-item font-weight-bolderer" href="wishlist.html">wishlist</a></li>
@@ -599,21 +600,24 @@
             <div class="col-lg-12 col-md-12 main_slider">
                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+               <% banners.forEach((item, index) => { %>
+               <li data-target="#carouselExampleIndicators" data-slide-to="<%=index%>" class="<%if( index === 0 ){%>active<%}%>"></li>
+               <%})%>
             </ol>
             <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <img src="/assets/img/s1.jpg" class="d-block w-100 img-fluid" alt="s1">
+              <% banners.forEach((item, index) => { %>
+               <div class="carousel-item  <%if( index === 0 ){%>active<%}%>" >
+                  <img src="/admin/assets/uploads/productImages/<%=item.bannerImage%>" class="d-block w-100 img-fluid" alt="s1">
                   <div class="carousel-caption container silder_text">
-                     <p class="arrival">New Arrival 2020</p>
-                     <h5 class="headding">New Perfect Plant <br>Collection</h5>
-                     <a type="btn" class="shop-now">Shop Now</a>
+                     <p class="arrival"><%=item.bannerName%></p>
+                     <%word = item.description.split(' ')%>
+                     <h5 class="headding"><%=word.slice(0,word.length-1).join(' ')%><br>Collection</h5>
+                     <a type="btn" href="http://localhost:3000/<%=item.targetId%>" class="shop-now">Shop Now</a>
                   </div>
                </div>
-               <div class="carousel-item">
-                  <img src="/assets/img/s2.jpg" class="d-block w-100 img-fluid" alt="s2">
+               <%})%>
+               <!-- <div class="carousel-item">
+                  <img src="assets/img/s2.jpg" class="d-block w-100 img-fluid" alt="s2">
                   <div class="carousel-caption container silder_text">
                      <p>New Arrival 2020</p>
                      <h5 class="headding">Spring Houseplant<br> The Perfect Choice! </h5>
@@ -621,18 +625,18 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img src="/assets/img/s3.jpg" class="d-block w-100 img-fluid" alt="s3">
+                  <img src="assets/img/s3.jpg" class="d-block w-100 img-fluid" alt="s3">
                   <div class="carousel-caption container silder_text">
                      <p>New Arrival 2020</p>
                      <h5 class="headding">Plants Gonna Make<br> People Happy.</h5>
                      <a type="btn" class="shop-now">Shop Now</a>
                   </div>
-               </div>
+               </div> -->
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"></a>
             <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"></a>
          </div>
-            </div>
+      </div>
             <!-- col-md-9 main_slider -->
          </div>
          <!-- row -->
@@ -683,7 +687,7 @@
                      </li>
                      <li class="ser-t d-lg-inline-block d-md-block align-middle  text-left">
                         <h6>world wide shipping</h6>
-                        <p class="mb-0 text-muted">On Order Over $99</p>
+                        <p class="mb-0 text-muted">On Order Over Rs. 99</p>
                      </li>
                   </ul>
                </div>
@@ -699,25 +703,25 @@
          <div class="row">
             <div class="col-12 col-lg-5 col-md-6">
                <div class="banner">
-                  <a href="#">
+                  <a onclick="showModal()" role="button">
                   <img src="/assets/img/sm1.png" class="rounded img-fluid  animate__animated animate__fadeInUp " data-wow-duration="0.8s" data-wow-delay="0.4s" alt="sm1">
                   </a>
                </div>
             </div>
             <div class="col-12  col-lg-3 col-md-6 img-center d-none d-lg-block Layer3">
                <div class="banner">
-                  <a href="#">
+                  <a onclick="showModal()" role="button">
                   <img src="/assets/img/Layer3.png" class="rounded float-left img-fluid  animate__animated animate__fadeInUp " data-wow-duration="0.8s" data-wow-delay="0.4s" alt="Layer3">
                   </a>
                </div>
             </div>
             <div class="col-12 col-lg-4 collection col-md-6">
                <div class="banner_text">
-                  <p class="sec-1">New Collection 2021</p>
+                  <p class="sec-1">New Collection 2024</p>
                   <h1 class="sec-2">House Shape Plant </h1>
-                  <p class="sec-3">Casual multifunctional sofabeds head elevation comfortable sofa at daytime ttransforms into changes to a very comfortable bed at night.
+                  <p class="sec-3">The House Shape Plant, with its distinctive growth pattern resembling a tiny house, adds an artistic and captivating touch to any space, making it a delightful and unique addition to your plant collection.
                   </p>
-                  <a class="shop-btn-1">Shop Now <i class="fas fa-arrow-right"></i></a>
+                  <a href="/shop" class="shop-btn-1">Shop Now <i class="fas fa-arrow-right"></i></a>
                </div>
             </div>
          </div>
@@ -733,12 +737,12 @@
                      <li class="nav-item" >
                         <a class="nav-link active" id="featured_tab" role="tab" data-toggle="tab" href="#featured_"  aria-selected="true">Featured</a>
                      </li>
-                     <li class="nav-item" >
+                     <!-- <li class="nav-item" >
                         <a class="nav-link" id="latest_tab" role="tab" data-toggle="tab" href="#latest_"  aria-selected="true">Latest</a>
-                     </li>
-                     <li class="nav-item" >
+                     </li> -->
+                     <!-- <li class="nav-item" >
                         <a class="nav-link" id="bags_tab" data-toggle="tab" role="tab" href="#bags" aria-selected="false">bestseller</a>
-                     </li>
+                     </li> -->
                   </ul>
                </div>
                <div class="col-12">
@@ -746,32 +750,33 @@
                      <div class="tab-pane fade show active" id="featured_" role="tabpanel" aria-labelledby="featured_tab">
                         <div class="row">
                            <div id="product_carousel2" class="owl-carousel  owl-theme pro_thumb">
+                            <% for(let i = 0; i < (products.length%2===0?products.length:products.length-1); i++){%>
                               <div class="item">
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_1.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_1"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_2.jpg" class="second-img mx-auto d-block img-fluid" alt="product_2"></a>
+                                          <a href="single-product.html"><img src="admin/assets/uploads/productImages/<%=products[i].images[0]%>" class="fst-image mx-auto d-block img-fluid" alt="product_1" style="max-width: 180px;"></a>
+                                          <a href="single-product.html"><img src="admin/assets/uploads/productImages/<%=products[i].images[0]%>" class="second-img mx-auto d-block img-fluid" alt="product_2" style="max-width: 180px;"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
                                              <a href="#"  class="symbol pro_heart" data-toggle="modal" data-target="#heart_model"></a>
-                                             <a href="#" class="symbol pro_eye"  data-toggle="modal" data-target="#eye_model"></a>
-                                             <a href="#" class="symbol pro_compare" data-toggle="modal" data-target="#compare_model "></a>   
+                                             <a onclick="showModal()" class="symbol pro_eye"></a>
+                                             <!-- <a href="#" class="symbol pro_compare" data-toggle="modal" data-target="#compare_model "></a>    -->
                                           </div>
                                           <div class="main_text">
-                                             <h2 class="text-center pro-heading my-2"><a href="single-product.html" class="font-weight-bolderer">Set of 3 Good Luck Plants</a></h2>
-                                             <div class="star">
+                                             <h2 class="text-center pro-heading my-2"><a href="single-product.html" class="font-weight-bolderer"><%=products[i].name%></a></h2>
+                                             <!-- <div class="star">
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                             </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
-                                             <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
-                                             + ADD TO CART
-                                             </a>
+                                             </div> -->
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. <%= products[i].price%> </span> <del class="text-muted">Rs. 100.00</del></span>
+                                             <!-- <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model"> -->
+                                             <!-- + ADD TO CART -->
+                                             <!-- </a> -->
                                           </div>
                                        </div>
                                     </div>
@@ -779,40 +784,41 @@
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_3.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_3"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_4.jpg" class="second-img mx-auto d-block img-fluid" alt="product_4"></a>
+                                          <a href="single-product.html"><img src="admin/assets/uploads/productImages/<%=products[i+1].images[0]%>" class="fst-image mx-auto d-block img-fluid" alt="product_3" style="max-width: 180px;"></a>
+                                          <a href="single-product.html"><img src="admin/assets/uploads/productImages/<%=products[i+1].images[0]%>" class="second-img mx-auto d-block img-fluid" alt="product_4" style="max-width: 180px;"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
                                              <a href="#"  class="symbol pro_heart" data-toggle="modal" data-target="#heart_model"></a>
-                                             <a href="#" class="symbol pro_eye"  data-toggle="modal" data-target="#eye_model"></a>
-                                             <a href="#" class="symbol pro_compare" data-toggle="modal" data-target="#compare_model "></a>   
+                                             <a class="symbol pro_eye"  onclick="showModal()"></a>
+                                             <!-- <a href="#" class="symbol pro_compare" data-toggle="modal" data-target="#compare_model "></a>    -->
                                           </div>
                                           <div class="main_text">
-                                             <h2 class="text-center pro-heading my-2"><a href="single-product.html" class="font-weight-bolderer">Two layer Bamboo Plant Standard</a></h2>
-                                             <div class="star">
+                                             <h2 class="text-center pro-heading my-2"><a href="single-product.html" class="font-weight-bolderer"><%=products[i+1].name%></a></h2>
+                                             <!-- <div class="star">
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                             </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
-                                             <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
-                                             + ADD TO CART
-                                             </a>
+                                             </div> -->
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. <%= products[i+1].price%></span> <del class="text-muted">Rs. 100.00</del></span>
+                                             <!-- <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model"> -->
+                                             <!-- + ADD TO CART -->
+                                             <!-- </a> -->
                                           </div>
                                        </div>
                                     </div>
                                  </div>
                               </div>
+                              <%i++;}%>
                               <!-- item --> 
-                              <div class="item">
+                              <!-- <div class="item">
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_5.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_5"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_6.jpg" class="second-img mx-auto d-block img-fluid" alt="product_6"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_5.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_5"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_6.jpg" class="second-img mx-auto d-block img-fluid" alt="product_6"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -829,7 +835,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -840,8 +846,8 @@
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_7.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_7"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_8.jpg" class="second-img mx-auto d-block img-fluid" alt="product_8"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_7.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_7"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_8.jpg" class="second-img mx-auto d-block img-fluid" alt="product_8"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -858,7 +864,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -866,14 +872,14 @@
                                        </div>
                                     </div>
                                  </div>
-                              </div>
+                              </div> -->
                               <!-- item --> 
-                              <div class="item">
+                              <!-- <div class="item">
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_9.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_9"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_10.jpg" class="second-img mx-auto d-block img-fluid" alt="product_10"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_9.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_9"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_10.jpg" class="second-img mx-auto d-block img-fluid" alt="product_10"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -890,7 +896,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -901,8 +907,8 @@
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_11.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_11"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_12.jpg" class="second-img mx-auto d-block img-fluid" alt="product_12"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_11.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_11"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_12.jpg" class="second-img mx-auto d-block img-fluid" alt="product_12"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -919,7 +925,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -927,14 +933,14 @@
                                        </div>
                                     </div>
                                  </div>
-                              </div>
+                              </div> -->
                               <!-- item --> 
-                              <div class="item">
+                              <!-- <div class="item">
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_27.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_27"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_28.jpg" class="second-img mx-auto d-block img-fluid" alt="product_28"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_27.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_27"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_28.jpg" class="second-img mx-auto d-block img-fluid" alt="product_28"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -951,7 +957,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -962,8 +968,8 @@
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_15.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_15"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_16.jpg" class="second-img mx-auto d-block img-fluid" alt="product_16"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_15.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_15"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_16.jpg" class="second-img mx-auto d-block img-fluid" alt="product_16"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -980,7 +986,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -988,14 +994,14 @@
                                        </div>
                                     </div>
                                  </div>
-                              </div>
+                              </div> -->
                               <!-- item --> 
-                              <div class="item">
+                              <!-- <div class="item">
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_17.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_17"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_18.jpg" class="second-img mx-auto d-block img-fluid" alt="product_18"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_17.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_17"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_18.jpg" class="second-img mx-auto d-block img-fluid" alt="product_18"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -1012,7 +1018,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1023,8 +1029,8 @@
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_19.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_19"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_20.jpg" class="second-img mx-auto d-block img-fluid" alt="product_20"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_19.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_19"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_20.jpg" class="second-img mx-auto d-block img-fluid" alt="product_20"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -1041,7 +1047,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1049,14 +1055,14 @@
                                        </div>
                                     </div>
                                  </div>
-                              </div>
+                              </div> -->
                               <!-- item --> 
-                              <div class="item">
+                              <!-- <div class="item">
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_21.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_21"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_22.jpg" class="second-img mx-auto d-block img-fluid" alt="product_22"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_21.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_21"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_22.jpg" class="second-img mx-auto d-block img-fluid" alt="product_22"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -1073,7 +1079,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1084,8 +1090,8 @@
                                  <div class="col-12">
                                     <div class="product_thumb bg-white rounded">
                                        <div class="pro_image">
-                                          <a href="single-product.html"><img src="/assets/img/product/product_23.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_23"></a>
-                                          <a href="single-product.html"><img src="/assets/img/product/product_14.jpg" class="second-img mx-auto d-block img-fluid" alt="product_24"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_23.jpg" class="fst-image mx-auto d-block img-fluid" alt="product_23"></a>
+                                          <a href="single-product.html"><img src="assets/img/product/product_14.jpg" class="second-img mx-auto d-block img-fluid" alt="product_24"></a>
                                        </div>
                                        <div class="text-center">
                                           <div class="button-group">
@@ -1102,7 +1108,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1110,7 +1116,7 @@
                                        </div>
                                     </div>
                                  </div>
-                              </div>
+                              </div> -->
                               <!-- item --> 
                            </div>
                            <!-- owl-carousel-1 -->
@@ -1141,7 +1147,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1170,7 +1176,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1202,7 +1208,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1231,7 +1237,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1263,7 +1269,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1292,7 +1298,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1324,7 +1330,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                           </div>
                                        </div>
                                     </div>
@@ -1350,7 +1356,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1382,7 +1388,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1411,7 +1417,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1443,7 +1449,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1472,7 +1478,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1511,7 +1517,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1540,7 +1546,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1572,7 +1578,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1601,7 +1607,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1633,7 +1639,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1662,7 +1668,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1694,7 +1700,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                           </div>
                                        </div>
                                     </div>
@@ -1720,7 +1726,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1752,7 +1758,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1781,7 +1787,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1813,7 +1819,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1842,7 +1848,7 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                              </div>
-                                             <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                             <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                              <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                              + ADD TO CART
                                              </a>
@@ -1868,19 +1874,19 @@
             <div class="row">
                <div class="col-lg-6 col-12">
                   <div class="img-1">
-                     <a href="category.html">
+                     <a href="/shop?category=Indoor Plants">
                         <img src="/assets/img/sm-sec-1.png" alt="sm-sec-1" class="w-100 img-fluid">
                      <div class="box-1">
-                        <h3 class="">Plant House (06)</h3>
+                        <h3 class="">Indoor Plants</h3>
                      </div>
                      </a>
                   </div>
                   <div class="row">
                      <div class="col-12 mt-4 img-1">
-                        <a href="category.html">
+                        <a href="/shop?category=Outdoor Plants">
                            <img src="/assets/img/sm-sec-2.png" alt="sm-sec-2" class="w-100 img-fluid">
                            <div class="box-1">
-                              <h3 class="">Small Plants (08)</h3>
+                              <h3 class="">Outdoor Plants</h3>
                            </div>
                           </a> 
                      </div>
@@ -1889,28 +1895,28 @@
                <div class="col-6">
                   <div class="row">
                      <div class="col-6 img-1 d-none d-lg-block">
-                         <a href="category.html">
+                         <a href="/shop?category=Lucky Plants">
                            <img src="/assets/img/sm-sec-3.png" alt="sm-sec-3" class="w-100 img-fluid">
                            <div class="box-1">
-                              <h3 style="color: #6ea820;">Office Plants (12)</h3>
+                              <h3 style="color: #6ea820;">Lucky Plants</h3>
                            </div>
                         </a>
                      </div>
                      <div class="col-6 img-1 d-none d-lg-block">
-                        <a href="category.html">
+                        <a href="/shop?category=Office Plants">
                         <img src="/assets/img/sm-sec-4.png" alt="sm-sec-4" class="w-100 img-fluid">
                         <div class="box-1">
-                           <h3>Succulents (04)</h3>
+                           <h3>Office Plants</h3>
                         </div>
                      </a>
                      </div>
                   </div>
                   <div class="row">
                      <div class="col-12 mt-4 img-1 d-none d-lg-block">
-                        <a href="category.html">
+                        <a href="/shop?category=Money Plants">
                         <img src="/assets/img/sm-sec-5.png" alt="sm-sec-5" class="w-100 img-fluid">
                         <div class="box-1">
-                           <h3 class="">Garden Plant (10)</h3>
+                           <h3 class="">Money Plants</h3>
                         </div>
                      </a>
                      </div>
@@ -1921,19 +1927,19 @@
       </div>
       <!-- Sm banners start -->    
       <!-- top product -->
-      <div class="Lastest-Products">
+      <!-- <div class="Lastest-Products">
          <div class="container   animate__animated animate__fadeInUp">
             <div class="row">
                <div class="col-12">
                   <div class="title_outer">
                      <h5 class="font-weight-bolderer d-inline-block">Lastest Products</h5>
-                  </div>
+                  </div> -->
                   <!-- title_outer -->
-               </div>
+               <!-- </div> -->
                <!-- col-12 -->
-            </div>
+            <!-- </div> -->
             <!-- row -->
-            <div class="row">
+            <!-- <div class="row">
                <div id="lastest_carousel" class="owl-carousel owl-theme pro_thumb">
                   <div class="item">
                      <div class="col-12">
@@ -1957,7 +1963,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -1965,9 +1971,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item -->
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -1989,7 +1995,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -1997,9 +2003,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item -->
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2021,7 +2027,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2029,9 +2035,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item -->
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2053,7 +2059,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2061,9 +2067,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item -->
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2085,7 +2091,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2093,9 +2099,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item --> 
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2117,7 +2123,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2125,9 +2131,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item --> 
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2149,7 +2155,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2157,9 +2163,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item --> 
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2181,7 +2187,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2189,9 +2195,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item --> 
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2213,7 +2219,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2221,9 +2227,9 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item --> 
-                  <div class="item">
+                  <!-- <div class="item">
                      <div class="col-12">
                         <div class="product_thumb bg-white rounded">
                            <div class="pro_image">
@@ -2245,7 +2251,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                  </div>
-                                 <span class="text-center prices"><span class="font-weight-bolderer price">$69.00 </span> <del class="text-muted">$100.00</del></span>
+                                 <span class="text-center prices"><span class="font-weight-bolderer price">Rs. 69.00 </span> <del class="text-muted">Rs. 100.00</del></span>
                                  <a href="#" class="symbol add_to_cart" data-toggle="modal" data-target="#cart_model">
                                  + ADD TO CART
                                  </a>
@@ -2253,82 +2259,92 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!-- item --> 
-               </div>
+               <!-- </div> -->
                <!-- owl-carousel-1 -->
-            </div>
+            <!-- </div>
             <div class="text-center">
                <button type="btn" type="submit" class="products-btn"><a href="shop-left-sidebar.html">All Products</a></button>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- top product end -->
-      <!---------------------------------------------------------- testimonials ------------------------------------------------------->
-      <div class="testimonial">
-         <div class="container ">
-            <div class="title_outer">
-               <h5 class="font-weight-bolderer d-inline-block"> Testimonials </h5>
-            </div>
-            <div id="testimonial_carousel" class="owl-carousel owl-theme pro_thumb row">
-               <div class="item">
-                  <div class="col-12">
-                     <div class="mr-jhon">
-                        <p class="">
-                           Sed elit quam the iaculis sed semper or sit amet the udin vitae nibh at magna akal semper Fusce commodo molestie elit quam, iaculis sum sempervitae nibh at magna semperusce commodo ltieelit semper quam molestie iaculis...
-                        </p>
-                     </div>
-                     <div class="designer">
-                        <div class="">
-                           <img src="/assets/img/Testi-1.png" alt="Testi-1" class="jhon-img img-fluid">
-                        </div>
-                        <div class="name">
-                           <h5 class="">mr.John doe</h5>
-                           <span>Designer</span>
-                        </div>
-                     </div>
-                  </div>
+
+     <!-- Testimonials Section -->
+<div class="testimonial">
+   <div class="container">
+      <div class="title_outer">
+         <h5 class="font-weight-bolderer d-inline-block"> Testimonials </h5>
+      </div>
+
+      <!-- Testimonial Carousel -->
+      <div id="testimonial_carousel" class="owl-carousel owl-theme pro_thumb row">
+         <!-- Testimonial Item 1 -->
+         <div class="item">
+            <div class="col-12">
+               <div class="testimonial-content">
+                  <p>
+                     "I absolutely love the variety and quality of plants from Plantly! Each purchase has exceeded my expectations, and the customer service is exceptional. Plantly has made gardening a delightful experience."
+                  </p>
                </div>
-               <div class="item">
-                  <div class="col-12">
-                     <div class="mr-jhon">
-                        <p class="">
-                           Sed elit quam the iaculis sed semper or sit amet the udin vitae nibh at magna akal semper Fusce commodo molestie elit quam, iaculis sum sempervitae nibh at magna semperusce commodo ltieelit semper quam molestie iaculis...
-                        </p>
-                     </div>
-                     <div class="designer">
-                        <div class="">
-                           <img src="/assets/img/Testi-2.png" alt="Testi-2" class="jhon-img img-fluid">
-                        </div>
-                        <div class="name">
-                           <h5 class="">mr.John doerrrr</h5>
-                           <span>Designer</span>
-                        </div>
-                     </div>
+               <div class="designer">
+                  <div class="image-container">
+                     <img src="/assets/img/Testi-1.png" alt="Testi-1" class="jhon-img img-fluid">
                   </div>
-               </div>
-               <div class="item">
-                  <div class="col-12">
-                     <div class="mr-jhon">
-                        <p class="">
-                           Sed elit quam the iaculis sed semper or sit amet the udin vitae nibh at magna akal semper Fusce commodo molestie elit quam, iaculis sum sempervitae nibh at magna semperusce commodo ltieelit semper quam molestie iaculis...
-                        </p>
-                     </div>
-                     <div class="designer">
-                        <div class="">
-                           <img src="/assets/img/Testi-3.png" alt="Testi-3" class="jhon-img img-fluid">
-                        </div>
-                        <div class="name">
-                           <h5 class="">mr.John doehhhh</h5>
-                           <span>Designer</span>
-                        </div>
-                     </div>
+                  <div class="name">
+                     <h5 class="">Elsa</h5>
+                     <span>Happy Gardener</span>
                   </div>
                </div>
             </div>
          </div>
+
+         <!-- Testimonial Item 2 -->
+         <div class="item">
+            <div class="col-12">
+               <div class="testimonial-content">
+                  <p>
+                     "Plantly is my go-to destination for all things plant-related. The website is user-friendly, the plants are delivered in excellent condition, and the team is knowledgeable and responsive. Highly recommended!"
+                  </p>
+               </div>
+               <div class="designer">
+                  <div class="image-container">
+                     <img src="/assets/img/Testi-2.png" alt="Testi-2" class="jhon-img img-fluid">
+                  </div>
+                  <div class="name">
+                     <h5 class="">Fazil T V</h5>
+                     <span>Plant Enthusiast</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Testimonial Item 3 -->
+         <div class="item">
+            <div class="col-12">
+               <div class="testimonial-content">
+                  <p>
+                     "Plantly has transformed my home into a green oasis! The variety of plants and the helpful guides on the website have made gardening a breeze. I appreciate the commitment to quality and customer satisfaction."
+                  </p>
+               </div>
+               <div class="designer">
+                  <div class="image-container">
+                     
+                     <img src="/assets/img/Testi-3.png" alt="Testi-3" class="jhon-img img-fluid">
+                  </div>
+                  <div class="name">
+                     <h5 class="">Sharon</h5>
+                     <span>Interior Designer</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+
       </div>
-      <!---------------------------------------------------------- testimonials ---------------------------------------------------------->
+   </div>
+</div>
+<!-- ---------------------------------- testimonials --------------------------------------------------------- -->
       <!-- Video Sec Start -->
       <div class="video_bg">
          <h3 class="perfect-choice">
@@ -2346,7 +2362,7 @@
             <div class="row">
                <div class="col-12  col-lg-5">
                   <div class="banner">
-                     <a href="#">
+                     <a href="/shop">
                      <img src="/assets/img/blog/img-2.png" class="rounded float-left img-fluid  animate__animated animate__fadeInUp " data-wow-duration="0.8s" data-wow-delay="0.4s" alt="img-2">
                      </a>
                   </div>
@@ -2361,11 +2377,11 @@
                         <div class="col-12 blog_ pb-2 pr-0 pl-0">
                            <div class="d-flex">
                               <div class="blog_image col-6">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_1.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_1.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -2376,9 +2392,9 @@
                                        <span class="ml-2">By Mr.John Doe</span>
                                     </div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Nunc placerat augue vel porta venenatis </a></h5>
+                                 <h5 class="secound"><a href="">Nunc placerat augue vel porta venenatis </a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                            </div>
                         </div>
@@ -2392,16 +2408,16 @@
                                     </div>
                                     <div class="blog-img-1"></div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Nam quis odio id eros porta consequat </a></h5>
+                                 <h5 class="secound"><a href="">Nam quis odio id eros porta consequat </a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                               <div class="blog_image col-6 blog-2">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_2.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_2.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -2414,11 +2430,11 @@
                         <div class="col-12 blog_ pl-0">
                            <div class="d-flex">
                               <div class="blog_image col-6">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_3.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_3.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -2429,9 +2445,9 @@
                                        <span class="ml-2">By Mr.John Doe</span>
                                     </div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Donec sollicitudin lectus ut efficitur elementum </a></h5>
+                                 <h5 class="secound"><a href="">Donec sollicitudin lectus ut efficitur elementum </a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                            </div>
                         </div>
@@ -2445,16 +2461,16 @@
                                     </div>
                                     <div class="blog-img-1"></div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Nam quis odio id eros porta consequat </a></h5>
+                                 <h5 class="secound"><a href="">Nam quis odio id eros porta consequat </a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                               <div class="blog_image col-6 blog-2">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_4.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_4.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -2467,11 +2483,11 @@
                         <div class="col-12 blog_">
                            <div class="d-flex">
                               <div class="blog_image col-6">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_5.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_5.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -2482,9 +2498,9 @@
                                        <span class="ml-2">By Mr.John Doe</span>
                                     </div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Vestibulum vel diam tincidunt accumsan mauris </a></h5>
+                                 <h5 class="secound"><a href="">Vestibulum vel diam tincidunt accumsan mauris </a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                            </div>
                         </div>
@@ -2498,16 +2514,16 @@
                                     </div>
                                     <div class="blog-img-1"></div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Maecenas suscipit massa quis magna dignissim ultricies</a></h5>
+                                 <h5 class="secound"><a href="">Maecenas suscipit massa quis magna dignissim ultricies</a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                               <div class="blog_image col-6 blog-2">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_6.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_6.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -2520,11 +2536,11 @@
                         <div class="col-12 blog_">
                            <div class="d-flex">
                               <div class="blog_image col-6">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_1.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_1.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>
@@ -2535,9 +2551,9 @@
                                        <span class="ml-2">By Mr.John Doe</span>
                                     </div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Aenean eleifend metus in leo volutpat sodales </a></h5>
+                                 <h5 class="secound"><a href="">Aenean eleifend metus in leo volutpat sodales </a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                            </div>
                         </div>
@@ -2551,16 +2567,16 @@
                                     </div>
                                     <div class="blog-img-1"></div>
                                  </div>
-                                 <h5 class="secound"><a href="single-blog.html">Nullam in neque vitae arcu auctor feugiat </a></h5>
+                                 <h5 class="secound"><a href="">Nullam in neque vitae arcu auctor feugiat </a></h5>
                                  <p class="text-muted mb-0 f_13 blog-quotes"> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-                                 <a href="single-blog.html" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
+                                 <a href="" class="shop-btn" style="border-bottom: none;">Read More <i class="fas fa-arrow-right"></i></a>  
                               </div>
                               <div class="blog_image col-6 blog-2">
-                                 <a href="single-blog.html"><img src="/assets/img/blog/blog_2.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
+                                 <a href=""><img src="/assets/img/blog/blog_2.jpg" class="fst-image img-fluid rounded" alt="blog-1"></a>  
                                  <div class="blog_mask">
                                     <div class="blog_mask_content mx-0 my-auto text-center">
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-search"></i></a>
-                                       <a href="single-blog.html" class="icon d-inline-block"><i class="fas fa-link"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-search"></i></a>
+                                       <a href="" class="icon d-inline-block"><i class="fas fa-link"></i></a>
                                     </div>
                                  </div>
                               </div>

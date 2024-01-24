@@ -3,12 +3,17 @@ import Orders from '../../model/Orders.js';
 import { filterSales } from '../../utils/filerSales.js';
 
 // admin dashboardhandler - GET
-export const getDashboard = async (req, res) => {
+export const getDashboard = async (req, res, next) => {
+  try{
   const orders = await Orders.find({status:'Delivered'});
   res.render('admin/dashBoard', { user: req.session.admin ,orders});
+  }catch (err) {
+    next(err)
+  }
 };
 // all customers handler - GET
-export const getAllCustomers = async (req, res) => {
+export const getAllCustomers = async (req, res, next) => {
+  try{
   let errorMessage = req.flash('error');
   if (errorMessage.length > 0) {
     errorMessage = errorMessage[0];
@@ -28,10 +33,14 @@ export const getAllCustomers = async (req, res) => {
     errorMessage: errorMessage,
     successMessage: successMessage,
   });
+}catch(err){
+  next(err)
+}
 };
 
 // block unblock custoemr - PATCH
-export const patchCustomer = async (req, res) => {
+export const patchCustomer = async (req, res, next) => {
+  try{
   const { id } = req.params;
 
   // Validate the user ID
@@ -53,11 +62,13 @@ export const patchCustomer = async (req, res) => {
   }
   // Return a JSON response with status indicating success
   res.json({ status: 'success' });
+}catch (err) {
+  next(err);
+}
 };
 
-
-
-export const getSales = async (req, res) => {
+// sales report - GET
+export const getSales = async (req, res, next) => {
   try {
     const { filter } = req.query;
     let orders;
@@ -69,16 +80,16 @@ export const getSales = async (req, res) => {
     console.log(orders, filter)
     res.render('admin/sales', { user: req.session.admin, orders, filter });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 };
  
-
-export const getOrderData = async (req, res) => {
+// order data - GET
+export const getOrderData = async (req, res, next) => {
   try{
   const orders = await Orders.find({status: 'Delivered'}).populate('products.product');
   res.status(200).json({orders});
   }catch(err){
-    console.log(err);
+    next(err)
   }
 }

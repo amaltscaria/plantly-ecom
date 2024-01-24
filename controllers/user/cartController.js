@@ -1,15 +1,19 @@
 import User from "../../model/User.js";
 import { itemStock, checkCartQuantity } from "../../utils/checkStock.js";
 
-export const getCart = async (req, res) => {
+export const getCart = async (req, res, next) => {
+  try{
     const user = await User.findOne({ email: req.session.email }).populate(
       'cart.product'
     );
     const cart = user.cart;
     return res.render('user/cart', { user: user, cart: cart });
+  }catch (err) {
+    next(err)
+  }
   };
 
-  export const postAddToCart = async (req, res) => {
+  export const postAddToCart = async (req, res, next) => {
     try {
       const { product, quantity } = req.body;
       if (!(await itemStock(product, quantity))) {
@@ -30,7 +34,6 @@ export const getCart = async (req, res) => {
         user.cart[productIndex].quantity += parseInt(quantity);
       }
       const inWishlist = user.wishList.findIndex(item => item.product.toString() === product);
-      console.log(inWishlist)
       if(inWishlist !== -1){
         user.wishList.splice(inWishlist,1);
       }
@@ -38,12 +41,11 @@ export const getCart = async (req, res) => {
       await user.save();
       res.status(200).json({ success: true });
     } catch (err) {
-      console.error(err);
       res.status(500).json({ success: false, error: err.message });
     }
   };
   
-  export const patchCartQuantity = async (req, res) => {
+  export const patchCartQuantity = async (req, res, next) => {
     try {
       const { product, newQuantity } = req.body;
       const user = await User.findOne({ email: req.session.email }).populate(
@@ -66,30 +68,26 @@ export const getCart = async (req, res) => {
         res.status(404).json({ error: 'Item not found in the cart' });
       }
     } catch (error) {
-      console.log(error);
       res.status(500).json({ error: 'Internal server error' });
     }
   };
   
-  export const deleteCartItem = async (req, res) => {
+  export const deleteCartItem = async (req, res, next) => {
     try {
       const { id } = req.body;
-      console.log(id);
       const user = await User.findOneAndUpdate(
         { email: req.session.email },
         { $pull: { cart: { product: { _id: id } } } },
         { new: true }
       );
-      console.log(user);
   
       res.status(200).json({ success: true });
     } catch (err) {
-      console.log(err);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   };
   
-  export const getCartQuantity = async (req, res) => {
+  export const getCartQuantity = async (req, res, next) => {
     try {
       const user = await User.findOne({ email: req.session.email }).populate(
         'cart.product'
@@ -99,6 +97,6 @@ export const getCart = async (req, res) => {
       }
       return res.status(200).json({ success: true });
     } catch (err) {
-      console.log(err);
+     next(err);
     }
   };
