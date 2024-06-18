@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Execute npm commands for build
+                    npmInstall()
+                    npmTest()
+                }
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                script {
+                    // Execute npm commands for deployment
+                    npmRunBuild()
+                    echo 'Deploying...'
+                }
+            }
+        }
+    }
+}
+
+// Custom methods for npm commands
+def npmInstall() {
+    sh 'npm install'
+}
+
+def npmTest() {
+    sh 'npm test'
+}
+
+def npmRunBuild() {
+    sh 'npm run build'
+}
