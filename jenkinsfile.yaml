@@ -2,13 +2,16 @@ pipeline:
   agent:
     any
   stages:
-    - stage: Build
-      steps:
-        - script:
-            - npm install
-            - npm test
-    - stage: Deploy
-      steps:
-        - script:
-            - npm run build
-            - echo "Deploying to production..."
+    - stage:
+        name: 'Build'
+        steps:
+          - script:
+              - npm install
+              - npm test
+    - stage:
+        name: 'Deploy'
+        steps:
+          - script:
+              - npm run build
+              - echo 'Deploying...'
+
