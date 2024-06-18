@@ -1,38 +1,25 @@
 pipeline {
     agent any
-    
+    tools {
+        nodejs "NodeJS"
+    }
     stages {
         stage('Build') {
             steps {
                 script {
-                    // Execute npm commands for build
-                    npmInstall()
-                    npmTest()
+                    sh 'npm install'
+                    sh 'npm test'
                 }
             }
         }
-        
         stage('Deploy') {
             steps {
                 script {
-                    // Execute npm commands for deployment
-                    npmRunBuild()
-                    echo 'Deploying...'
+                    sh 'npm run build'
+                    // Example deployment steps
+                    sh 'echo "Deploying to production..."'
                 }
             }
         }
     }
-}
-
-// Custom methods for npm commands
-def npmInstall() {
-    sh 'npm install'
-}
-
-def npmTest() {
-    sh 'npm test'
-}
-
-def npmRunBuild() {
-    sh 'npm run build'
 }
