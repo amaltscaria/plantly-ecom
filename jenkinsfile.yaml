@@ -2,16 +2,15 @@ pipeline:
   agent:
     any
   stages:
-    - stage:
-        name: 'Build'
-        steps:
-          - script:
-              - npm install
-              - npm test
-    - stage:
-        name: 'Deploy'
-        steps:
-          - script:
-              - npm run build
-              - echo 'Deploying...'
+    - name: 'Build'
+      steps:
+        - script:
+            - npm install
+            - npm test
+
+    - name: 'Deploy'
+      steps:
+        - script:
+            - npm run build
+            - echo 'Deploying...'
 
