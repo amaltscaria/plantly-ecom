@@ -1,7 +1,7 @@
 import Banner from '../../model/Banner.js';
 
 //all banners handler - GET
-export const getAllBanners = async (req, re, next) => {
+export const getAllBanners = async (req, res, next) => {
   try {
     const banners = await Banner.find();
     res.render('admin/banners/allBanners', {

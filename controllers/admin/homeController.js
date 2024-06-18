@@ -6,7 +6,7 @@ import { filterSales } from '../../utils/filerSales.js';
 export const getDashboard = async (req, res, next) => {
   try{
   const orders = await Orders.find({status:'Delivered'});
-  res.render('admin/dashBoard', { user: req.session.admin ,orders});
+  res.render('admin/dashboard', { user: req.session.admin ,orders});
   }catch (err) {
     next(err)
   }

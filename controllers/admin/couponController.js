@@ -42,7 +42,7 @@ export const getAllcoupons = async (req, res, next) =>{
     try{
     const coupons = await Coupon.find();
     const listedCategories = await Category.find({isListed:true});
-    res.render('admin/coupons/allcoupons',{user: req.session.admin, coupons,listedCategories})
+    res.render('admin/coupons/allCoupons',{user: req.session.admin, coupons,listedCategories})
     }catch (err){
         next(err)
     }
