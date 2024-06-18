@@ -2,13 +2,13 @@ pipeline:
   agent:
     any
   stages:
-    - stage: 'Build'
+    - name: 'Build'
       steps:
         - script:
             - npm install
             - npm test
 
-    - stage: 'Deploy'
+    - name: 'Deploy'
       steps:
         - script:
             - npm run build
